@@ -1,8 +1,10 @@
-# openyao-skills
+# Open Yao Skills
 
-`openyao-skills` 是一个面向公开分享的 Skill 合集仓库。它只收录适合开源、可长期维护、可被他人直接理解和复用的 Skill。
+*A curated collection of high-quality, production-ready AI skills*
 
 `OpenYao` 延续 `YAO = Yielding AI Outcomes` 这条方法线。重点不是继续堆更多 prompt 文本，而是把有效的方法、流程、评估和执行边界沉淀成可复用的 AI 资产，并最终产生真实可交付的结果。
+
+Open Yao Skills is a growing collection of AI-native skills designed for real-world impact.
 
 这个目录同时承担两件事：
 
@@ -21,6 +23,21 @@
 
 换句话说，`OpenYao` 是把 `YAO` 的方法论往公开知识库推进一步：让那些值得分享的 Skill，不只存在于本地，而是成为可以被发现、引用、改进和复用的公开能力集合。
 
+## Featured Skill Lines
+
+这部分展示的是 `OpenYao` 计划长期建设的能力线，风格上会尽量保持“功能导向 + 动词感”，避免命名体系散掉。
+
+**Skill Doctor**
+Diagnose and fix issues in skills automatically.
+
+**Skill Optimizer**
+Improve performance, structure, and effectiveness.
+
+**Skill Ranker**
+Evaluate and rank skills based on real impact.
+
+这些名称代表的是产品方向，不等于它们现在都已经作为独立 Skill 收录进仓库。当前仓库会把“已发布能力”和“规划中的能力线”区分开维护。
+
 ## 推荐入口
 
 如果你想理解 `OpenYao` 背后的元方法，优先看 [`yao-meta-skill`](https://github.com/yaojingang/yao-meta-skill)。
@@ -31,6 +48,8 @@
 
 - [`yao-meta-skill`](https://github.com/yaojingang/yao-meta-skill): 定义如何系统化地创建、评估、治理和打包 Skill
 - [`openyao-skills`](https://github.com/yaojingang/openyao-skills): 收录那些已经值得公开分享的 Skill 成果
+
+如果把 `yao-meta-skill` 理解成“元方法引擎”，那么 `openyao-skills` 更像“公开产品化陈列层”。
 
 ## 仓库目标
 
@@ -66,6 +85,15 @@ openyao-skills/
 - `registry/`: Skill 登记表，是本地和公开状态的事实源。
 - `scripts/`: 更新登记表和 README 的辅助脚本。
 - `skills/`: 真正收录进公开合集的 Skill 副本。
+
+## Planned Capability Families
+
+为了让这个仓库像生态而不是像杂货堆，先预留两条能力家族目录：
+
+- `skills/skill-builder/`
+- `skills/skill-analyzer/`
+
+它们当前只是占位目录，用来约束未来的扩展方向。
 
 ## 工作流
 
