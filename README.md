@@ -77,7 +77,7 @@ openyao-skills/
 <!-- catalog:start -->
 | Skill | Lifecycle | Sync | Collection Path | Source Path | GitHub |
 | --- | --- | --- | --- | --- | --- |
-| `openyao-skills-sync` | `active` | `local-only` | `skills/openyao-skills-sync` | `/Users/laoyao/AI Coding/03-Development/Skills/openyao-skills/skills/openyao-skills-sync` | `pending` |
+| `openyao-skills-sync` | `active` | `published` | `skills/openyao-skills-sync` | `/Users/laoyao/AI Coding/03-Development/Skills/openyao-skills/skills/openyao-skills-sync` | `https://github.com/yaojingang/openyao-skills/tree/main/skills/openyao-skills-sync` |
 <!-- catalog:end -->
 
 ## 后续约定
