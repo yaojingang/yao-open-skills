@@ -1,8 +1,8 @@
-# openyao-skills 仓库设计
+# open-yao-skills 仓库设计
 
 ## 0. 理念
 
-`openyao-skills` 采用 `YAO = Yielding AI Outcomes` 的方法视角。
+`open-yao-skills` 采用 `YAO = Yielding AI Outcomes` 的方法视角。
 
 这里的重点不是累积更多提示词，而是沉淀更好的 AI 资产。一个 Skill 值得进入这个公开合集，不是因为它“能聊”，而是因为它能稳定支持某类真实任务，能被复用，能被维护，也能被别人理解和继续改进。
 
@@ -16,11 +16,11 @@
 
 - [yao-meta-skill](https://github.com/yaojingang/yao-meta-skill)
 
-它定义的是如何创建、评估、治理和打包 Skill；而 `openyao-skills` 负责承接其中那些已经值得公开分享的成果。
+它定义的是如何创建、评估、治理和打包 Skill；而 `open-yao-skills` 负责承接其中那些已经值得公开分享的成果。
 
 ## 1. 定位
 
-`openyao-skills` 不是“当前 Skills 工作区的完整镜像”，而是一个精选的公开合集仓库。
+`open-yao-skills` 不是“当前 Skills 工作区的完整镜像”，而是一个精选的公开合集仓库。
 
 它只收录满足下面条件的 Skill：
 
@@ -48,7 +48,7 @@
 ## 3. 目录规则
 
 ```text
-openyao-skills/
+open-yao-skills/
 ├── README.md
 ├── .gitignore
 ├── docs/
@@ -168,7 +168,7 @@ README 的 Skill 目录区块必须从 `registry/skills.json` 自动渲染，不
 
 这个目录默认对应一个公开 GitHub 仓库：
 
-- repo: `yaojingang/openyao-skills`
+- repo: `yaojingang/open-yao-skills`
 
 发布顺序固定：
 

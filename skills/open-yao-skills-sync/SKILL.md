@@ -1,13 +1,11 @@
 ---
-name: openyao-skills-sync
-description: Manage the openyao-skills public collection. Use this skill whenever the user wants to evaluate whether a local skill should be open sourced, import a local skill into the openyao-skills repository, register which skills are already public, track GitHub sync status, or update the collection README and catalog after adding or refreshing a skill.
+name: open-yao-skills-sync
+description: Manage the open-yao-skills public collection. Use this skill whenever the user wants to evaluate whether a local skill should be open sourced, import a local skill into the open-yao-skills repository, register which skills are already public, track GitHub sync status, or update the collection README and catalog after adding or refreshing a skill.
 ---
 
-# OpenYao Skills Sync
+# Open Yao Skills Sync
 
-Use this skill to manage the public `openyao-skills` collection at:
-
-- `/Users/laoyao/AI Coding/03-Development/Skills/openyao-skills`
+Use this skill to manage the public `open-yao-skills` collection in the current repo root.
 
 This skill is not for creating arbitrary new skills from scratch. It is for intake, governance, sync tracking, and collection maintenance.
 
@@ -57,7 +55,7 @@ Use the publishing rules:
 
 When approved:
 
-- Copy the public version into `openyao-skills/skills/<slug>/`
+- Copy the public version into `skills/<slug>/` under the repo root
 - Keep only the files needed for the public skill
 - Make the structure self-contained and understandable
 
@@ -74,7 +72,7 @@ python3 scripts/register_skill.py \
   --collection-path "skills/<slug>" \
   --lifecycle active \
   --sync-status <local-only|staged|published|needs-update> \
-  --github-repo openyao-skills \
+  --github-repo open-yao-skills \
   --github-url "<url-if-known>" \
   --license "<license>" \
   --tags "tag1,tag2"
@@ -98,7 +96,7 @@ If the user wants the collection pushed:
 
 - ensure the public files, registry, and README are already consistent
 - commit the current repo changes with a clear message
-- push to the configured `openyao-skills` GitHub repository
+- push to the configured `open-yao-skills` GitHub repository
 - only after a successful push, mark relevant skills as `published` and set `last_synced_at`
 
 If the public repo exists but the local collection has new unpublished changes, use `needs-update` until the push is complete.

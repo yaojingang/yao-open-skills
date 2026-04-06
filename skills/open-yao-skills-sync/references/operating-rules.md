@@ -1,6 +1,6 @@
 # Operating Rules
 
-This reference is the short operational summary for maintaining `openyao-skills`.
+This reference is the short operational summary for maintaining `open-yao-skills`.
 
 ## Source of truth
 
@@ -33,6 +33,5 @@ Use these `sync_status` values:
 
 ## Paths
 
-- Repo root: `/Users/laoyao/AI Coding/03-Development/Skills/openyao-skills`
-- Skill collection root: `/Users/laoyao/AI Coding/03-Development/Skills/openyao-skills/skills`
-
+- Repo root: the repository root that contains `README.md`, `registry/`, `scripts/`, and `skills/`
+- Skill collection root: `skills/` under the repo root

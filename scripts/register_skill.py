@@ -17,7 +17,7 @@ def parse_args():
     parser.add_argument("--collection-path", required=True)
     parser.add_argument("--lifecycle", default="active")
     parser.add_argument("--sync-status", default="local-only")
-    parser.add_argument("--github-repo", default="openyao-skills")
+    parser.add_argument("--github-repo")
     parser.add_argument("--github-url", default="")
     parser.add_argument("--license", default="TBD")
     parser.add_argument("--tags", default="")
@@ -25,9 +25,9 @@ def parse_args():
     return parser.parse_args()
 
 
-def load_registry(path: Path):
+def load_registry(path: Path, repo_name: str):
     if not path.exists():
-        return {"repo_name": "openyao-skills", "updated_at": "", "skills": []}
+        return {"repo_name": repo_name, "updated_at": "", "skills": []}
 
     with path.open("r", encoding="utf-8") as handle:
         return json.load(handle)
@@ -37,8 +37,9 @@ def main():
     args = parse_args()
     today = date.today().isoformat()
     repo_root = Path(__file__).resolve().parents[1]
+    repo_name = repo_root.name
     registry_path = repo_root / "registry" / "skills.json"
-    registry = load_registry(registry_path)
+    registry = load_registry(registry_path, repo_name)
 
     tags = [tag.strip() for tag in args.tags.split(",") if tag.strip()]
     record = {
@@ -49,7 +50,7 @@ def main():
         "collection_path": args.collection_path,
         "lifecycle": args.lifecycle,
         "sync_status": args.sync_status,
-        "github_repo": args.github_repo,
+        "github_repo": args.github_repo or repo_name,
         "github_url": args.github_url,
         "license": args.license,
         "tags": tags,
@@ -64,7 +65,7 @@ def main():
     else:
         existing.update(record)
 
-    registry["repo_name"] = registry.get("repo_name", "openyao-skills")
+    registry["repo_name"] = repo_name
     registry["updated_at"] = today
     skills.sort(key=lambda item: item["slug"])
 
@@ -77,4 +78,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

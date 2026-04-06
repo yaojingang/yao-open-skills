@@ -6,7 +6,7 @@
 
 ```json
 {
-  "repo_name": "openyao-skills",
+  "repo_name": "open-yao-skills",
   "updated_at": "YYYY-MM-DD",
   "skills": []
 }
@@ -18,10 +18,10 @@
 - `title`: human-facing name
 - `summary`: one-line description of why the skill exists in the collection
 - `source_local_path`: original local source path outside or inside the collection
-- `collection_path`: relative path inside `openyao-skills`
+- `collection_path`: relative path inside `open-yao-skills`
 - `lifecycle`: `active`, `deprecated`, or `archived`
 - `sync_status`: `local-only`, `staged`, `published`, or `needs-update`
-- `github_repo`: normally `openyao-skills`
+- `github_repo`: normally `open-yao-skills`
 - `github_url`: public GitHub URL when available
 - `license`: intended license for the public copy
 - `tags`: flat tag list
@@ -35,4 +35,3 @@ When a skill is imported or refreshed:
 1. Update the record
 2. Keep `collection_path` stable if possible
 3. Regenerate README after the registry change
-

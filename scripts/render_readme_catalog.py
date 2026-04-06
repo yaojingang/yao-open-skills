@@ -8,7 +8,16 @@ START_MARKER = "<!-- catalog:start -->"
 END_MARKER = "<!-- catalog:end -->"
 
 
-def render_table(skills):
+def format_source_path(source_path: str, repo_root: Path) -> str:
+    source = Path(source_path)
+    try:
+        relative = source.resolve().relative_to(repo_root.resolve())
+        return "[{path}]({path})".format(path=relative.as_posix())
+    except ValueError:
+        return "`external-local-source`"
+
+
+def render_table(skills, repo_root: Path):
     lines = [
         START_MARKER,
         "| Skill | Lifecycle | Sync | Collection Path | Source Path | GitHub |",
@@ -16,14 +25,21 @@ def render_table(skills):
     ]
 
     for skill in skills:
-        github = skill["github_url"] or "pending"
+        collection = "[{path}]({path})".format(path=skill["collection_path"])
+        source = format_source_path(skill["source_local_path"], repo_root)
+        github = (
+            "[link]({url})".format(url=skill["github_url"])
+            if skill["github_url"]
+            else "pending"
+        )
         lines.append(
-            "| `{slug}` | `{lifecycle}` | `{sync}` | `{collection}` | `{source}` | `{github}` |".format(
+            "| [{slug}]({collection_path}/SKILL.md) | `{lifecycle}` | `{sync}` | {collection} | {source} | {github} |".format(
                 slug=skill["slug"],
                 lifecycle=skill["lifecycle"],
                 sync=skill["sync_status"],
-                collection=skill["collection_path"],
-                source=skill["source_local_path"],
+                collection=collection,
+                collection_path=skill["collection_path"],
+                source=source,
                 github=github,
             )
         )
@@ -39,7 +55,7 @@ def main():
 
     registry = json.loads(registry_path.read_text(encoding="utf-8"))
     skills = sorted(registry.get("skills", []), key=lambda item: item["slug"])
-    table = render_table(skills)
+    table = render_table(skills, repo_root)
 
     readme = readme_path.read_text(encoding="utf-8")
     if START_MARKER not in readme or END_MARKER not in readme:
@@ -54,4 +70,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
