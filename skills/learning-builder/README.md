@@ -1,8 +1,8 @@
-# Learning Tutorial Builder
+# Learning Builder
 
 ## What It Does
 
-`learning-tutorial-builder` turns a vague learning request into a source-backed tutorial package.
+`learning-builder` turns a vague learning request into a source-backed tutorial package.
 
 It guides the user through a short learner intake, prefers authoritative sources, writes a personalized study guide in markdown, and can export the result to `docx` and `pdf`. After the tutorial is approved, it can also extend the content into an optional learning webpage.
 
@@ -26,7 +26,7 @@ It guides the user through a short learner intake, prefers authoritative sources
 ## Basic Usage
 
 ```bash
-python3 skills/learning-tutorial-builder/scripts/export_tutorial.py tutorial.md out/
+python3 skills/learning-builder/scripts/export_tutorial.py tutorial.md out/
 ```
 
 ## Outputs

@@ -1,8 +1,8 @@
-# open-yao-skills 命名规范
+# yao-open-skills 命名规范
 
 ## 1. 目标
 
-`open-yao-skills` 里的名字不是随手起的目录名，而是公开资产的产品名。
+`yao-open-skills` 里的名字不是随手起的目录名，而是公开资产的产品名。
 
 一个好名字至少要同时满足这几件事：
 
@@ -166,7 +166,7 @@
 
 不推荐：
 
-- `skill-learning-tutorial-builder`
+- `skill-learning-builder`
 - `skill-note-cleanup`
 
 原因：
@@ -178,14 +178,19 @@
 
 不推荐：
 
-- `open-yao-skills-sync`
-- `yao-learning-tutorial-builder`
+- `yao-open-skills-sync`
+- `yao-learning-builder`
 
 原因：
 
 - 耦合过强
 - 脱离本仓库语境后可读性更差
 - 以后迁移、复用或拆分时成本更高
+
+例外：
+
+- 如果一个 Skill 明确只服务当前仓库本身，且作用域需要写进名字里，可以保留仓库作用域命名
+- 当前仓库中的 `yao-open-skills-sync` 就属于这种 repo-scoped 例外
 
 ### 5.3 名字只描述实现细节
 
@@ -203,7 +208,7 @@
 
 不推荐：
 
-- `personalized-authoritative-learning-tutorial-builder`
+- `personalized-authoritative-learning-builder`
 - `advanced-multi-format-study-guide-generator`
 
 原因：
@@ -234,11 +239,11 @@
 
 这些名字属于元技能家族，风格统一，保留 `skill-*` 是合理的。
 
-### 可接受但偏长的名字
+### 可接受的简洁名字
 
-- `learning-tutorial-builder`
+- `learning-builder`
 
-这个名字目前可用，边界也清楚，但它比理想状态略长。
+这个名字目前可用，简洁，也保留了后续扩展空间。
 
 如果未来需要新起同类名字，优先考虑更短版本，例如：
 

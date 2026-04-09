@@ -1,9 +1,9 @@
 ---
-name: learning-tutorial-builder
+name: learning-builder
 description: Create personalized learning tutorials from a learner profile and authority-first research. Use when the user wants a guided intake to clarify goals, background, constraints, and desired outcomes, then wants a structured tutorial or study guide assembled from official docs, standards, maintainer docs, regulator guidance, or other primary sources. Also use when the user wants the tutorial exported to Word or PDF, or wants to extend the finished tutorial into a personalized learning webpage. Do not use for one-off factual answers, generic blog writing, broad web research without a tutorial deliverable, or standalone webpage design with no learning packet.
 ---
 
-# Learning Tutorial Builder
+# Learning Builder
 
 ## Own The Following Job
 

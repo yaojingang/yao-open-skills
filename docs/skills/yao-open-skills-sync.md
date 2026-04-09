@@ -1,8 +1,8 @@
-# Open Yao Skills Sync
+# Yao Open Skills Sync
 
 ## What It Does
 
-`open-yao-skills-sync` manages the `open-yao-skills` public collection itself.
+`yao-open-skills-sync` manages the `yao-open-skills` public collection itself.
 
 Use it when you want to:
 

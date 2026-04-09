@@ -1,10 +1,10 @@
-# Open Yao Skills
+# Yao Open Skills
 
 *A curated collection of high-quality, production-ready AI skills*
 
 `OpenYao` 延续 `YAO = Yielding AI Outcomes` 这条方法线。重点不是继续堆更多 prompt 文本，而是把有效的方法、流程、评估和执行边界沉淀成可复用的 AI 资产，并最终产生真实可交付的结果。
 
-Open Yao Skills is a growing collection of AI-native skills designed for real-world impact.
+Yao Open Skills is a growing collection of AI-native skills designed for real-world impact.
 
 这个目录同时承担两件事：
 
@@ -24,7 +24,7 @@ Open Yao Skills is a growing collection of AI-native skills designed for real-wo
 
 ## OpenYao 理念
 
-`open-yao-skills` 想公开的不是“零散 prompt 收藏”，而是一套更稳定的 AI 资产观：
+`yao-open-skills` 想公开的不是“零散 prompt 收藏”，而是一套更稳定的 AI 资产观：
 
 - Skill 应该服务真实任务结果，而不是只服务对话过程。
 - Skill 应该可复用、可维护、可评估，而不是一次性技巧。
@@ -57,9 +57,9 @@ Evaluate and rank skills based on real impact.
 在这两个仓库之间，关系可以简单理解为：
 
 - [`yao-meta-skill`](https://github.com/yaojingang/yao-meta-skill): 定义如何系统化地创建、评估、治理和打包 Skill
-- [`open-yao-skills`](https://github.com/yaojingang/open-yao-skills): 收录那些已经值得公开分享的 Skill 成果
+- [`yao-open-skills`](https://github.com/yaojingang/yao-open-skills): 收录那些已经值得公开分享的 Skill 成果
 
-如果把 `yao-meta-skill` 理解成“元方法引擎”，那么 `open-yao-skills` 更像“公开产品化陈列层”。
+如果把 `yao-meta-skill` 理解成“元方法引擎”，那么 `yao-open-skills` 更像“公开产品化陈列层”。
 
 ## 仓库目标
 
@@ -84,7 +84,7 @@ Evaluate and rank skills based on real impact.
 ## 目录结构
 
 ```text
-open-yao-skills/
+yao-open-skills/
 ├── README.md
 ├── docs/
 ├── registry/
@@ -109,7 +109,7 @@ open-yao-skills/
 ## Published Skill Guides
 
 - [Skill Guides Index](docs/skills/README.md)
-- [Open Yao Skills Sync](docs/skills/open-yao-skills-sync.md)
+- [Yao Open Skills Sync](docs/skills/yao-open-skills-sync.md)
 - [Skill Doctor](docs/skills/skill-doctor.md)
 
 ## 工作流
@@ -119,11 +119,11 @@ open-yao-skills/
 3. 清理敏感文件和无关产物后，复制到 `skills/<slug>/`。
 4. 在 `registry/skills.json` 写入或更新登记信息。
 5. 运行 README 渲染脚本，刷新合集说明页。
-6. 如果你要发布，再把仓库推到 GitHub 的 `open-yao-skills`。
+6. 如果你要发布，再把仓库推到 GitHub 的 `yao-open-skills`。
 
 ## GitHub 发布约定
 
-- GitHub 仓库名固定为 `open-yao-skills`。
+- GitHub 仓库名固定为 `yao-open-skills`。
 - 本地集合完成变更后，先更新 `registry/skills.json` 和 README，再执行 Git 提交与推送。
 - 只有实际完成推送后，相关 Skill 才能标记为 `published`，并写入 `last_synced_at`。
 - 如果后续本地源 Skill 有变化，但 GitHub 还没更新，对应记录应标记为 `needs-update`。
@@ -132,13 +132,13 @@ open-yao-skills/
 
 这个仓库内置了一个管理 Skill：
 
-- [skills/open-yao-skills-sync/SKILL.md](skills/open-yao-skills-sync/SKILL.md)
+- [skills/yao-open-skills-sync/SKILL.md](skills/yao-open-skills-sync/SKILL.md)
 
 它的职责是：
 
 - 接收你给的本地 Skill 路径。
 - 判断是否适合公开。
-- 按合集规则导入到 `open-yao-skills`。
+- 按合集规则导入到 `yao-open-skills`。
 - 维护登记表和 README 目录页。
 - 记录这个 Skill 是否已经同步到 GitHub，以及线上对应路径。
 
@@ -147,9 +147,9 @@ open-yao-skills/
 <!-- catalog:start -->
 | Skill | Guide | Lifecycle | Sync | Collection Path | Source Path | GitHub |
 | --- | --- | --- | --- | --- | --- | --- |
-| [learning-tutorial-builder](skills/learning-tutorial-builder/SKILL.md) | [guide](docs/skills/learning-tutorial-builder.md) | `active` | `published` | [skills/learning-tutorial-builder](skills/learning-tutorial-builder) | `external-local-source` | [link](https://github.com/yaojingang/open-yao-skills/tree/main/skills/learning-tutorial-builder) |
-| [open-yao-skills-sync](skills/open-yao-skills-sync/SKILL.md) | [guide](docs/skills/open-yao-skills-sync.md) | `active` | `published` | [skills/open-yao-skills-sync](skills/open-yao-skills-sync) | [skills/open-yao-skills-sync](skills/open-yao-skills-sync) | [link](https://github.com/yaojingang/open-yao-skills/tree/main/skills/open-yao-skills-sync) |
-| [skill-doctor](skills/skill-doctor/SKILL.md) | [guide](docs/skills/skill-doctor.md) | `active` | `published` | [skills/skill-doctor](skills/skill-doctor) | `external-local-source` | [link](https://github.com/yaojingang/open-yao-skills/tree/main/skills/skill-doctor) |
+| [learning-builder](skills/learning-builder/SKILL.md) | [guide](docs/skills/learning-builder.md) | `active` | `published` | [skills/learning-builder](skills/learning-builder) | `external-local-source` | [link](https://github.com/yaojingang/yao-open-skills/tree/main/skills/learning-builder) |
+| [skill-doctor](skills/skill-doctor/SKILL.md) | [guide](docs/skills/skill-doctor.md) | `active` | `published` | [skills/skill-doctor](skills/skill-doctor) | `external-local-source` | [link](https://github.com/yaojingang/yao-open-skills/tree/main/skills/skill-doctor) |
+| [yao-open-skills-sync](skills/yao-open-skills-sync/SKILL.md) | [guide](docs/skills/yao-open-skills-sync.md) | `active` | `published` | [skills/yao-open-skills-sync](skills/yao-open-skills-sync) | [skills/yao-open-skills-sync](skills/yao-open-skills-sync) | [link](https://github.com/yaojingang/yao-open-skills/tree/main/skills/yao-open-skills-sync) |
 <!-- catalog:end -->
 
 ## 后续约定

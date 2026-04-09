@@ -51,5 +51,5 @@ Artifacts include:
 
 ## Publishing Rule
 
-Those generated reports are local runtime outputs. They should not be committed back into `open-yao-skills` unless you intentionally create a sanitized public sample.
+Those generated reports are local runtime outputs. They should not be committed back into `yao-open-skills` unless you intentionally create a sanitized public sample.
 

@@ -6,7 +6,7 @@
 
 ```json
 {
-  "repo_name": "open-yao-skills",
+  "repo_name": "yao-open-skills",
   "updated_at": "YYYY-MM-DD",
   "skills": []
 }
@@ -18,10 +18,10 @@
 - `title`: human-facing name
 - `summary`: one-line description of why the skill exists in the collection
 - `source_local_path`: original local source path outside or inside the collection
-- `collection_path`: relative path inside `open-yao-skills`
+- `collection_path`: relative path inside `yao-open-skills`
 - `lifecycle`: `active`, `deprecated`, or `archived`
 - `sync_status`: `local-only`, `staged`, `published`, or `needs-update`
-- `github_repo`: normally `open-yao-skills`
+- `github_repo`: normally `yao-open-skills`
 - `github_url`: public GitHub URL when available
 - `guide_path`: path to the human-facing usage guide inside `docs/skills/`
 - `license`: intended license for the public copy

@@ -1,8 +1,8 @@
-# open-yao-skills 发布规则
+# yao-open-skills 发布规则
 
 ## 1. 发布目标
 
-每次把本地 Skill 收录到 `open-yao-skills` 时，目标不是“把目录搬过去”，而是“产出一个适合公开阅读和复用的版本”。
+每次把本地 Skill 收录到 `yao-open-skills` 时，目标不是“把目录搬过去”，而是“产出一个适合公开阅读和复用的版本”。
 
 因此发布流程默认包含筛选、清理、登记和说明页更新四部分。
 每个已开源 Skill 还必须补一份面向人类读者的使用说明。
@@ -68,7 +68,7 @@
 
 默认远程仓库为：
 
-- `https://github.com/yaojingang/open-yao-skills`
+- `https://github.com/yaojingang/yao-open-skills`
 
 如果本地集合发生增删改，并且这些变更是准备公开的版本，就应在整理完成后提交并推送到这个远程仓库。
 
@@ -88,7 +88,7 @@ README 首页至少要反映：
 
 ## 8. 命名约定
 
-- GitHub 仓库名固定为 `open-yao-skills`
+- GitHub 仓库名固定为 `yao-open-skills`
 - 集合内目录统一使用 kebab-case slug
 - 使用说明统一放在 `docs/skills/<slug>.md`
 - slug 一旦公开，尽量不改名

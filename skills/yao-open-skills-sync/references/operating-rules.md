@@ -1,6 +1,6 @@
 # Operating Rules
 
-This reference is the short operational summary for maintaining `open-yao-skills`.
+This reference is the short operational summary for maintaining `yao-open-skills`.
 
 ## Source of truth
 

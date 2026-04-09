@@ -1,8 +1,8 @@
-# Learning Tutorial Builder
+# Learning Builder
 
 ## 中文说明
 
-`learning-tutorial-builder` 面向“要做教程成品”的场景，不只是做搜索或写稿。
+`learning-builder` 面向“要做教程成品”的场景，不只是做搜索或写稿。
 
 它会先引导用户说明学习目标、背景、当前水平、时间预算和期望输出，再从官方文档、标准规范、维护者文档、监管资料等权威来源中提炼内容，最终生成一份个性化学习教程。默认以 markdown 为源稿，按需导出 `docx`、`pdf`，并且可以在教程确认后继续扩展成学习网页。
 
@@ -31,7 +31,7 @@
 
 ## English Usage
 
-`learning-tutorial-builder` is for producing a finished learning packet, not just answering questions or collecting links.
+`learning-builder` is for producing a finished learning packet, not just answering questions or collecting links.
 
 Use it when you need to:
 
@@ -52,7 +52,7 @@ Use it when you need to:
 ### Command
 
 ```bash
-python3 skills/learning-tutorial-builder/scripts/export_tutorial.py tutorial.md out/
+python3 skills/learning-builder/scripts/export_tutorial.py tutorial.md out/
 ```
 
 ### Important Boundary

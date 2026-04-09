@@ -1,8 +1,8 @@
-# Learning Tutorial Builder
+# Learning Builder
 
 ## 中文说明
 
-`learning-tutorial-builder` 用来把一个模糊的学习需求，整理成一份可交付、可追溯、可导出的学习教程包。
+`learning-builder` 用来把一个模糊的学习需求，整理成一份可交付、可追溯、可导出的学习教程包。
 
 它的核心流程是：
 

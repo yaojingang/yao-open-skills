@@ -1,7 +1,7 @@
 interface:
-  display_name: "Learning Tutorial Builder"
+  display_name: "Learning Builder"
   short_description: "Build authority-first study guides and export them"
-  default_prompt: "Use $learning-tutorial-builder to clarify the learner profile, research authoritative sources, write a personalized tutorial, and export it to docx or pdf with an optional learning webpage."
+  default_prompt: "Use $learning-builder to clarify the learner profile, research authoritative sources, write a personalized tutorial, and export it to docx or pdf with an optional learning webpage."
 compatibility:
   canonical_format: "agent-skills"
   adapter_targets:

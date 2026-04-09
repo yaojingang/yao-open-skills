@@ -1,11 +1,11 @@
 ---
-name: open-yao-skills-sync
-description: Manage the open-yao-skills public collection. Use this skill whenever the user wants to evaluate whether a local skill should be open sourced, import a local skill into the open-yao-skills repository, register which skills are already public, track GitHub sync status, or update the collection README and catalog after adding or refreshing a skill.
+name: yao-open-skills-sync
+description: Manage the yao-open-skills public collection. Use this skill whenever the user wants to evaluate whether a local skill should be open sourced, import a local skill into the yao-open-skills repository, register which skills are already public, track GitHub sync status, or update the collection README and catalog after adding or refreshing a skill.
 ---
 
-# Open Yao Skills Sync
+# Yao Open Skills Sync
 
-Use this skill to manage the public `open-yao-skills` collection in the current repo root.
+Use this skill to manage the public `yao-open-skills` collection in the current repo root.
 
 This skill is not for creating arbitrary new skills from scratch. It is for intake, governance, sync tracking, and collection maintenance.
 
@@ -75,7 +75,7 @@ python3 scripts/register_skill.py \
   --collection-path "skills/<slug>" \
   --lifecycle active \
   --sync-status <local-only|staged|published|needs-update> \
-  --github-repo open-yao-skills \
+  --github-repo yao-open-skills \
   --github-url "<url-if-known>" \
   --license "<license>" \
   --tags "tag1,tag2"
@@ -115,7 +115,7 @@ If the user wants the collection pushed:
 
 - ensure the public files, registry, and README are already consistent
 - commit the current repo changes with a clear message
-- push to the configured `open-yao-skills` GitHub repository
+- push to the configured `yao-open-skills` GitHub repository
 - only after a successful push, mark relevant skills as `published` and set `last_synced_at`
 
 If the public repo exists but the local collection has new unpublished changes, use `needs-update` until the push is complete.

@@ -1,18 +1,18 @@
 {
-  "repo_name": "open-yao-skills",
+  "repo_name": "yao-open-skills",
   "updated_at": "2026-04-09",
   "skills": [
     {
-      "slug": "learning-tutorial-builder",
-      "title": "Learning Tutorial Builder",
+      "slug": "learning-builder",
+      "title": "Learning Builder",
       "summary": "Build personalized tutorials from learner profiles and authoritative sources, then export them to docx, pdf, and an optional learning webpage.",
-      "source_local_path": "/Users/laoyao/AI Coding/03-Development/Skills/personalized-learning-tutorial",
-      "collection_path": "skills/learning-tutorial-builder",
+      "source_local_path": "/Users/laoyao/AI Coding/03-Development/Skills/learning-builder",
+      "collection_path": "skills/learning-builder",
       "lifecycle": "active",
       "sync_status": "published",
-      "github_repo": "open-yao-skills",
-      "github_url": "https://github.com/yaojingang/open-yao-skills/tree/main/skills/learning-tutorial-builder",
-      "guide_path": "docs/skills/learning-tutorial-builder.md",
+      "github_repo": "yao-open-skills",
+      "github_url": "https://github.com/yaojingang/yao-open-skills/tree/main/skills/learning-builder",
+      "guide_path": "docs/skills/learning-builder.md",
       "license": "MIT",
       "tags": [
         "education",
@@ -25,16 +25,16 @@
       "updated_at": "2026-04-09"
     },
     {
-      "slug": "open-yao-skills-sync",
-      "title": "Open Yao Skills Sync",
-      "summary": "Manage intake, registration, sync state, and README updates for the open-yao-skills public collection.",
-      "source_local_path": "/Users/laoyao/AI Coding/03-Development/Skills/open-yao-skills/skills/open-yao-skills-sync",
-      "collection_path": "skills/open-yao-skills-sync",
+      "slug": "yao-open-skills-sync",
+      "title": "Yao Open Skills Sync",
+      "summary": "Manage intake, registration, sync state, and README updates for the yao-open-skills public collection.",
+      "source_local_path": "/Users/laoyao/AI Coding/03-Development/Skills/yao-open-skills/skills/yao-open-skills-sync",
+      "collection_path": "skills/yao-open-skills-sync",
       "lifecycle": "active",
       "sync_status": "published",
-      "github_repo": "open-yao-skills",
-      "github_url": "https://github.com/yaojingang/open-yao-skills/tree/main/skills/open-yao-skills-sync",
-      "guide_path": "docs/skills/open-yao-skills-sync.md",
+      "github_repo": "yao-open-skills",
+      "github_url": "https://github.com/yaojingang/yao-open-skills/tree/main/skills/yao-open-skills-sync",
+      "guide_path": "docs/skills/yao-open-skills-sync.md",
       "license": "MIT",
       "tags": [
         "catalog",
@@ -42,7 +42,7 @@
         "publishing"
       ],
       "last_synced_at": "2026-04-06",
-      "updated_at": "2026-04-06"
+      "updated_at": "2026-04-09"
     },
     {
       "slug": "skill-doctor",
@@ -52,8 +52,8 @@
       "collection_path": "skills/skill-doctor",
       "lifecycle": "active",
       "sync_status": "published",
-      "github_repo": "open-yao-skills",
-      "github_url": "https://github.com/yaojingang/open-yao-skills/tree/main/skills/skill-doctor",
+      "github_repo": "yao-open-skills",
+      "github_url": "https://github.com/yaojingang/yao-open-skills/tree/main/skills/skill-doctor",
       "guide_path": "docs/skills/skill-doctor.md",
       "license": "MIT",
       "tags": [
