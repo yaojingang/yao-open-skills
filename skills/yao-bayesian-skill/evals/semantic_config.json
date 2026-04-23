@@ -1,0 +1,167 @@
+{
+  "optimizer_hints": {
+    "capability": "Convert uncertain choices into Bayesian evidence-to-action reports",
+    "inputs": [
+      "decision question",
+      "hypothesis",
+      "evidence",
+      "prior assumptions",
+      "actions",
+      "risk tolerance"
+    ],
+    "trigger_actions": [
+      "set a prior",
+      "grade evidence",
+      "update to a posterior",
+      "run sensitivity analysis",
+      "compare actions by expected value",
+      "recommend the next information to collect"
+    ],
+    "exclusions": [
+      "Bayes theorem tutoring",
+      "textbook homework",
+      "generic brainstorming",
+      "final professional advice in regulated domains"
+    ],
+    "artifacts": [
+      "Bayesian decision report",
+      "prior and evidence table",
+      "posterior summary",
+      "action comparison",
+      "next-information recommendation"
+    ]
+  },
+  "fallback_positive_concepts": [
+    "bayesian_decision",
+    "prior_posterior",
+    "evidence_quality",
+    "action_recommendation",
+    "sensitivity_analysis"
+  ],
+  "positive_concepts": {
+    "bayesian_decision": {
+      "weight": 0.24,
+      "phrases": [
+        "bayesian decision",
+        "bayesian workflow",
+        "decision report",
+        "under uncertainty",
+        "evidence to action",
+        "probabilistic decision"
+      ]
+    },
+    "prior_posterior": {
+      "weight": 0.22,
+      "phrases": [
+        "prior",
+        "posterior",
+        "reference class",
+        "likelihood ratio",
+        "bayes factor",
+        "update the probability",
+        "changes risk",
+        "risk enough"
+      ]
+    },
+    "evidence_quality": {
+      "weight": 0.18,
+      "phrases": [
+        "evidence quality",
+        "grade the evidence",
+        "source quality",
+        "credible evidence",
+        "quality tier"
+      ]
+    },
+    "action_recommendation": {
+      "weight": 0.2,
+      "phrases": [
+        "action threshold",
+        "expected value",
+        "recommend an action",
+        "should we do this",
+        "what should we do next",
+        "compare actions",
+        "justify follow-up",
+        "justify follow up",
+        "follow-up",
+        "follow up"
+      ]
+    },
+    "sensitivity_analysis": {
+      "weight": 0.12,
+      "phrases": [
+        "sensitivity analysis",
+        "sensitivity",
+        "robustness",
+        "what changes the conclusion",
+        "stable under different priors"
+      ]
+    },
+    "information_value": {
+      "weight": 0.04,
+      "phrases": [
+        "next experiment",
+        "next information",
+        "collect more data",
+        "value of information"
+      ]
+    },
+    "report_export": {
+      "weight": 0.04,
+      "phrases": [
+        "html report",
+        "pdf report",
+        "word report",
+        "docx report",
+        "export it as html",
+        "export it as pdf",
+        "export it as word"
+      ]
+    }
+  },
+  "negative_concepts": {
+    "teaching_only": {
+      "weight": 0.34,
+      "exclusive": true,
+      "phrases": [
+        "explain bayes theorem",
+        "just explain",
+        "teach me",
+        "in simple language",
+        "what does it mean"
+      ]
+    },
+    "homework_only": {
+      "weight": 0.38,
+      "exclusive": true,
+      "phrases": [
+        "homework",
+        "textbook problem",
+        "exam question",
+        "solve this probability problem"
+      ]
+    },
+    "generic_brainstorm": {
+      "weight": 0.24,
+      "exclusive": true,
+      "phrases": [
+        "brainstorm",
+        "ideas only",
+        "generic strategy",
+        "do not use bayesian analysis"
+      ]
+    },
+    "final_professional_advice": {
+      "weight": 0.42,
+      "exclusive": true,
+      "phrases": [
+        "final investment advice",
+        "tell me whether to buy this stock",
+        "legal advice",
+        "medical advice",
+        "final professional judgment"
+      ]
+    }
+  }
+}

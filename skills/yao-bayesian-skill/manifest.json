@@ -1,0 +1,28 @@
+{
+  "name": "yao-bayesian-skill",
+  "version": "0.3.0",
+  "owner": "Yao Team",
+  "updated_at": "2026-04-21",
+  "status": "active",
+  "maturity_tier": "library",
+  "lifecycle_stage": "library",
+  "context_budget_tier": "library",
+  "review_cadence": "quarterly",
+  "skill_archetype": "library",
+  "category": "decision-analysis",
+  "complexity_tier": "complex",
+  "target_platforms": [
+    "openai",
+    "claude",
+    "generic",
+    "agent-skills-compatible"
+  ],
+  "factory_components": [
+    "references",
+    "scripts",
+    "templates",
+    "input",
+    "evals",
+    "reports"
+  ]
+}

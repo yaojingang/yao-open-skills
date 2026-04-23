@@ -1,0 +1,181 @@
+{
+  "title": {
+    "zh": "2026年5月是否应该从北京飞去三亚旅行？",
+    "en": "Should I fly from Beijing to Sanya for a trip in May 2026?"
+  },
+  "question": {
+    "zh": "我现在在北京上班，是否应该在 2026 年 5 月请假并乘飞机去三亚旅行？",
+    "en": "I am currently working in Beijing. Should I take time off and fly to Sanya for a trip in May 2026?"
+  },
+  "hypothesis": {
+    "zh": "这次旅行的净收益会高于时间、预算和工作协调成本，因此值得推进到订票和订酒店阶段。",
+    "en": "The trip's overall benefit will outweigh the time, budget, and work-coordination cost, making it worth moving to booking flights and hotels."
+  },
+  "time_horizon": {
+    "zh": "2026 年 5 月",
+    "en": "May 2026"
+  },
+  "decision_deadline": "2026-05-05",
+  "success_metric": {
+    "zh": "能够请出合适天数的假期，总预算在可接受范围内，且不会明显打乱当前工作安排。",
+    "en": "You can secure suitable leave, keep the total budget within an acceptable range, and avoid materially disrupting current work commitments."
+  },
+  "domain": {
+    "zh": "个人旅行决策",
+    "en": "personal-travel"
+  },
+  "high_risk_domain": false,
+  "method": "auto",
+  "prior": {
+    "probability": 0.42,
+    "alpha": 8.4,
+    "beta": 11.6,
+    "equivalent_sample_size": 20,
+    "source_summary": [
+      {
+        "zh": "基于个人休闲旅行决策的一般经验形成的弱先验（演示用）",
+        "en": "A weak prior based on general leisure-trip decision patterns for personal travel (demo only)"
+      },
+      {
+        "zh": "根据当前输入对请假、预算和执行难度做的常识性假设（演示用）",
+        "en": "Common-sense assumptions about leave, budget, and execution friction inferred from the current prompt (demo only)"
+      }
+    ],
+    "source_quality": "D",
+    "confidence": "low"
+  },
+  "evidence": [
+    {
+      "name": {
+        "zh": "出发地和目的地已经明确",
+        "en": "Origin and destination are already clear"
+      },
+      "summary": {
+        "zh": "已明确从北京出发、目的地是三亚，说明不是纯粹的模糊愿望，而是一个可执行的旅行方向。",
+        "en": "The plan already specifies Beijing as the origin and Sanya as the destination, so this is more concrete than a vague travel wish."
+      },
+      "likelihood_ratio": 1.35,
+      "quality": "D",
+      "dependency_discount": 0.9,
+      "direction": "support",
+      "notes": {
+        "zh": "这是来自当前输入的结构化信号，不代表外部验证过的旅行可行性。",
+        "en": "This is a structured signal from the current prompt, not externally verified travel feasibility."
+      }
+    },
+    {
+      "name": {
+        "zh": "当前仍在北京上班",
+        "en": "You are currently working in Beijing"
+      },
+      "summary": {
+        "zh": "还在上班意味着旅行要经过请假、工作交接和时间协调，存在明显执行摩擦。",
+        "en": "Being actively employed means the trip requires leave approval, work handoff, and schedule coordination, which creates real execution friction."
+      },
+      "likelihood_ratio": 1.55,
+      "quality": "C",
+      "dependency_discount": 0.95,
+      "direction": "against",
+      "notes": {
+        "zh": "这是现实约束，不代表最终不能成行，但会抬高行动阈值。",
+        "en": "This is a practical constraint. It does not rule out the trip, but it raises the action threshold."
+      }
+    },
+    {
+      "name": {
+        "zh": "出行方式已经偏好飞机",
+        "en": "Air travel is already the preferred mode"
+      },
+      "summary": {
+        "zh": "交通方式已经锁定为飞机，说明执行路径较清晰，不需要在高铁、自驾和联程方案之间重新比较。",
+        "en": "Air travel is already the chosen mode, which narrows the execution path and reduces transport-choice ambiguity."
+      },
+      "likelihood_ratio": 1.2,
+      "quality": "D",
+      "dependency_discount": 0.8,
+      "direction": "support",
+      "notes": {
+        "zh": "这是便利性信号，但仍然没有覆盖真实价格和班次信息。",
+        "en": "This is a convenience signal, but it does not cover real prices or schedules."
+      }
+    },
+    {
+      "name": {
+        "zh": "旅行日期、预算和天数都还没定",
+        "en": "Dates, budget, and duration are still undefined"
+      },
+      "summary": {
+        "zh": "目前只有“下个月去三亚旅行”的意愿，没有明确出发日期、旅行天数和预算上限，因此决策基础还偏弱。",
+        "en": "Right now there is only the intention to travel next month, without a fixed departure date, trip length, or budget ceiling, so the decision basis is still weak."
+      },
+      "likelihood_ratio": 1.7,
+      "quality": "C",
+      "dependency_discount": 0.9,
+      "direction": "against",
+      "notes": {
+        "zh": "这条证据说明最需要补的是信息，而不是立刻重投入。",
+        "en": "This signal implies the biggest gap is missing information rather than willingness."
+      }
+    }
+  ],
+  "actions": [
+    {
+      "name": {
+        "zh": "现在就订机票和酒店",
+        "en": "Book flights and hotels now"
+      },
+      "cost": 5200,
+      "upside_if_h_true": 9000,
+      "downside_if_h_false": -2000,
+      "opportunity_cost": 0
+    },
+    {
+      "name": {
+        "zh": "先确认请假和预算，再订",
+        "en": "Confirm leave and budget first, then book"
+      },
+      "cost": 300,
+      "upside_if_h_true": 6000,
+      "downside_if_h_false": -300,
+      "opportunity_cost": -300
+    },
+    {
+      "name": {
+        "zh": "这次先暂缓",
+        "en": "Defer this trip for now"
+      },
+      "cost": 0,
+      "upside_if_h_true": 0,
+      "downside_if_h_false": 0,
+      "opportunity_cost": -1200
+    }
+  ],
+  "sensitivity": {
+    "prior_probabilities": [
+      0.3,
+      0.42,
+      0.55
+    ],
+    "lr_power_factors": [
+      0.75,
+      1.0,
+      1.25
+    ]
+  },
+  "next_information": {
+    "candidates": [
+      {
+        "zh": "先确认 2026 年 5 月能否请出连续 3 到 5 天假期，并判断是否需要避开月初高峰。",
+        "en": "First confirm whether you can secure a continuous 3-to-5-day leave window in May 2026 and whether you should avoid the early-month peak."
+      },
+      {
+        "zh": "拉一版北京往返三亚的机票和 3 到 4 晚酒店预算，给自己一个可接受的总价上限。",
+        "en": "Build a draft budget for round-trip Beijing-Sanya flights plus 3 to 4 hotel nights, then define an acceptable total-price ceiling."
+      },
+      {
+        "zh": "确认这次旅行是独自出行还是同行出行，因为这会直接影响日期、住宿和预算。",
+        "en": "Confirm whether this is a solo trip or a group trip, because that directly affects timing, lodging, and budget."
+      }
+    ]
+  }
+}

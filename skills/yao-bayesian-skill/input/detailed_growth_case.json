@@ -1,0 +1,193 @@
+{
+  "title": {
+    "zh": "NimbusCRM 应该在本季度发布 AI Deal Coach 增值包吗？",
+    "en": "Should NimbusCRM launch the AI Deal Coach add-on this quarter?"
+  },
+  "question": {
+    "zh": "产品团队是否应该在本季度投入 3 名工程师和 1 名产品经理，用 8 周时间把 AI Deal Coach 增值包上线到所有付费工作区？",
+    "en": "Should the product team commit three engineers and one product manager for eight weeks to launch the AI Deal Coach add-on to all paying workspaces this quarter?"
+  },
+  "hypothesis": {
+    "zh": "至少 12% 的符合条件付费工作区会启用 AI Deal Coach，且其中 70% 的启用者在 60 天后仍持续使用。",
+    "en": "At least 12% of eligible paying workspaces will activate the AI Deal Coach and 70% of activators will still use it after 60 days."
+  },
+  "time_horizon": {
+    "zh": "90 天",
+    "en": "90 days"
+  },
+  "decision_deadline": "2026-06-15",
+  "success_metric": {
+    "zh": "增购率至少达到 12%，且启用工作区的 60 天留存率至少达到 70%。",
+    "en": "At least 12% attach rate and at least 70% 60-day retention among activated workspaces."
+  },
+  "domain": {
+    "zh": "SaaS 产品决策",
+    "en": "saas-product"
+  },
+  "high_risk_domain": false,
+  "method": "auto",
+  "prior": {
+    "probability": 0.26,
+    "alpha": 13,
+    "beta": 37,
+    "equivalent_sample_size": 50,
+    "source_summary": [
+      {
+        "zh": "相邻工作流产品的历史增值包发布表现",
+        "en": "Historical add-on launches for adjacent workflow products"
+      },
+      {
+        "zh": "对现有销售团队管理员的结构化访谈",
+        "en": "Structured interviews with existing sales-team administrators"
+      },
+      {
+        "zh": "公司内部高阶 AI 功能采用率基准",
+        "en": "Internal benchmark for adoption of premium AI features"
+      }
+    ],
+    "source_quality": "B/C",
+    "confidence": "medium"
+  },
+  "observations": {
+    "trials": 72,
+    "successes": 15,
+    "label": {
+      "zh": "在设计伙伴试点中愿意支付试点订金的付费工作区",
+      "en": "Paying workspaces that accepted a paid pilot deposit during the design-partner offer"
+    }
+  },
+  "evidence": [
+    {
+      "name": {
+        "zh": "ICP 访谈把 deal coaching 列为高优先级工作流缺口",
+        "en": "ICP interviews ranked deal coaching as a top workflow gap"
+      },
+      "summary": {
+        "zh": "14 位目标管理员中有 9 位把会前准备和 deal coaching 排进前三大工作流缺口。",
+        "en": "9 of 14 target admins ranked meeting prep plus deal coaching as one of the top three workflow gaps."
+      },
+      "likelihood_ratio": 1.8,
+      "quality": "C",
+      "dependency_discount": 0.85,
+      "direction": "support",
+      "notes": {
+        "zh": "访谈证据有价值，但仍容易受到口头偏好高估的影响。",
+        "en": "Interview evidence is useful but still vulnerable to stated-preference inflation."
+      }
+    },
+    {
+      "name": {
+        "zh": "相邻竞品在上市初期的增购率较强",
+        "en": "Adjacent competitor reported strong attach at launch"
+      },
+      "summary": {
+        "zh": "一款相近的销售赋能产品在上市后的首个季度报告了略高于 11% 的增购率。",
+        "en": "A nearby sales-enablement product reported an attach rate slightly above 11% during its first quarter after launch."
+      },
+      "likelihood_ratio": 1.3,
+      "quality": "B",
+      "dependency_discount": 0.75,
+      "direction": "support",
+      "notes": {
+        "zh": "对标产品在买方类型上相近，但工作流深度并不完全一致。",
+        "en": "The comparison product is similar in buyer type but not identical in workflow depth."
+      }
+    },
+    {
+      "name": {
+        "zh": "原型阶段的支持负担高于预期",
+        "en": "Prototype support burden was higher than expected"
+      },
+      "summary": {
+        "zh": "8 个内部试点账号中有 6 个需要人工调整提示词或设置，才能产出有用的 coaching 结果。",
+        "en": "6 of 8 internal pilot accounts needed manual prompt or settings intervention to get useful coaching outputs."
+      },
+      "likelihood_ratio": 1.6,
+      "quality": "C",
+      "dependency_discount": 0.9,
+      "direction": "against",
+      "notes": {
+        "zh": "这代表了真实执行风险，如果不解决，可能直接压低留存。",
+        "en": "This is meaningful execution risk and could suppress retention if unresolved."
+      }
+    },
+    {
+      "name": {
+        "zh": "扩张信号取决于管理员控制能力",
+        "en": "Expansion signal depends on admin controls"
+      },
+      "summary": {
+        "zh": "两家设计伙伴表示，如果首发版本包含经理控制台和管理员分析功能，他们会扩大 seat 覆盖范围。",
+        "en": "Two design partners said they would expand seat coverage if the launch included manager controls and admin analytics."
+      },
+      "likelihood_ratio": 1.4,
+      "quality": "C",
+      "dependency_discount": 0.7,
+      "direction": "support",
+      "notes": {
+        "zh": "这是积极信号，但前提是首发版本真的交付了关键控制能力。",
+        "en": "This is promising, but still conditional on shipping the right controls."
+      }
+    }
+  ],
+  "actions": [
+    {
+      "name": {
+        "zh": "本季度直接大范围上线",
+        "en": "Launch broadly this quarter"
+      },
+      "cost": 95000,
+      "upside_if_h_true": 520000,
+      "downside_if_h_false": -95000,
+      "opportunity_cost": 0
+    },
+    {
+      "name": {
+        "zh": "先跑 6 周带管理员控制能力的付费试点",
+        "en": "Run a 6-week paid pilot with admin controls first"
+      },
+      "cost": 18000,
+      "upside_if_h_true": 135000,
+      "downside_if_h_false": -18000,
+      "opportunity_cost": 0
+    },
+    {
+      "name": {
+        "zh": "延后上线并收窄范围",
+        "en": "Delay and narrow the scope"
+      },
+      "cost": 6000,
+      "upside_if_h_true": 25000,
+      "downside_if_h_false": -6000,
+      "opportunity_cost": -18000
+    }
+  ],
+  "sensitivity": {
+    "prior_probabilities": [
+      0.18,
+      0.26,
+      0.35
+    ],
+    "lr_power_factors": [
+      0.75,
+      1.0,
+      1.25
+    ]
+  },
+  "next_information": {
+    "candidates": [
+      {
+        "zh": "先运行一个 6 周的付费试点，补齐经理控制能力，并在至少 120 个符合条件的工作区中测量增购率和 60 天留存。",
+        "en": "Run a 6-week paid pilot with manager controls and measure attach plus 60-day retention on at least 120 eligible workspaces."
+      },
+      {
+        "zh": "补齐管理员控制能力和模板预设后，重新测量仍需人工介入支持的账户比例。",
+        "en": "Measure how many support interventions are still needed after shipping admin controls and template presets."
+      },
+      {
+        "zh": "验证设计伙伴支付的订金是否会在 30 天内转化为真实的周活跃使用。",
+        "en": "Test whether design-partner deposits convert into active weekly usage within 30 days."
+      }
+    ]
+  }
+}

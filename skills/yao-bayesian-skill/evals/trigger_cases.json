@@ -1,0 +1,18 @@
+{
+  "recommended_threshold": 0.34,
+  "should_trigger": [
+    "Turn this product bet into a Bayesian decision report with priors, evidence quality, posterior updates, action thresholds, the next experiment, and export it as HTML and PDF.",
+    "Use a Bayesian workflow to decide whether we should enter this market, including likelihood-ratio updates, sensitivity analysis, and expected value by action.",
+    "Assess whether a positive screening test changes risk enough to justify follow-up, keep it in decision-support mode with caveats, and give me a Word report for review."
+  ],
+  "should_not_trigger": [
+    "Explain Bayes theorem in simple language.",
+    "Solve this textbook probability homework problem.",
+    "Give me final investment advice on whether to buy this stock today."
+  ],
+  "near_neighbor": [
+    "Brainstorm whether this product direction is good, but do not use Bayesian analysis or produce a decision report.",
+    "Summarize the evidence around this medical test without making an explicit action recommendation.",
+    "Build a generic forecasting spreadsheet for this business case."
+  ]
+}

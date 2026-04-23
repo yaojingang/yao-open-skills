@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BayesianDecisionReport",
+  "type": "object",
+  "required": [
+    "title",
+    "summary",
+    "prior",
+    "evidence",
+    "posterior",
+    "decision",
+    "sensitivity",
+    "natural_frequency",
+    "warnings"
+  ],
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "posterior_probability",
+        "recommendation",
+        "confidence"
+      ],
+      "properties": {
+        "posterior_probability": {
+          "type": "number"
+        },
+        "credible_interval": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "recommendation": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "string"
+        },
+        "one_sentence": {
+          "type": "string"
+        }
+      }
+    },
+    "prior": {
+      "type": "object"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "posterior": {
+      "type": "object"
+    },
+    "decision": {
+      "type": "object"
+    },
+    "sensitivity": {
+      "type": "object"
+    },
+    "natural_frequency": {
+      "type": "object"
+    },
+    "next_information": {
+      "type": "object"
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "calculation_log": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

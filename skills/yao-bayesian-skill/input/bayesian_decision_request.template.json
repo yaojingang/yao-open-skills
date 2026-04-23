@@ -1,0 +1,171 @@
+{
+  "title": {
+    "zh": "我们现在应该开发这个 AI 功能 MVP 吗？",
+    "en": "Should we build the AI feature MVP now?"
+  },
+  "question": {
+    "zh": "团队是否应该现在投入两名工程师，用 30 天完成这个功能的 MVP？",
+    "en": "Should the team spend two engineers for 30 days building the MVP now?"
+  },
+  "hypothesis": {
+    "zh": "目标用户在接触该功能后的 14 天内，会表现出足够强的付费意愿。",
+    "en": "Target users will show enough willingness to pay for the feature within 14 days of exposure."
+  },
+  "time_horizon": {
+    "zh": "30 天",
+    "en": "30 days"
+  },
+  "decision_deadline": "2026-05-15",
+  "success_metric": {
+    "zh": "至少 5% 的目标用户愿意预订或明确承诺付费。",
+    "en": "At least 5% of target users pre-order or commit to pay."
+  },
+  "domain": {
+    "zh": "产品决策",
+    "en": "product"
+  },
+  "high_risk_domain": false,
+  "method": "auto",
+  "prior": {
+    "probability": 0.18,
+    "alpha": 9,
+    "beta": 41,
+    "equivalent_sample_size": 50,
+    "source_summary": [
+      {
+        "zh": "相似功能实验历史",
+        "en": "Similar feature experiments"
+      },
+      {
+        "zh": "对目标用户的结构化访谈",
+        "en": "Structured target-user interviews"
+      }
+    ],
+    "source_quality": "B/C",
+    "confidence": "medium"
+  },
+  "observations": {
+    "trials": 20,
+    "successes": 6,
+    "label": {
+      "zh": "在 concierge 测试中愿意预订的用户",
+      "en": "Users willing to pre-order in a concierge test"
+    }
+  },
+  "evidence": [
+    {
+      "name": {
+        "zh": "高需求访谈信号",
+        "en": "Strong-demand interviews"
+      },
+      "summary": {
+        "zh": "12 位目标用户中有 5 位对该能力表达了强需求。",
+        "en": "5 of 12 target users expressed strong demand for the capability."
+      },
+      "likelihood_ratio": 2.1,
+      "quality": "C",
+      "dependency_discount": 0.8,
+      "direction": "support",
+      "notes": {
+        "zh": "口头表达的需求可能会高估真实付费意愿。",
+        "en": "Stated demand may overstate real willingness to pay."
+      }
+    },
+    {
+      "name": {
+        "zh": "竞品上线了类似功能",
+        "en": "Competitor launched a similar feature"
+      },
+      "summary": {
+        "zh": "一个接近的竞品最近上线了类似功能。",
+        "en": "A close competitor recently launched a similar feature."
+      },
+      "likelihood_ratio": 1.4,
+      "quality": "D",
+      "dependency_discount": 0.7,
+      "direction": "support",
+      "notes": {
+        "zh": "这是间接证据，同时也可能意味着竞争会更激烈。",
+        "en": "This is indirect evidence and may also imply stronger competition."
+      }
+    },
+    {
+      "name": {
+        "zh": "历史相关实验转化偏弱",
+        "en": "Historical conversion baseline was weak"
+      },
+      "summary": {
+        "zh": "过去相关实验的转化率大约只有 3%。",
+        "en": "Past related experiments converted at roughly 3%."
+      },
+      "likelihood_ratio": 1.4,
+      "quality": "C",
+      "dependency_discount": 0.9,
+      "direction": "against",
+      "notes": {
+        "zh": "参考类相似，但并不完全一致。",
+        "en": "The reference class is similar but not identical."
+      }
+    }
+  ],
+  "actions": [
+    {
+      "name": {
+        "zh": "现在直接开发完整 MVP",
+        "en": "Build full MVP now"
+      },
+      "cost": 30000,
+      "upside_if_h_true": 170000,
+      "downside_if_h_false": -30000,
+      "opportunity_cost": 0
+    },
+    {
+      "name": {
+        "zh": "先做 7 天 landing page 测试",
+        "en": "Run a 7-day landing-page test"
+      },
+      "cost": 3000,
+      "upside_if_h_true": 50000,
+      "downside_if_h_false": -3000,
+      "opportunity_cost": 0
+    },
+    {
+      "name": {
+        "zh": "暂停这个方向",
+        "en": "Pause the direction"
+      },
+      "cost": 0,
+      "upside_if_h_true": 0,
+      "downside_if_h_false": 0,
+      "opportunity_cost": -10000
+    }
+  ],
+  "sensitivity": {
+    "prior_probabilities": [
+      0.1,
+      0.18,
+      0.3
+    ],
+    "lr_power_factors": [
+      0.75,
+      1.0,
+      1.25
+    ]
+  },
+  "next_information": {
+    "candidates": [
+      {
+        "zh": "先跑一个 7 天的 landing page 测试，至少拿到 100 个目标用户访问样本。",
+        "en": "Run a 7-day landing-page test with at least 100 target-user visits."
+      },
+      {
+        "zh": "优先收集预订或押金信号，而不是只看口头兴趣。",
+        "en": "Collect pre-order or deposit signals instead of stated interest."
+      },
+      {
+        "zh": "基于更可比的产品类型和买方细分重新校准参考类。",
+        "en": "Re-check the reference class using comparable products and buyer segments."
+      }
+    ]
+  }
+}
