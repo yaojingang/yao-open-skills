@@ -1,0 +1,2259 @@
+{
+  "analysis_mode": "model_diagnosis",
+  "entity": {
+    "input": "HubSpot",
+    "name": {
+      "zh": "HubSpot",
+      "en": "HubSpot"
+    },
+    "type": {
+      "zh": "上市公司与客户平台产品",
+      "en": "Public company and customer platform product"
+    },
+    "domain": "hubspot.com",
+    "legal_name": "HubSpot, Inc.",
+    "jurisdiction": "United States",
+    "region": {
+      "zh": "美国公司服务全球市场",
+      "en": "US company serving global markets"
+    },
+    "confidence": 89.4,
+    "confidence_band": "high_confidence"
+  },
+  "market_environment": {
+    "company_origin": "overseas",
+    "target_market": "global_multi_region",
+    "delivery_direction": "overseas_to_overseas",
+    "primary_buyer": [
+      {
+        "zh": "中小到中端 B2B 企业",
+        "en": "SMB to mid-market B2B companies"
+      },
+      {
+        "zh": "营销负责人",
+        "en": "Marketing leaders"
+      },
+      {
+        "zh": "销售负责人",
+        "en": "Sales leaders"
+      },
+      {
+        "zh": "客服负责人",
+        "en": "Service leaders"
+      }
+    ],
+    "payment_environment": [
+      {
+        "zh": "年度订阅合约",
+        "en": "Annual subscription contracts"
+      },
+      {
+        "zh": "按席位收费",
+        "en": "Seat-based pricing"
+      },
+      {
+        "zh": "按营销联系人阶梯计费",
+        "en": "Tiered pricing by marketing contacts"
+      },
+      {
+        "zh": "AI credits 与 outcome-based 补充计费",
+        "en": "AI credits and outcome-based add-on pricing"
+      }
+    ],
+    "channel_environment": [
+      {
+        "zh": "免费版驱动的 PLG",
+        "en": "Freemium-led PLG"
+      },
+      {
+        "zh": "官网自助购买",
+        "en": "Web self-serve"
+      },
+      {
+        "zh": "销售辅助扩展",
+        "en": "Sales-assisted expansion"
+      },
+      {
+        "zh": "Solutions Partner 渠道",
+        "en": "Solutions Partner channel"
+      }
+    ],
+    "compliance_environment": [
+      {
+        "zh": "全球隐私与数据治理要求",
+        "en": "Global privacy and data-governance requirements"
+      },
+      {
+        "zh": "AI 监管与模型责任",
+        "en": "AI regulation and model responsibility"
+      },
+      {
+        "zh": "Payments 与 Commerce 的合规要求",
+        "en": "Payments and commerce compliance requirements"
+      }
+    ],
+    "trust_environment": [
+      {
+        "zh": "品牌心智与 thought leadership",
+        "en": "Brand trust and thought leadership"
+      },
+      {
+        "zh": "Academy 认证体系",
+        "en": "Academy certification system"
+      },
+      {
+        "zh": "伙伴服务与实施生态",
+        "en": "Partner service and implementation ecosystem"
+      }
+    ],
+    "service_environment": [
+      {
+        "zh": "产品内引导与 onboarding",
+        "en": "In-product onboarding"
+      },
+      {
+        "zh": "官方支持与知识库",
+        "en": "Official support and knowledge base"
+      },
+      {
+        "zh": "伙伴实施与顾问服务",
+        "en": "Partner implementation and advisory services"
+      }
+    ],
+    "competition_environment": [
+      {
+        "zh": "大型套件型厂商竞争",
+        "en": "Large-suite competition"
+      },
+      {
+        "zh": "细分点工具价格压力",
+        "en": "Point-solution pricing pressure"
+      },
+      {
+        "zh": "AI 原生 agent 产品冲击",
+        "en": "AI-native agent competition"
+      }
+    ],
+    "channel_fit": 90,
+    "payment_fit": 87,
+    "compliance_fit": 78,
+    "trust_fit": 91,
+    "service_fit": 88,
+    "competition_fit": 83,
+    "regional_constraints": [
+      {
+        "zh": "全球多区域扩张会持续放大隐私、数据驻留与 AI 责任治理压力",
+        "en": "Global multi-region expansion keeps increasing privacy, data residency, and AI governance pressure"
+      },
+      {
+        "zh": "平台越做越全，越容易损伤“易用”定位并引发复杂度税",
+        "en": "As the suite broadens, the risk of complexity undermining the ease-of-use promise increases"
+      },
+      {
+        "zh": "上探企业市场时，Salesforce、Microsoft、ServiceNow 的治理能力和既有系统关系会更强",
+        "en": "As HubSpot moves upmarket, Salesforce, Microsoft, and ServiceNow hold stronger governance capabilities and incumbent relationships"
+      }
+    ],
+    "regional_opportunities": [
+      {
+        "zh": "全球 mid-market 的统一前台平台仍然分散，HubSpot 继续有整合机会",
+        "en": "The global mid-market front-office stack remains fragmented, leaving integration room for HubSpot"
+      },
+      {
+        "zh": "免费版 + Starter + Partner 渠道的组合仍然适合国际扩张",
+        "en": "Free tools plus Starter plus partner channels remain a strong combination for international expansion"
+      },
+      {
+        "zh": "Breeze credits 与 outcome-based pricing 让 HubSpot 有机会把 AI 变成新的 ARPC 增长层",
+        "en": "Breeze credits and outcome-based pricing give HubSpot a path to turn AI into a new ARPC growth layer"
+      }
+    ],
+    "environment_fit_score": 86.2,
+    "environment_fit_band": "very_strong",
+    "fit_summary": "Environment fit is very_strong at 86.2. Strongest dimensions: trust, channel. Weakest dimensions: competition, compliance."
+  },
+  "evidence_items": [
+    {
+      "id": "E1",
+      "claim": {
+        "zh": "HubSpot 将自身定义为三层客户平台：AI-powered engagement hubs、Smart CRM，以及由集成、模板、专家伙伴、社区与 Academy 构成的 connected ecosystem。",
+        "en": "HubSpot describes itself as a three-layer customer platform: AI-powered engagement hubs, Smart CRM, and a connected ecosystem of integrations, templates, expert partners, community, and academy."
+      },
+      "source_url": "https://ir.hubspot.com/static-files/efb8d22a-4fcd-4c15-b154-7cf59069c05c",
+      "source_tier": "S",
+      "source_type": "10-K",
+      "source_date": "2026-02-11"
+    },
+    {
+      "id": "E2",
+      "claim": {
+        "zh": "HubSpot 重点服务 2 到 2,000 名员工的 mid-market B2B 企业，并主要以订阅模式销售客户平台。",
+        "en": "HubSpot focuses on mid-market B2B companies with 2 to 2,000 employees and primarily sells its customer platform on a subscription basis."
+      },
+      "source_url": "https://ir.hubspot.com/static-files/efb8d22a-4fcd-4c15-b154-7cf59069c05c",
+      "source_tier": "S",
+      "source_type": "10-K",
+      "source_date": "2026-02-11"
+    },
+    {
+      "id": "E3",
+      "claim": {
+        "zh": "2025 财年 HubSpot 总收入 31.31 亿美元，其中订阅收入 30.64 亿美元，专业服务及其他收入 6735 万美元。",
+        "en": "For FY2025 HubSpot reported $3.131 billion of total revenue, including $3.064 billion of subscription revenue and $67.3 million of professional services and other revenue."
+      },
+      "source_url": "https://ir.hubspot.com/news-releases/news-release-details/hubspot-reports-strong-q4-and-full-year-2025-results",
+      "source_tier": "S",
+      "source_type": "earnings_release",
+      "source_date": "2026-02-11"
+    },
+    {
+      "id": "E4",
+      "claim": {
+        "zh": "截至 2025 年底，HubSpot 拥有 288,706 个客户，平均每客户订阅收入为 11,414 美元，净收入留存率为 103.5%。",
+        "en": "As of year-end 2025 HubSpot had 288,706 customers, average subscription revenue per customer of $11,414, and net revenue retention of 103.5%."
+      },
+      "source_url": "https://ir.hubspot.com/static-files/efb8d22a-4fcd-4c15-b154-7cf59069c05c",
+      "source_tier": "S",
+      "source_type": "10-K",
+      "source_date": "2026-02-11"
+    },
+    {
+      "id": "E5",
+      "claim": {
+        "zh": "2025 财年 HubSpot 毛利润为 26.23 亿美元，毛利率为 84%。",
+        "en": "In FY2025 HubSpot generated $2.623 billion of gross profit at an 84% gross margin."
+      },
+      "source_url": "https://ir.hubspot.com/static-files/efb8d22a-4fcd-4c15-b154-7cf59069c05c",
+      "source_tier": "S",
+      "source_type": "10-K",
+      "source_date": "2026-02-11"
+    },
+    {
+      "id": "E6",
+      "claim": {
+        "zh": "Solutions Partners 及其转介绍客户约占 HubSpot 2025 年末客户数的 25%，却贡献了约 49% 的 2025 年收入。",
+        "en": "Solutions Partners and customers referred by them represented about 25% of year-end 2025 customers and about 49% of 2025 revenue."
+      },
+      "source_url": "https://ir.hubspot.com/static-files/efb8d22a-4fcd-4c15-b154-7cf59069c05c",
+      "source_tier": "S",
+      "source_type": "10-K",
+      "source_date": "2026-02-11"
+    },
+    {
+      "id": "E7",
+      "claim": {
+        "zh": "HubSpot 生态中已有超过 2,000 个 integrations 和 applications，可作为平台扩展层与网络效应来源。",
+        "en": "HubSpot’s ecosystem includes over 2,000 integrations and applications, reinforcing extensibility and network effects."
+      },
+      "source_url": "https://ir.hubspot.com/static-files/efb8d22a-4fcd-4c15-b154-7cf59069c05c",
+      "source_tier": "S",
+      "source_type": "10-K",
+      "source_date": "2026-02-11"
+    },
+    {
+      "id": "E8",
+      "claim": {
+        "zh": "Customer Platform 的公开起始价格为 Free $0、Starter $20/seat、Professional $1,450/月（含 6 席位）、Enterprise $4,700/月（含 8 席位）。",
+        "en": "Public entry pricing for the Customer Platform is Free $0, Starter $20 per seat, Professional $1,450 per month with 6 seats, and Enterprise $4,700 per month with 8 seats."
+      },
+      "source_url": "https://www.hubspot.com/products/pricing-cr115",
+      "source_tier": "A",
+      "source_type": "pricing_page",
+      "source_date": "2026-04-21"
+    },
+    {
+      "id": "E9",
+      "claim": {
+        "zh": "Marketing Hub 仍然保留按营销联系人阶梯收费的机制，Professional 起价为 $890/月（含 3 个 core seats）。",
+        "en": "Marketing Hub still includes tiered monetization by marketing contacts, and Professional starts at $890 per month with 3 core seats."
+      },
+      "source_url": "https://legal.hubspot.com/hubspot-product-and-services-catalog",
+      "source_tier": "A",
+      "source_type": "product_catalog",
+      "source_date": "2026-04-21"
+    },
+    {
+      "id": "E10",
+      "claim": {
+        "zh": "HubSpot Credits 支持按量扩展，pay-as-you-go 价格为每 credit $0.010；Breeze Agents 的计费单位包括 customer agent 每次 resolved conversation 50 credits、prospecting agent 每次推荐线索 100 credits。",
+        "en": "HubSpot Credits support pay-as-you-go expansion at $0.010 per credit; Breeze Agents consume credits such as 50 credits per resolved conversation for customer agent and 100 credits per recommended lead for prospecting agent."
+      },
+      "source_url": "https://legal.hubspot.com/hubspot-product-and-services-catalog",
+      "source_tier": "A",
+      "source_type": "product_catalog",
+      "source_date": "2026-04-21"
+    },
+    {
+      "id": "E11",
+      "claim": {
+        "zh": "自 2026 年 4 月 14 日起，Breeze Customer Agent 改为每个 resolved conversation 收费 $0.50，Prospecting Agent 改为每个推荐线索收费 $1.00，明确转向 outcome-based pricing。",
+        "en": "Starting April 14, 2026, Breeze Customer Agent moved to $0.50 per resolved conversation and Prospecting Agent to $1.00 per recommended lead, explicitly shifting to outcome-based pricing."
+      },
+      "source_url": "https://www.hubspot.com/company-news/hubspots-customer-agent-and-prospecting-agent-now-you-pay-when-the-task-is-complete",
+      "source_tier": "A",
+      "source_type": "company_news",
+      "source_date": "2026-04-02"
+    },
+    {
+      "id": "E12",
+      "claim": {
+        "zh": "2025 年专业服务及其他收入的增长，管理层明确指出主要由 Payments 驱动。",
+        "en": "Management explicitly said the increase in 2025 professional services and other revenue was primarily driven by Payments."
+      },
+      "source_url": "https://ir.hubspot.com/static-files/efb8d22a-4fcd-4c15-b154-7cf59069c05c",
+      "source_tier": "S",
+      "source_type": "10-K",
+      "source_date": "2026-02-11"
+    }
+  ],
+  "current_business_models": [
+    {
+      "model_label": {
+        "zh": "核心平台订阅：Customer Platform / Hubs / Smart CRM",
+        "en": "Core platform subscription: Customer Platform / Hubs / Smart CRM"
+      },
+      "taxonomy_id": "BM-SAAS-SUITE",
+      "payer": {
+        "zh": "营销、销售、服务与运营团队",
+        "en": "Marketing, sales, service, and operations teams"
+      },
+      "pricing_unit": {
+        "zh": "平台订阅 + 版本等级",
+        "en": "Platform subscription plus edition tier"
+      },
+      "revenue_basis": "recognized_revenue",
+      "status": "confirmed",
+      "evidence_ids": [
+        "E1",
+        "E3",
+        "E8"
+      ],
+      "notes": {
+        "zh": "这是绝对主收入线，收入占比接近 98%，也是 HubSpot 的战略核心。",
+        "en": "This is the dominant revenue line at roughly 98% of total revenue and remains the strategic core."
+      },
+      "confidence": 90.4,
+      "confidence_band": "high_confidence"
+    },
+    {
+      "model_label": {
+        "zh": "Freemium 到 Starter/Pro/Enterprise 的 land-and-expand",
+        "en": "Freemium to Starter/Pro/Enterprise land-and-expand"
+      },
+      "taxonomy_id": "BM-FREEMIUM-LANDEXPAND",
+      "payer": {
+        "zh": "先由使用团队试用，再扩展到部门预算",
+        "en": "Usage team first, then department budget expansion"
+      },
+      "pricing_unit": {
+        "zh": "免费版、Starter、Professional、Enterprise 分层",
+        "en": "Free, Starter, Professional, and Enterprise tiering"
+      },
+      "revenue_basis": "subscription",
+      "status": "confirmed",
+      "evidence_ids": [
+        "E2",
+        "E8"
+      ],
+      "notes": {
+        "zh": "HubSpot 的增长飞轮并非纯企业销售，而是 freemium + 自助购买 + 销售扩展的混合模式。",
+        "en": "HubSpot’s growth flywheel is not pure enterprise sales; it is a freemium plus self-serve plus sales-assisted expansion model."
+      },
+      "confidence": 85.4,
+      "confidence_band": "high_confidence"
+    },
+    {
+      "model_label": {
+        "zh": "多维扩张计费：席位、营销联系人、limit increases 与 add-ons",
+        "en": "Multi-axis expansion pricing: seats, marketing contacts, limit increases, and add-ons"
+      },
+      "taxonomy_id": "BM-SAAS-HYBRID-UPSELL",
+      "payer": {
+        "zh": "现有付费客户",
+        "en": "Existing paying customers"
+      },
+      "pricing_unit": {
+        "zh": "每席位、每联系人层级、额度包、附加功能",
+        "en": "Per-seat, per-contact tier, capacity pack, and add-on"
+      },
+      "revenue_basis": "subscription",
+      "status": "confirmed",
+      "evidence_ids": [
+        "E8",
+        "E9",
+        "E10"
+      ],
+      "notes": {
+        "zh": "这决定了 HubSpot 的 ARPC 增长并不只靠涨 seat，而是靠多维增购结构。",
+        "en": "ARPC expansion is not driven only by seats; it depends on a multi-axis upsell structure."
+      },
+      "confidence": 84.6,
+      "confidence_band": "fairly_strong"
+    },
+    {
+      "model_label": {
+        "zh": "伙伴驱动分发与实施生态",
+        "en": "Partner-led distribution and implementation ecosystem"
+      },
+      "taxonomy_id": "BM-PARTNER-CHANNEL",
+      "payer": {
+        "zh": "最终客户付费，伙伴影响成交与服务交付",
+        "en": "End customers pay while partners influence acquisition and service delivery"
+      },
+      "pricing_unit": {
+        "zh": "订阅收入中的渠道影响份额",
+        "en": "Channel-influenced share of subscription revenue"
+      },
+      "revenue_basis": "recognized_revenue",
+      "status": "confirmed",
+      "evidence_ids": [
+        "E6",
+        "E7"
+      ],
+      "notes": {
+        "zh": "Solutions Partners 对收入贡献极高，说明 HubSpot 的商业模式不仅是 SaaS 产品，更是产品 + 渠道 + 服务网络。",
+        "en": "The Solutions Partner contribution shows HubSpot is not just software; it is software plus channel plus service network."
+      },
+      "confidence": 83.6,
+      "confidence_band": "fairly_strong"
+    },
+    {
+      "model_label": {
+        "zh": "Payments / Commerce / 专业服务及其他收入",
+        "en": "Payments / Commerce / professional services and other revenue"
+      },
+      "taxonomy_id": "BM-COMMERCE-OTHER",
+      "payer": {
+        "zh": "使用 Commerce / Payments 与 onboarding 服务的客户",
+        "en": "Customers using Commerce, Payments, and onboarding services"
+      },
+      "pricing_unit": {
+        "zh": "支付与商务相关收入、培训和其他服务收入",
+        "en": "Payments and commerce revenue plus training and service revenue"
+      },
+      "revenue_basis": "recognized_revenue",
+      "status": "confirmed",
+      "evidence_ids": [
+        "E3",
+        "E12"
+      ],
+      "notes": {
+        "zh": "虽然占比只有约 2%，但它是 HubSpot 从前台 SaaS 向交易与变现基础设施延伸的重要信号。",
+        "en": "Although still only about 2% of revenue, this is an important signal of HubSpot extending from front-office SaaS into monetization infrastructure."
+      },
+      "confidence": 80.5,
+      "confidence_band": "fairly_strong"
+    },
+    {
+      "model_label": {
+        "zh": "AI 计费层：Credits 与 outcome-based agents",
+        "en": "AI monetization layer: credits and outcome-based agents"
+      },
+      "taxonomy_id": "BM-AI-CREDITS-OUTCOME",
+      "payer": {
+        "zh": "Professional / Enterprise 客户",
+        "en": "Professional and Enterprise customers"
+      },
+      "pricing_unit": {
+        "zh": "HubSpot Credits、每次结果收费",
+        "en": "HubSpot Credits and per-outcome pricing"
+      },
+      "revenue_basis": "usage_revenue",
+      "status": "confirmed",
+      "evidence_ids": [
+        "E10",
+        "E11"
+      ],
+      "notes": {
+        "zh": "这代表 HubSpot 正从传统 seat 模式向 hybrid seat + usage + outcome 模式过渡，是 2026 以后最值得跟踪的新层。",
+        "en": "This shows HubSpot moving from pure seats toward a hybrid seat-plus-usage-plus-outcome model, likely the most important new monetization layer after 2026."
+      },
+      "confidence": 78.7,
+      "confidence_band": "fairly_strong"
+    }
+  ],
+  "financial_estimates": [
+    {
+      "label": {
+        "zh": "订阅收入（已披露）",
+        "en": "Subscription revenue (disclosed)"
+      },
+      "formula": "disclosed FY2025 subscription revenue",
+      "variables": [
+        "reported subscription revenue"
+      ],
+      "range": {
+        "low": 3063917000,
+        "base": 3063917000,
+        "high": 3063917000,
+        "currency": "USD"
+      },
+      "gross_margin_range": {
+        "low": 2570138000,
+        "base": 2570138000,
+        "high": 2570138000,
+        "currency": "USD"
+      },
+      "basis": "disclosed",
+      "assumptions": [
+        {
+          "zh": "该值来自 FY2025 官方披露。",
+          "en": "This value is from official FY2025 disclosure."
+        }
+      ],
+      "confidence": 93.8,
+      "confidence_band": "high_confidence"
+    },
+    {
+      "label": {
+        "zh": "专业服务及其他收入（已披露）",
+        "en": "Professional services and other revenue (disclosed)"
+      },
+      "formula": "disclosed FY2025 professional services and other revenue",
+      "variables": [
+        "reported services and other revenue"
+      ],
+      "range": {
+        "low": 67349000,
+        "base": 67349000,
+        "high": 67349000,
+        "currency": "USD"
+      },
+      "gross_margin_range": {
+        "low": 0,
+        "base": 0,
+        "high": 0,
+        "currency": "USD"
+      },
+      "basis": "disclosed",
+      "assumptions": [
+        {
+          "zh": "该收入线中 Payments 是明确驱动项，但细分拆分未披露。",
+          "en": "Payments is identified as a driver, but detailed line-level decomposition is not disclosed."
+        }
+      ],
+      "confidence": 91.2,
+      "confidence_band": "high_confidence"
+    },
+    {
+      "label": {
+        "zh": "总毛利润（已披露）",
+        "en": "Gross profit (disclosed)"
+      },
+      "formula": "disclosed FY2025 gross profit",
+      "variables": [
+        "reported gross profit"
+      ],
+      "range": {
+        "low": 2622779000,
+        "base": 2622779000,
+        "high": 2622779000,
+        "currency": "USD"
+      },
+      "gross_margin_range": {
+        "low": 84,
+        "base": 84,
+        "high": 84,
+        "currency": "%"
+      },
+      "basis": "disclosed",
+      "assumptions": [
+        {
+          "zh": "总毛利率 84%，仍保持典型高毛利 SaaS 平台特征。",
+          "en": "Gross margin of 84% preserves a classic high-margin SaaS-platform profile."
+        }
+      ],
+      "confidence": 93.8,
+      "confidence_band": "high_confidence"
+    },
+    {
+      "label": {
+        "zh": "伙伴影响收入池（推算）",
+        "en": "Partner-influenced revenue pool (inferred)"
+      },
+      "formula": "FY2025 total revenue * 49% partner-influenced revenue share",
+      "variables": [
+        "total revenue",
+        "partner-influenced revenue share"
+      ],
+      "range": {
+        "low": 1534320340,
+        "base": 1534320340,
+        "high": 1534320340,
+        "currency": "USD"
+      },
+      "gross_margin_range": {
+        "low": 0,
+        "base": 0,
+        "high": 0,
+        "currency": "USD"
+      },
+      "basis": "inference",
+      "assumptions": [
+        {
+          "zh": "该值不是独立收入线，而是根据 49% revenue contribution 推算的渠道影响池，用于衡量伙伴生态重要性。",
+          "en": "This is not a separate revenue line; it is an inferred pool based on the 49% revenue contribution of partner-influenced customers."
+        }
+      ],
+      "confidence": 74.8,
+      "confidence_band": "fairly_strong"
+    }
+  ],
+  "direct_competitors": [
+    {
+      "type": "direct",
+      "name": "Salesforce",
+      "url": "https://www.salesforce.com/sales/pricing/",
+      "category": {
+        "zh": "CRM 与前台套件",
+        "en": "CRM and front-office suite"
+      },
+      "model_tags": [
+        "seat_subscription",
+        "suite",
+        "enterprise"
+      ],
+      "selection_reason": {
+        "zh": "HubSpot 上探企业市场时最重要的套件型对手，尤其在 CRM、营销、服务与 AI 扩展层面形成正面竞争。",
+        "en": "The most important suite competitor as HubSpot moves upmarket, especially across CRM, marketing, service, and AI layers."
+      },
+      "score": 84.5,
+      "score_band": "very_strong"
+    },
+    {
+      "type": "direct",
+      "name": "Microsoft Dynamics 365",
+      "url": "https://www.microsoft.com/en-us/dynamics-365/pricing",
+      "category": {
+        "zh": "CRM / ERP / AI 套件",
+        "en": "CRM / ERP / AI suite"
+      },
+      "model_tags": [
+        "seat_subscription",
+        "suite",
+        "enterprise"
+      ],
+      "selection_reason": {
+        "zh": "在大型账户和既有 Microsoft 生态中，Dynamics 365 是 HubSpot 的关键上探阻力。",
+        "en": "Dynamics 365 is a key obstacle to HubSpot in larger accounts already embedded in the Microsoft ecosystem."
+      },
+      "score": 79.5,
+      "score_band": "strong"
+    },
+    {
+      "type": "direct",
+      "name": "Zoho CRM / Zoho One",
+      "url": "https://www.zoho.com/crm/zohocrm-pricing.html",
+      "category": {
+        "zh": "中小企业一体化软件套件",
+        "en": "SMB integrated software suite"
+      },
+      "model_tags": [
+        "seat_subscription",
+        "suite",
+        "SMB"
+      ],
+      "selection_reason": {
+        "zh": "Zoho 在中小企业市场用更低价格的一体化套件，直接压制 HubSpot 的 Starter 到 Pro 区间。",
+        "en": "Zoho attacks HubSpot’s Starter-to-Pro band with a lower-priced integrated suite for SMBs."
+      },
+      "score": 79.3,
+      "score_band": "strong"
+    },
+    {
+      "type": "direct",
+      "name": "Freshworks",
+      "url": "https://www.freshworks.com/crm/pricing/",
+      "category": {
+        "zh": "中端销售与客服平台",
+        "en": "Mid-market sales and service platform"
+      },
+      "model_tags": [
+        "seat_subscription",
+        "service",
+        "sales"
+      ],
+      "selection_reason": {
+        "zh": "Freshworks 在销售与客服结合场景中与 HubSpot 有较高重合，特别是在 mid-market。",
+        "en": "Freshworks overlaps heavily with HubSpot in sales-plus-service use cases, especially in the mid-market."
+      },
+      "score": 77.2,
+      "score_band": "strong"
+    },
+    {
+      "type": "direct",
+      "name": "Zendesk",
+      "url": "https://www.zendesk.com/pricing/",
+      "category": {
+        "zh": "客服平台与 AI 服务自动化",
+        "en": "Customer service platform and AI service automation"
+      },
+      "model_tags": [
+        "seat_subscription",
+        "service",
+        "ai_add_on"
+      ],
+      "selection_reason": {
+        "zh": "Zendesk 在服务与 AI 自动化层面对 HubSpot Service Hub 构成直接竞争。",
+        "en": "Zendesk directly competes with HubSpot Service Hub in service workflows and AI automation."
+      },
+      "score": 74.4,
+      "score_band": "strong"
+    },
+    {
+      "type": "direct",
+      "name": "ActiveCampaign",
+      "url": "https://www.activecampaign.com/pricing",
+      "category": {
+        "zh": "营销自动化与 CRM",
+        "en": "Marketing automation and CRM"
+      },
+      "model_tags": [
+        "subscription",
+        "marketing_automation",
+        "SMB"
+      ],
+      "selection_reason": {
+        "zh": "在中小企业营销自动化层面，ActiveCampaign 是 HubSpot 的典型性价比型替代品。",
+        "en": "ActiveCampaign is a classic value alternative to HubSpot in SMB marketing automation."
+      },
+      "score": 73.6,
+      "score_band": "strong"
+    },
+    {
+      "type": "direct",
+      "name": "Klaviyo",
+      "url": "https://www.klaviyo.com/pricing",
+      "category": {
+        "zh": "营销自动化与客户数据",
+        "en": "Marketing automation and customer data"
+      },
+      "model_tags": [
+        "usage",
+        "marketing_automation",
+        "ecommerce"
+      ],
+      "selection_reason": {
+        "zh": "Klaviyo 在电商营销自动化领域对 HubSpot Marketing Hub 有明显重叠，尤其是在联系人与发送量驱动计费上。",
+        "en": "Klaviyo overlaps strongly with Marketing Hub in ecommerce marketing automation, especially in contact and send-volume driven pricing."
+      },
+      "score": 72.0,
+      "score_band": "strong"
+    },
+    {
+      "type": "direct",
+      "name": "Intercom",
+      "url": "https://www.intercom.com/pricing",
+      "category": {
+        "zh": "AI 客服与客户沟通平台",
+        "en": "AI service and customer communications platform"
+      },
+      "model_tags": [
+        "automation",
+        "service",
+        "outcome_pricing"
+      ],
+      "selection_reason": {
+        "zh": "Intercom 在 AI 客服和结果导向定价上更激进，是 HubSpot Breeze service layer 的重要参照对手。",
+        "en": "Intercom is more aggressive in AI service and outcome-oriented pricing, making it a key reference rival for HubSpot’s Breeze service layer."
+      },
+      "score": 71.0,
+      "score_band": "strong"
+    },
+    {
+      "type": "direct",
+      "name": "Pipedrive",
+      "url": "https://www.pipedrive.com/en/pricing",
+      "category": {
+        "zh": "销售 CRM",
+        "en": "Sales CRM"
+      },
+      "model_tags": [
+        "seat_subscription",
+        "sales"
+      ],
+      "selection_reason": {
+        "zh": "Pipedrive 在销售场景中提供更聚焦、更轻量的选择，对 HubSpot Sales Hub 的低中端区间形成分流。",
+        "en": "Pipedrive offers a lighter, more focused alternative in sales use cases, splitting HubSpot Sales Hub’s lower and mid-market audience."
+      },
+      "score": 69.1,
+      "score_band": "strong"
+    },
+    {
+      "type": "direct",
+      "name": "monday CRM",
+      "url": "https://monday.com/pricing/crm",
+      "category": {
+        "zh": "工作流 + CRM",
+        "en": "Workflow plus CRM"
+      },
+      "model_tags": [
+        "seat_subscription",
+        "workflow",
+        "SMB"
+      ],
+      "selection_reason": {
+        "zh": "monday CRM 以工作流灵活性切入 CRM，对 HubSpot 在团队协作和轻量管理场景构成竞争。",
+        "en": "monday CRM competes with HubSpot through flexible workflow-led CRM for collaborative teams."
+      },
+      "score": 69.0,
+      "score_band": "strong"
+    }
+  ],
+  "cross_industry_analogs": [
+    {
+      "type": "cross_industry",
+      "name": "Shopify",
+      "url": "https://www.shopify.com/pricing",
+      "category": {
+        "zh": "SMB 平台 + 应用生态 + 支付",
+        "en": "SMB platform plus app ecosystem plus payments"
+      },
+      "model_tags": [
+        "platform",
+        "ecosystem",
+        "payments"
+      ],
+      "selection_reason": {
+        "zh": "Shopify 是最强的类比之一：都在做 SMB 平台、生态扩展和支付/交易层附加。",
+        "en": "Shopify is one of the strongest analogs: SMB platform, ecosystem expansion, and payment-layer attach."
+      },
+      "score": 79.2,
+      "score_band": "strong"
+    },
+    {
+      "type": "cross_industry",
+      "name": "Atlassian",
+      "url": "https://www.atlassian.com/software/jira/pricing",
+      "category": {
+        "zh": "团队软件平台 + Marketplace",
+        "en": "Team software platform plus marketplace"
+      },
+      "model_tags": [
+        "seat_subscription",
+        "marketplace",
+        "land_expand"
+      ],
+      "selection_reason": {
+        "zh": "Atlassian 展示了席位订阅、产品扩张和 Marketplace 如何长期推高客户价值。",
+        "en": "Atlassian shows how seat subscriptions, product expansion, and a marketplace can drive long-term customer value."
+      },
+      "score": 77.1,
+      "score_band": "strong"
+    },
+    {
+      "type": "cross_industry",
+      "name": "Canva",
+      "url": "https://www.canva.com/pricing",
+      "category": {
+        "zh": "Freemium 创意协作平台",
+        "en": "Freemium creative collaboration platform"
+      },
+      "model_tags": [
+        "freemium",
+        "team_subscription",
+        "template_ecosystem"
+      ],
+      "selection_reason": {
+        "zh": "Canva 与 HubSpot 都依赖 freemium、模板化价值和团队扩张逻辑。",
+        "en": "Canva and HubSpot both depend on freemium, templated value, and team expansion."
+      },
+      "score": 75.1,
+      "score_band": "strong"
+    },
+    {
+      "type": "cross_industry",
+      "name": "Notion",
+      "url": "https://www.notion.so/pricing",
+      "category": {
+        "zh": "工作空间平台 + AI 附加层",
+        "en": "Workspace platform plus AI layer"
+      },
+      "model_tags": [
+        "freemium",
+        "workspace",
+        "ai_add_on"
+      ],
+      "selection_reason": {
+        "zh": "Notion 展示了通用工作平台如何通过 AI 与模板化结构推高 ARPU 与扩张率。",
+        "en": "Notion shows how a general work platform can raise ARPU and expansion through AI and templates."
+      },
+      "score": 73.3,
+      "score_band": "strong"
+    },
+    {
+      "type": "cross_industry",
+      "name": "Stripe",
+      "url": "https://stripe.com/pricing",
+      "category": {
+        "zh": "支付基础设施与平台增值",
+        "en": "Payments infrastructure and platform monetization"
+      },
+      "model_tags": [
+        "payments",
+        "platform",
+        "usage"
+      ],
+      "selection_reason": {
+        "zh": "Stripe 是 HubSpot Payments / Commerce 延伸层最重要的商业模式类比之一。",
+        "en": "Stripe is one of the strongest analogs for HubSpot’s Payments and Commerce extension layer."
+      },
+      "score": 72.9,
+      "score_band": "strong"
+    },
+    {
+      "type": "cross_industry",
+      "name": "Intuit QuickBooks",
+      "url": "https://quickbooks.intuit.com/pricing/",
+      "category": {
+        "zh": "SMB 业务操作平台",
+        "en": "SMB business operations platform"
+      },
+      "model_tags": [
+        "subscription",
+        "SMB_suite",
+        "payments"
+      ],
+      "selection_reason": {
+        "zh": "Intuit 在 SMB 经营流程中通过产品扩展与金融附加层提升客户终身价值，这点和 HubSpot 有很强可比性。",
+        "en": "Intuit similarly increases LTV in SMB workflows through product expansion and financial adjacencies."
+      },
+      "score": 71.8,
+      "score_band": "strong"
+    },
+    {
+      "type": "cross_industry",
+      "name": "Microsoft 365 Copilot",
+      "url": "https://www.microsoft.com/en-us/microsoft-365/copilot/pricing",
+      "category": {
+        "zh": "套件 + AI 附加层",
+        "en": "Suite plus AI layer"
+      },
+      "model_tags": [
+        "suite",
+        "ai_add_on",
+        "seat_subscription"
+      ],
+      "selection_reason": {
+        "zh": "它是理解 HubSpot AI add-on / outcome pricing 上限和套件化压力的关键参照。",
+        "en": "This is a key analog for understanding the upside of AI monetization and the pressure of suite bundling."
+      },
+      "score": 71.0,
+      "score_band": "strong"
+    },
+    {
+      "type": "cross_industry",
+      "name": "ServiceNow",
+      "url": "https://www.servicenow.com/products/pricing.html",
+      "category": {
+        "zh": "流程平台与企业治理层",
+        "en": "Workflow platform and enterprise governance layer"
+      },
+      "model_tags": [
+        "platform",
+        "enterprise",
+        "workflow"
+      ],
+      "selection_reason": {
+        "zh": "ServiceNow 提醒 HubSpot：当平台上探企业后，治理、流程编排和平台控制会成为更强的价值层。",
+        "en": "ServiceNow is a reminder that as a platform moves upmarket, governance and workflow control become stronger value layers."
+      },
+      "score": 70.3,
+      "score_band": "strong"
+    },
+    {
+      "type": "cross_industry",
+      "name": "Wix",
+      "url": "https://www.wix.com/upgrade/website",
+      "category": {
+        "zh": "自助式 SMB 内容与网站平台",
+        "en": "Self-serve SMB content and website platform"
+      },
+      "model_tags": [
+        "self_serve",
+        "SMB_platform",
+        "templates"
+      ],
+      "selection_reason": {
+        "zh": "Wix 代表了更轻量的 SMB 自助内容平台路径，可作为 HubSpot Content / Starter 侧的对照。",
+        "en": "Wix represents a lighter self-serve SMB content-platform path and serves as a contrast for HubSpot’s Content / Starter side."
+      },
+      "score": 68.1,
+      "score_band": "strong"
+    },
+    {
+      "type": "cross_industry",
+      "name": "Twilio",
+      "url": "https://www.twilio.com/pricing",
+      "category": {
+        "zh": "平台 API 与按量收费",
+        "en": "Platform API and usage pricing"
+      },
+      "model_tags": [
+        "usage",
+        "platform",
+        "developer_ecosystem"
+      ],
+      "selection_reason": {
+        "zh": "Twilio 提供了平台化和按量计费逻辑的另一种极端形态，可用于理解 HubSpot Credits 的上限。",
+        "en": "Twilio offers a stronger usage-pricing archetype and helps frame the upper bound of HubSpot Credits logic."
+      },
+      "score": 65.8,
+      "score_band": "strong"
+    }
+  ],
+  "benchmark": {
+    "summary": {
+      "zh": "HubSpot 当前的核心优势不是单一 CRM 功能，而是“统一前台平台 + freemium land-and-expand + 伙伴生态 + AI 新收费层”的组合。它在中小到中端 B2B 市场的匹配度很高，但越向企业化推进，越会进入与 Salesforce、Microsoft、ServiceNow 争夺治理与系统粘性的战场。",
+      "en": "HubSpot’s edge is not a single CRM feature. It is the combination of a unified front-office platform, freemium land-and-expand, partner ecosystem, and a new AI monetization layer. That model fits SMB to mid-market B2B well, but the further it moves upmarket, the more it enters a governance-and-incumbency battle with Salesforce, Microsoft, and ServiceNow."
+    },
+    "scorecard": [
+      {
+        "dimension": {
+          "zh": "平台完整性",
+          "en": "Platform completeness"
+        },
+        "target": 88,
+        "peer_median": 81,
+        "gap_note": {
+          "zh": "HubSpot 的前台统一性强于多数点工具，但仍弱于真正的超大型企业套件。",
+          "en": "HubSpot is more unified than most point tools, but still lighter than mega-enterprise suites."
+        }
+      },
+      {
+        "dimension": {
+          "zh": "mid-market 渗透能力",
+          "en": "Mid-market penetration fit"
+        },
+        "target": 91,
+        "peer_median": 76,
+        "gap_note": {
+          "zh": "freemium、Starter 与伙伴网络共同提高了渗透效率。",
+          "en": "Freemium, Starter, and the partner network jointly improve penetration efficiency."
+        }
+      },
+      {
+        "dimension": {
+          "zh": "AI 商业化成熟度",
+          "en": "AI monetization maturity"
+        },
+        "target": 76,
+        "peer_median": 68,
+        "gap_note": {
+          "zh": "HubSpot 已经从 credits 走向 outcome-based pricing，但长期贡献仍需观察。",
+          "en": "HubSpot has moved from credits toward outcome-based pricing, but the long-term contribution is still emerging."
+        }
+      },
+      {
+        "dimension": {
+          "zh": "企业治理与上探能力",
+          "en": "Upmarket governance strength"
+        },
+        "target": 64,
+        "peer_median": 79,
+        "gap_note": {
+          "zh": "这一维度仍然是 HubSpot 相对大型企业平台的短板。",
+          "en": "This remains a relative weakness versus enterprise-heavy platforms."
+        }
+      }
+    ]
+  },
+  "upgrade_recommendations": [
+    {
+      "title": {
+        "zh": "把 AI outcome-based pricing 从两类 agents 扩展到更多高价值工作流",
+        "en": "Extend AI outcome-based pricing from two agents into more high-value workflows"
+      },
+      "mechanism": "subscription_plus_usage",
+      "impact": 83,
+      "effort": 58,
+      "risk": 46,
+      "formula": "incremental_ai_revenue = billable_outcomes * outcome_price + credits_consumed * credit_price",
+      "validation": {
+        "zh": "跟踪 2026 年 Customer Agent 与 Prospecting Agent 的采用率、单客户 credits 消耗与净新增 ARPC。",
+        "en": "Track 2026 adoption, credit consumption, and net ARPC lift from Customer Agent and Prospecting Agent."
+      },
+      "environment_adjustment": {
+        "zh": "适用于全球市场，因为 AI 价值表述正在从 seat 转向 measurable outcome。",
+        "en": "Fits the global market because AI value is shifting from seats toward measurable outcomes."
+      },
+      "confidence": 75.5,
+      "confidence_band": "fairly_strong"
+    },
+    {
+      "title": {
+        "zh": "继续提高 Payments / Commerce attach rate，把 2% 的其他收入层做成更有贡献的第二曲线",
+        "en": "Increase Payments and Commerce attach rate so the 2% other-revenue layer becomes a stronger second curve"
+      },
+      "mechanism": "payments_attach",
+      "impact": 78,
+      "effort": 63,
+      "risk": 44,
+      "formula": "commerce_revenue = installed_base * attach_rate * payments_volume * take_rate",
+      "validation": {
+        "zh": "跟踪 Commerce / Payments 客户渗透率、支付量和与核心订阅的共购率。",
+        "en": "Track Commerce and Payments penetration, payment volume, and co-purchase rates with the core subscription."
+      },
+      "environment_adjustment": {
+        "zh": "这一建议更适用于已在 HubSpot 内完成前台流程整合的客户群。",
+        "en": "This recommendation fits customers that already run front-office workflows inside HubSpot."
+      },
+      "confidence": 74.4,
+      "confidence_band": "fairly_strong"
+    },
+    {
+      "title": {
+        "zh": "在上探企业市场时，把治理、数据控制和 AI 监督能力做成更明确的高阶价值层",
+        "en": "Turn governance, data control, and AI oversight into a clearer high-end value layer as HubSpot moves upmarket"
+      },
+      "mechanism": "enterprise_governance_add_on",
+      "impact": 74,
+      "effort": 69,
+      "risk": 41,
+      "formula": "enterprise_expansion = qualified_accounts * governance_attach_rate * annual_uplift",
+      "validation": {
+        "zh": "观察大型客户对治理、权限、审计和 AI oversight 相关能力的付费意愿。",
+        "en": "Observe willingness to pay for governance, permissions, auditability, and AI oversight in larger accounts."
+      },
+      "environment_adjustment": {
+        "zh": "这是 HubSpot 与 Salesforce / Microsoft / ServiceNow 竞争时必须补齐的价值层。",
+        "en": "This is a required value layer if HubSpot wants to compete with Salesforce, Microsoft, and ServiceNow upmarket."
+      },
+      "confidence": 70.0,
+      "confidence_band": "fairly_strong"
+    },
+    {
+      "title": {
+        "zh": "严格控制产品复杂度，确保“易用”不被全家桶化吞掉",
+        "en": "Control product complexity so the suite does not destroy the ease-of-use promise"
+      },
+      "mechanism": "retention_and_conversion_defense",
+      "impact": 72,
+      "effort": 52,
+      "risk": 32,
+      "formula": "retention_gain = accounts_at_risk * churn_reduction * gross_profit_per_account",
+      "validation": {
+        "zh": "监测 Starter/Pro 用户升级后的激活率、模块使用深度和复杂度导致的流失。",
+        "en": "Monitor post-upgrade activation, module depth, and churn caused by complexity."
+      },
+      "environment_adjustment": {
+        "zh": "这更像防守策略，但对维持 HubSpot 在全球 mid-market 的核心差异化极其关键。",
+        "en": "This is more defensive, but it is critical for maintaining HubSpot’s core differentiation in the global mid-market."
+      },
+      "confidence": 69.0,
+      "confidence_band": "moderate_estimate"
+    }
+  ],
+  "risk_flags": [
+    {
+      "type": "suite_complexity_risk",
+      "severity": "medium",
+      "evidence": [
+        "E1",
+        "E8",
+        "E10"
+      ],
+      "safe_control": {
+        "zh": "维持模块化 packaging、清晰升级路径与易上手体验，避免因平台过宽而损伤转化和留存。",
+        "en": "Preserve modular packaging, clear upgrade paths, and ease of use so platform breadth does not hurt conversion and retention."
+      }
+    },
+    {
+      "type": "ai_pricing_and_margin_risk",
+      "severity": "medium",
+      "evidence": [
+        "E10",
+        "E11"
+      ],
+      "safe_control": {
+        "zh": "在 credits 与 outcome-based pricing 扩张时，持续校准单位成本、免费额度与客户 ROI。",
+        "en": "As credits and outcome-based pricing expand, continuously calibrate unit cost, free allowances, and customer ROI."
+      }
+    },
+    {
+      "type": "enterprise_incumbent_pressure",
+      "severity": "high",
+      "evidence": [
+        "E1",
+        "E2",
+        "E6"
+      ],
+      "safe_control": {
+        "zh": "将企业治理、权限、审计、AI oversight 与数据控制做成独立且可销售的价值层。",
+        "en": "Make governance, permissions, auditability, AI oversight, and data control into a distinct and sellable value layer."
+      }
+    },
+    {
+      "type": "global_regulation_and_data_governance",
+      "severity": "high",
+      "evidence": [
+        "E2",
+        "E10",
+        "E11"
+      ],
+      "safe_control": {
+        "zh": "持续加强全球隐私、数据驻留、支付与 AI 合规控制，避免国际扩张被监管掣肘。",
+        "en": "Keep strengthening privacy, data residency, payments, and AI compliance controls to avoid regulatory drag on global expansion."
+      }
+    }
+  ],
+  "unknowns": [
+    {
+      "zh": "HubSpot 未公开披露各个 Hub 的独立收入贡献，因此无法精确拆出 Marketing、Sales、Service、Content、Operations、Commerce 的收入份额。",
+      "en": "HubSpot does not publicly disclose revenue by each Hub, so exact revenue share by Marketing, Sales, Service, Content, Operations, and Commerce cannot be separated."
+    },
+    {
+      "zh": "Payments / Commerce 的具体 take rate、支付量和毛利结构尚未单独披露。",
+      "en": "The exact take rate, payment volume, and gross-margin structure of Payments / Commerce are not separately disclosed."
+    },
+    {
+      "zh": "2026 年起的 AI outcome-based pricing 还没有经过完整财年的验证，暂时无法判断它对 ARPC 和毛利的长期贡献。",
+      "en": "AI outcome-based pricing only began in 2026 and has not yet been proven across a full fiscal year."
+    }
+  ],
+  "next_validation": [
+    {
+      "title": {
+        "zh": "跟踪 2026 年 AI agents 的收入披露或管理层 commentary",
+        "en": "Track 2026 AI agent revenue disclosures or management commentary"
+      },
+      "owner": {
+        "zh": "投资研究 / 战略团队",
+        "en": "Research / strategy team"
+      },
+      "time_horizon": "2026 fiscal year",
+      "success_signal": {
+        "zh": "确认 AI credits / outcome-based pricing 是否开始显著提升 ARPC 或其他收入占比。",
+        "en": "Confirm whether AI credits and outcome-based pricing start to materially lift ARPC or the share of other revenue."
+      }
+    },
+    {
+      "title": {
+        "zh": "持续观察 Payments / Commerce 的披露粒度提升",
+        "en": "Monitor whether Payments / Commerce disclosure becomes more granular"
+      },
+      "owner": {
+        "zh": "投资研究 / 财务分析",
+        "en": "Research / finance analysis"
+      },
+      "time_horizon": "next 2-4 quarters",
+      "success_signal": {
+        "zh": "若管理层开始单列 Payments / Commerce 指标，说明第二曲线的重要性提升。",
+        "en": "If management starts to separately disclose Payments / Commerce metrics, it would signal growing second-curve importance."
+      }
+    },
+    {
+      "title": {
+        "zh": "比较 HubSpot 与 Salesforce / Microsoft 在企业治理层的产品差距",
+        "en": "Compare HubSpot with Salesforce and Microsoft on enterprise governance capabilities"
+      },
+      "owner": {
+        "zh": "产品战略团队",
+        "en": "Product strategy team"
+      },
+      "time_horizon": "60-90 days",
+      "success_signal": {
+        "zh": "形成一张治理、权限、审计、AI oversight 差距矩阵，用于判断上探企业市场的可行性。",
+        "en": "Produce a gap matrix on governance, permissions, auditability, and AI oversight to assess upmarket feasibility."
+      }
+    }
+  ],
+  "ai_fit": {
+    "role": "mixed",
+    "summary": {
+      "zh": "对 HubSpot 来说，AI 既是平台差异化能力，也是新的收费单元，更是防止被“大模型外壳化”的关键控制层。当前最重要的变化不是“有没有 AI”，而是 HubSpot 已经开始把 AI 从 seats 附赠逻辑，逐步推进到 credits 与 outcome-based pricing。",
+      "en": "For HubSpot, AI is simultaneously a differentiator, a new billable unit, and a control layer against commoditized model wrappers. The key shift is not whether it has AI, but that HubSpot is moving AI from bundled seat logic toward credits and outcome-based pricing."
+    },
+    "leverage_points": [
+      {
+        "zh": "Breeze agents 与 assistants 覆盖营销、销售、服务场景",
+        "en": "Breeze agents and assistants span marketing, sales, and service"
+      },
+      {
+        "zh": "Smart CRM 让 AI 能使用客户上下文而非通用上下文",
+        "en": "Smart CRM lets AI operate with customer-specific context instead of generic context"
+      },
+      {
+        "zh": "credits 与 outcome-based pricing 为 ARPC 提供新的增长层",
+        "en": "Credits and outcome-based pricing create a new ARPC growth layer"
+      }
+    ],
+    "disruption_risks": [
+      {
+        "zh": "若 AI 只是附赠功能，价值会被大型套件吸收",
+        "en": "If AI remains merely bundled functionality, its value can be absorbed by larger suites"
+      },
+      {
+        "zh": "若 outcome 定义不清晰，客户可能质疑计费公平性",
+        "en": "If outcomes are not clearly defined, customers may challenge billing fairness"
+      },
+      {
+        "zh": "若 AI 功能太快扩张，却没有足够治理与控制，企业市场 adoption 会受限",
+        "en": "If AI expands too quickly without sufficient governance and control, enterprise adoption will be constrained"
+      }
+    ],
+    "pricing_implication": "base_plan_plus_ai_usage"
+  },
+  "appendix": {
+    "formulas": [
+      {
+        "zh": "可信度 = 0.28×来源质量 + 0.22×直接可观察性 + 0.18×三角验证 + 0.12×可比性 + 0.10×时效 + 0.10×口径清晰度 - 风险扣分",
+        "en": "Confidence = 0.28*source quality + 0.22*direct observability + 0.18*triangulation + 0.12*benchmark fit + 0.10*recency + 0.10*accounting clarity - risk penalty"
+      },
+      {
+        "zh": "经营环境适配度 = 0.22×渠道 + 0.20×支付 + 0.20×合规 + 0.15×信任 + 0.13×服务 + 0.10×竞争",
+        "en": "Environment fit = 0.22*channel + 0.20*payment + 0.20*compliance + 0.15*trust + 0.13*service + 0.10*competition"
+      },
+      {
+        "zh": "伙伴影响收入池 = FY2025 总收入 × 49% 伙伴影响收入占比",
+        "en": "Partner-influenced revenue pool = FY2025 total revenue * 49% partner-influenced revenue share"
+      }
+    ],
+    "assumptions": [
+      {
+        "zh": "正式披露值优先使用单点值；只有推算项才使用 inference 标记。",
+        "en": "Disclosed values are treated as point values; only inferred items carry an inference label."
+      },
+      {
+        "zh": "竞品与跨行业类比分数，是基于当前公开产品定位、定价结构和模式重合度做出的结构化推断。",
+        "en": "Competitor and analog scores are structured inferences based on current public positioning, pricing architecture, and model overlap."
+      }
+    ],
+    "source_notes": [
+      {
+        "zh": "主要事实来源为 HubSpot FY2025 10-K、FY2025 业绩公告、官方定价页、产品目录和 2026 年 Breeze outcome pricing 官方公告。",
+        "en": "Primary facts come from HubSpot’s FY2025 10-K, FY2025 earnings release, official pricing pages, product catalog, and the 2026 Breeze outcome-pricing announcement."
+      }
+    ]
+  },
+  "chart_modules": [
+    {
+      "id": "environment_radar",
+      "chart_type": "radar",
+      "title": {
+        "zh": "经营环境六维雷达图",
+        "en": "Operating Environment Radar"
+      },
+      "subtitle": {
+        "zh": "用六个经营维度看这个模式的外部适配轮廓。",
+        "en": "Six operating dimensions show the shape of environment fit."
+      },
+      "insight": {
+        "zh": "最强维度是信任和渠道，最弱维度是竞争和合规。",
+        "en": "The strongest dimensions are Trust and Channel, while the weakest are Competition and Compliance."
+      },
+      "data": {
+        "metrics": [
+          {
+            "label": {
+              "zh": "渠道",
+              "en": "Channel"
+            },
+            "value": 90.0
+          },
+          {
+            "label": {
+              "zh": "支付",
+              "en": "Payment"
+            },
+            "value": 87.0
+          },
+          {
+            "label": {
+              "zh": "合规",
+              "en": "Compliance"
+            },
+            "value": 78.0
+          },
+          {
+            "label": {
+              "zh": "信任",
+              "en": "Trust"
+            },
+            "value": 91.0
+          },
+          {
+            "label": {
+              "zh": "服务",
+              "en": "Service"
+            },
+            "value": 88.0
+          },
+          {
+            "label": {
+              "zh": "竞争",
+              "en": "Competition"
+            },
+            "value": 83.0
+          }
+        ],
+        "max_value": 100
+      }
+    },
+    {
+      "id": "environment_heatmap",
+      "chart_type": "heatmap",
+      "title": {
+        "zh": "经营环境热力图",
+        "en": "Environment Heatmap"
+      },
+      "subtitle": {
+        "zh": "把六维适配度压缩成高低温区，优先识别短板。",
+        "en": "Compress the six fit scores into a quick hot-cold view."
+      },
+      "insight": {
+        "zh": "低于 80 分的维度需要优先补强；当前最需要关注的是竞争。",
+        "en": "Anything below 80 needs active reinforcement; the first watch item is Competition."
+      },
+      "data": {
+        "cells": [
+          {
+            "label": {
+              "zh": "渠道",
+              "en": "Channel"
+            },
+            "value": 90.0
+          },
+          {
+            "label": {
+              "zh": "支付",
+              "en": "Payment"
+            },
+            "value": 87.0
+          },
+          {
+            "label": {
+              "zh": "合规",
+              "en": "Compliance"
+            },
+            "value": 78.0
+          },
+          {
+            "label": {
+              "zh": "信任",
+              "en": "Trust"
+            },
+            "value": 91.0
+          },
+          {
+            "label": {
+              "zh": "服务",
+              "en": "Service"
+            },
+            "value": 88.0
+          },
+          {
+            "label": {
+              "zh": "竞争",
+              "en": "Competition"
+            },
+            "value": 83.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "evidence_tier_distribution",
+      "chart_type": "ranked_bar",
+      "title": {
+        "zh": "证据层级分布图",
+        "en": "Evidence Tier Distribution"
+      },
+      "subtitle": {
+        "zh": "看结论到底依赖强证据还是弱证据。",
+        "en": "See whether the report stands on strong or weak evidence."
+      },
+      "insight": {
+        "zh": "当前共有 12 条证据，其中强证据（S/A）占 12 条。",
+        "en": "The report currently uses 12 evidence items, with 12 in the strongest S/A tiers."
+      },
+      "data": {
+        "items": [
+          {
+            "label": "S",
+            "value": 8,
+            "meta": {
+              "zh": "证据数量",
+              "en": "Evidence count"
+            }
+          },
+          {
+            "label": "A",
+            "value": 4,
+            "meta": {
+              "zh": "证据数量",
+              "en": "Evidence count"
+            }
+          },
+          {
+            "label": "B",
+            "value": 0,
+            "meta": {
+              "zh": "证据数量",
+              "en": "Evidence count"
+            }
+          },
+          {
+            "label": "C",
+            "value": 0,
+            "meta": {
+              "zh": "证据数量",
+              "en": "Evidence count"
+            }
+          },
+          {
+            "label": "D",
+            "value": 0,
+            "meta": {
+              "zh": "证据数量",
+              "en": "Evidence count"
+            }
+          }
+        ],
+        "max_value": 8
+      }
+    },
+    {
+      "id": "evidence_recency_timeline",
+      "chart_type": "timeline",
+      "title": {
+        "zh": "证据时间线",
+        "en": "Evidence Recency Timeline"
+      },
+      "subtitle": {
+        "zh": "看主要证据是否足够新，避免报告被旧信息主导。",
+        "en": "Check whether the report is anchored in current evidence."
+      },
+      "insight": {
+        "zh": "最新证据主要集中在 2026 年，共 12 条。",
+        "en": "The most recent evidence is concentrated in 2026, with 12 items."
+      },
+      "data": {
+        "items": [
+          {
+            "label": "2026",
+            "value": 12,
+            "meta": {
+              "zh": "证据条数",
+              "en": "Evidence count"
+            }
+          }
+        ],
+        "max_value": 12
+      }
+    },
+    {
+      "id": "model_confidence_ranking",
+      "chart_type": "ranked_bar",
+      "title": {
+        "zh": "商业模式置信度排行",
+        "en": "Business Model Confidence Ranking"
+      },
+      "subtitle": {
+        "zh": "对比各模式线的确定性，避免把潜在线当成核心盘。",
+        "en": "Compare certainty across monetization lines."
+      },
+      "insight": {
+        "zh": "当前最确定的模式线是核心平台订阅：Customer Platform / Hubs / Smart CRM，可信度 90.4。",
+        "en": "The highest-confidence model line is Core platform subscription: Customer Platform / Hubs / Smart CRM, at 90.4."
+      },
+      "data": {
+        "items": [
+          {
+            "label": {
+              "zh": "核心平台订阅：Customer Platform / Hubs / Smart CRM",
+              "en": "Core platform subscription: Customer Platform / Hubs / Smart CRM"
+            },
+            "value": 90.4,
+            "meta": {
+              "zh": "confirmed",
+              "en": "confirmed"
+            }
+          },
+          {
+            "label": {
+              "zh": "Freemium 到 Starter/Pro/Enterprise 的 land-and-expand",
+              "en": "Freemium to Starter/Pro/Enterprise land-and-expand"
+            },
+            "value": 85.4,
+            "meta": {
+              "zh": "confirmed",
+              "en": "confirmed"
+            }
+          },
+          {
+            "label": {
+              "zh": "多维扩张计费：席位、营销联系人、limit increases 与 add-ons",
+              "en": "Multi-axis expansion pricing: seats, marketing contacts, limit increases, and add-ons"
+            },
+            "value": 84.6,
+            "meta": {
+              "zh": "confirmed",
+              "en": "confirmed"
+            }
+          },
+          {
+            "label": {
+              "zh": "伙伴驱动分发与实施生态",
+              "en": "Partner-led distribution and implementation ecosystem"
+            },
+            "value": 83.6,
+            "meta": {
+              "zh": "confirmed",
+              "en": "confirmed"
+            }
+          },
+          {
+            "label": {
+              "zh": "Payments / Commerce / 专业服务及其他收入",
+              "en": "Payments / Commerce / professional services and other revenue"
+            },
+            "value": 80.5,
+            "meta": {
+              "zh": "confirmed",
+              "en": "confirmed"
+            }
+          },
+          {
+            "label": {
+              "zh": "AI 计费层：Credits 与 outcome-based agents",
+              "en": "AI monetization layer: credits and outcome-based agents"
+            },
+            "value": 78.7,
+            "meta": {
+              "zh": "confirmed",
+              "en": "confirmed"
+            }
+          }
+        ],
+        "max_value": 100
+      }
+    },
+    {
+      "id": "financial_range_comparison",
+      "chart_type": "range_bar",
+      "title": {
+        "zh": "财务区间对比图",
+        "en": "Financial Range Comparison"
+      },
+      "subtitle": {
+        "zh": "所有关键收入线都以 low / base / high 区间展示。",
+        "en": "Every key financial line is shown as low / base / high instead of fake precision."
+      },
+      "insight": {
+        "zh": "基准情景下最大的收入线是订阅收入（已披露），约 3.06B USD。",
+        "en": "In the base case, the largest revenue line is Subscription revenue (disclosed) at about 3.06B USD."
+      },
+      "data": {
+        "items": [
+          {
+            "label": {
+              "zh": "订阅收入（已披露）",
+              "en": "Subscription revenue (disclosed)"
+            },
+            "low": 3063917000,
+            "base": 3063917000,
+            "high": 3063917000,
+            "unit": "USD"
+          },
+          {
+            "label": {
+              "zh": "专业服务及其他收入（已披露）",
+              "en": "Professional services and other revenue (disclosed)"
+            },
+            "low": 67349000,
+            "base": 67349000,
+            "high": 67349000,
+            "unit": "USD"
+          },
+          {
+            "label": {
+              "zh": "总毛利润（已披露）",
+              "en": "Gross profit (disclosed)"
+            },
+            "low": 2622779000,
+            "base": 2622779000,
+            "high": 2622779000,
+            "unit": "USD"
+          },
+          {
+            "label": {
+              "zh": "伙伴影响收入池（推算）",
+              "en": "Partner-influenced revenue pool (inferred)"
+            },
+            "low": 1534320340,
+            "base": 1534320340,
+            "high": 1534320340,
+            "unit": "USD"
+          }
+        ]
+      }
+    },
+    {
+      "id": "financial_mix_share",
+      "chart_type": "stacked_bar",
+      "title": {
+        "zh": "收入结构堆叠图",
+        "en": "Revenue Mix Share"
+      },
+      "subtitle": {
+        "zh": "看主要收入盘和第二曲线的结构。",
+        "en": "See the main revenue engine and the secondary curves."
+      },
+      "insight": {
+        "zh": "当前收入结构高度集中在订阅收入（已披露），约占基准情景的 42.0%。",
+        "en": "The revenue mix is concentrated in Subscription revenue (disclosed), which represents about 42.0% of the base case."
+      },
+      "data": {
+        "items": [
+          {
+            "label": {
+              "zh": "订阅收入（已披露）",
+              "en": "Subscription revenue (disclosed)"
+            },
+            "value": 3063917000,
+            "unit": "USD"
+          },
+          {
+            "label": {
+              "zh": "专业服务及其他收入（已披露）",
+              "en": "Professional services and other revenue (disclosed)"
+            },
+            "value": 67349000,
+            "unit": "USD"
+          },
+          {
+            "label": {
+              "zh": "总毛利润（已披露）",
+              "en": "Gross profit (disclosed)"
+            },
+            "value": 2622779000,
+            "unit": "USD"
+          },
+          {
+            "label": {
+              "zh": "伙伴影响收入池（推算）",
+              "en": "Partner-influenced revenue pool (inferred)"
+            },
+            "value": 1534320340,
+            "unit": "USD"
+          }
+        ],
+        "total": 7288365340
+      }
+    },
+    {
+      "id": "direct_competitor_ranking",
+      "chart_type": "ranked_bar",
+      "title": {
+        "zh": "直接竞品得分排行",
+        "en": "Direct Competitor Ranking"
+      },
+      "subtitle": {
+        "zh": "最值得持续监控的正面对手。",
+        "en": "The direct threats that deserve the closest watch."
+      },
+      "insight": {
+        "zh": "当前最强的正面对手是Salesforce，竞争相似度 84.5。",
+        "en": "The strongest direct threat is Salesforce with a similarity score of 84.5."
+      },
+      "data": {
+        "items": [
+          {
+            "label": {
+              "zh": "Salesforce",
+              "en": "Salesforce"
+            },
+            "value": 84.5,
+            "meta": {
+              "zh": "CRM 与前台套件",
+              "en": "CRM and front-office suite"
+            }
+          },
+          {
+            "label": {
+              "zh": "Microsoft Dynamics 365",
+              "en": "Microsoft Dynamics 365"
+            },
+            "value": 79.5,
+            "meta": {
+              "zh": "CRM / ERP / AI 套件",
+              "en": "CRM / ERP / AI suite"
+            }
+          },
+          {
+            "label": {
+              "zh": "Zoho CRM / Zoho One",
+              "en": "Zoho CRM / Zoho One"
+            },
+            "value": 79.3,
+            "meta": {
+              "zh": "中小企业一体化软件套件",
+              "en": "SMB integrated software suite"
+            }
+          },
+          {
+            "label": {
+              "zh": "Freshworks",
+              "en": "Freshworks"
+            },
+            "value": 77.2,
+            "meta": {
+              "zh": "中端销售与客服平台",
+              "en": "Mid-market sales and service platform"
+            }
+          },
+          {
+            "label": {
+              "zh": "Zendesk",
+              "en": "Zendesk"
+            },
+            "value": 74.4,
+            "meta": {
+              "zh": "客服平台与 AI 服务自动化",
+              "en": "Customer service platform and AI service automation"
+            }
+          },
+          {
+            "label": {
+              "zh": "ActiveCampaign",
+              "en": "ActiveCampaign"
+            },
+            "value": 73.6,
+            "meta": {
+              "zh": "营销自动化与 CRM",
+              "en": "Marketing automation and CRM"
+            }
+          },
+          {
+            "label": {
+              "zh": "Klaviyo",
+              "en": "Klaviyo"
+            },
+            "value": 72.0,
+            "meta": {
+              "zh": "营销自动化与客户数据",
+              "en": "Marketing automation and customer data"
+            }
+          },
+          {
+            "label": {
+              "zh": "Intercom",
+              "en": "Intercom"
+            },
+            "value": 71.0,
+            "meta": {
+              "zh": "AI 客服与客户沟通平台",
+              "en": "AI service and customer communications platform"
+            }
+          },
+          {
+            "label": {
+              "zh": "Pipedrive",
+              "en": "Pipedrive"
+            },
+            "value": 69.1,
+            "meta": {
+              "zh": "销售 CRM",
+              "en": "Sales CRM"
+            }
+          },
+          {
+            "label": {
+              "zh": "monday CRM",
+              "en": "monday CRM"
+            },
+            "value": 69.0,
+            "meta": {
+              "zh": "工作流 + CRM",
+              "en": "Workflow plus CRM"
+            }
+          }
+        ],
+        "max_value": 100
+      }
+    },
+    {
+      "id": "cross_industry_analog_ranking",
+      "chart_type": "ranked_bar",
+      "title": {
+        "zh": "跨行业类比分排行",
+        "en": "Cross-Industry Analog Ranking"
+      },
+      "subtitle": {
+        "zh": "看哪些模式值得迁移，而不是只盯同类产品。",
+        "en": "Show which models are most transferable from other categories."
+      },
+      "insight": {
+        "zh": "当前最强的跨行业类比是Shopify，说明其平台扩展逻辑最值得借鉴。",
+        "en": "The strongest cross-industry analog is Shopify, suggesting its expansion logic is highly transferable."
+      },
+      "data": {
+        "items": [
+          {
+            "label": {
+              "zh": "Shopify",
+              "en": "Shopify"
+            },
+            "value": 79.2,
+            "meta": {
+              "zh": "SMB 平台 + 应用生态 + 支付",
+              "en": "SMB platform plus app ecosystem plus payments"
+            }
+          },
+          {
+            "label": {
+              "zh": "Atlassian",
+              "en": "Atlassian"
+            },
+            "value": 77.1,
+            "meta": {
+              "zh": "团队软件平台 + Marketplace",
+              "en": "Team software platform plus marketplace"
+            }
+          },
+          {
+            "label": {
+              "zh": "Canva",
+              "en": "Canva"
+            },
+            "value": 75.1,
+            "meta": {
+              "zh": "Freemium 创意协作平台",
+              "en": "Freemium creative collaboration platform"
+            }
+          },
+          {
+            "label": {
+              "zh": "Notion",
+              "en": "Notion"
+            },
+            "value": 73.3,
+            "meta": {
+              "zh": "工作空间平台 + AI 附加层",
+              "en": "Workspace platform plus AI layer"
+            }
+          },
+          {
+            "label": {
+              "zh": "Stripe",
+              "en": "Stripe"
+            },
+            "value": 72.9,
+            "meta": {
+              "zh": "支付基础设施与平台增值",
+              "en": "Payments infrastructure and platform monetization"
+            }
+          },
+          {
+            "label": {
+              "zh": "Intuit QuickBooks",
+              "en": "Intuit QuickBooks"
+            },
+            "value": 71.8,
+            "meta": {
+              "zh": "SMB 业务操作平台",
+              "en": "SMB business operations platform"
+            }
+          },
+          {
+            "label": {
+              "zh": "Microsoft 365 Copilot",
+              "en": "Microsoft 365 Copilot"
+            },
+            "value": 71.0,
+            "meta": {
+              "zh": "套件 + AI 附加层",
+              "en": "Suite plus AI layer"
+            }
+          },
+          {
+            "label": {
+              "zh": "ServiceNow",
+              "en": "ServiceNow"
+            },
+            "value": 70.3,
+            "meta": {
+              "zh": "流程平台与企业治理层",
+              "en": "Workflow platform and enterprise governance layer"
+            }
+          },
+          {
+            "label": {
+              "zh": "Wix",
+              "en": "Wix"
+            },
+            "value": 68.1,
+            "meta": {
+              "zh": "自助式 SMB 内容与网站平台",
+              "en": "Self-serve SMB content and website platform"
+            }
+          },
+          {
+            "label": {
+              "zh": "Twilio",
+              "en": "Twilio"
+            },
+            "value": 65.8,
+            "meta": {
+              "zh": "平台 API 与按量收费",
+              "en": "Platform API and usage pricing"
+            }
+          }
+        ],
+        "max_value": 100
+      }
+    },
+    {
+      "id": "benchmark_gap",
+      "chart_type": "gap_bar",
+      "title": {
+        "zh": "Benchmark 差距图",
+        "en": "Benchmark Gap Chart"
+      },
+      "subtitle": {
+        "zh": "把关键维度放到同行中位数旁边看。",
+        "en": "Place key dimensions next to the peer median."
+      },
+      "insight": {
+        "zh": "相对同行最强的领先项是mid-market 渗透能力，最弱的短板是企业治理与上探能力。",
+        "en": "The best lead over peers is Mid-market penetration fit, while the clearest gap is Upmarket governance strength."
+      },
+      "data": {
+        "items": [
+          {
+            "label": {
+              "zh": "平台完整性",
+              "en": "Platform completeness"
+            },
+            "current": 88,
+            "peer": 81,
+            "delta": 7,
+            "meta": {
+              "zh": "HubSpot 的前台统一性强于多数点工具，但仍弱于真正的超大型企业套件。",
+              "en": "HubSpot is more unified than most point tools, but still lighter than mega-enterprise suites."
+            }
+          },
+          {
+            "label": {
+              "zh": "mid-market 渗透能力",
+              "en": "Mid-market penetration fit"
+            },
+            "current": 91,
+            "peer": 76,
+            "delta": 15,
+            "meta": {
+              "zh": "freemium、Starter 与伙伴网络共同提高了渗透效率。",
+              "en": "Freemium, Starter, and the partner network jointly improve penetration efficiency."
+            }
+          },
+          {
+            "label": {
+              "zh": "AI 商业化成熟度",
+              "en": "AI monetization maturity"
+            },
+            "current": 76,
+            "peer": 68,
+            "delta": 8,
+            "meta": {
+              "zh": "HubSpot 已经从 credits 走向 outcome-based pricing，但长期贡献仍需观察。",
+              "en": "HubSpot has moved from credits toward outcome-based pricing, but the long-term contribution is still emerging."
+            }
+          },
+          {
+            "label": {
+              "zh": "企业治理与上探能力",
+              "en": "Upmarket governance strength"
+            },
+            "current": 64,
+            "peer": 79,
+            "delta": -15,
+            "meta": {
+              "zh": "这一维度仍然是 HubSpot 相对大型企业平台的短板。",
+              "en": "This remains a relative weakness versus enterprise-heavy platforms."
+            }
+          }
+        ],
+        "max_value": 100
+      }
+    },
+    {
+      "id": "upgrade_impact_effort",
+      "chart_type": "quadrant",
+      "title": {
+        "zh": "升级建议影响-投入矩阵",
+        "en": "Upgrade Impact-Effort Matrix"
+      },
+      "subtitle": {
+        "zh": "先做高影响、低投入，再决定哪些建议值得重投入。",
+        "en": "Prioritize high-impact, low-effort upgrades first."
+      },
+      "insight": {
+        "zh": "当前可优先推进的 quick wins 有 0 项。",
+        "en": "There are 0 clear quick wins in the current recommendation set."
+      },
+      "data": {
+        "items": [
+          {
+            "label": {
+              "zh": "把 AI outcome-based pricing 从两类 agents 扩展到更多高价值工作流",
+              "en": "Extend AI outcome-based pricing from two agents into more high-value workflows"
+            },
+            "x": 58,
+            "y": 83,
+            "tone": "balanced",
+            "risk": 46
+          },
+          {
+            "label": {
+              "zh": "继续提高 Payments / Commerce attach rate，把 2% 的其他收入层做成更有贡献的第二曲线",
+              "en": "Increase Payments and Commerce attach rate so the 2% other-revenue layer becomes a stronger second curve"
+            },
+            "x": 63,
+            "y": 78,
+            "tone": "balanced",
+            "risk": 44
+          },
+          {
+            "label": {
+              "zh": "在上探企业市场时，把治理、数据控制和 AI 监督能力做成更明确的高阶价值层",
+              "en": "Turn governance, data control, and AI oversight into a clearer high-end value layer as HubSpot moves upmarket"
+            },
+            "x": 69,
+            "y": 74,
+            "tone": "balanced",
+            "risk": 41
+          },
+          {
+            "label": {
+              "zh": "严格控制产品复杂度，确保“易用”不被全家桶化吞掉",
+              "en": "Control product complexity so the suite does not destroy the ease-of-use promise"
+            },
+            "x": 52,
+            "y": 72,
+            "tone": "balanced",
+            "risk": 32
+          }
+        ],
+        "x_label": {
+          "zh": "投入",
+          "en": "Effort"
+        },
+        "y_label": {
+          "zh": "影响",
+          "en": "Impact"
+        }
+      }
+    },
+    {
+      "id": "risk_severity_map",
+      "chart_type": "heatmap",
+      "title": {
+        "zh": "风险热力图",
+        "en": "Risk Severity Map"
+      },
+      "subtitle": {
+        "zh": "把风险强度和风险类型一起摆出来。",
+        "en": "Keep downside visible by mapping risk type and severity."
+      },
+      "insight": {
+        "zh": "当前最高风险项是enterprise_incumbent_pressure。",
+        "en": "The highest-severity current risk is enterprise_incumbent_pressure."
+      },
+      "data": {
+        "cells": [
+          {
+            "label": {
+              "zh": "suite_complexity_risk",
+              "en": "suite_complexity_risk"
+            },
+            "value": 50,
+            "meta": {
+              "zh": "medium",
+              "en": "medium"
+            }
+          },
+          {
+            "label": {
+              "zh": "ai_pricing_and_margin_risk",
+              "en": "ai_pricing_and_margin_risk"
+            },
+            "value": 50,
+            "meta": {
+              "zh": "medium",
+              "en": "medium"
+            }
+          },
+          {
+            "label": {
+              "zh": "enterprise_incumbent_pressure",
+              "en": "enterprise_incumbent_pressure"
+            },
+            "value": 75,
+            "meta": {
+              "zh": "high",
+              "en": "high"
+            }
+          },
+          {
+            "label": {
+              "zh": "global_regulation_and_data_governance",
+              "en": "global_regulation_and_data_governance"
+            },
+            "value": 75,
+            "meta": {
+              "zh": "high",
+              "en": "high"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "ai_leverage_balance",
+      "chart_type": "balance",
+      "title": {
+        "zh": "AI 杠杆与冲击平衡图",
+        "en": "AI Leverage Balance"
+      },
+      "subtitle": {
+        "zh": "同时看 AI 带来的增长点和它带来的新压力。",
+        "en": "Hold AI upside and AI pressure in the same frame."
+      },
+      "insight": {
+        "zh": "当前识别出 3 个 AI 杠杆点，和 3 个 AI 冲击风险。",
+        "en": "The report identifies 3 AI leverage points and 3 disruption risks."
+      },
+      "data": {
+        "positive": [
+          {
+            "zh": "Breeze agents 与 assistants 覆盖营销、销售、服务场景",
+            "en": "Breeze agents and assistants span marketing, sales, and service"
+          },
+          {
+            "zh": "Smart CRM 让 AI 能使用客户上下文而非通用上下文",
+            "en": "Smart CRM lets AI operate with customer-specific context instead of generic context"
+          },
+          {
+            "zh": "credits 与 outcome-based pricing 为 ARPC 提供新的增长层",
+            "en": "Credits and outcome-based pricing create a new ARPC growth layer"
+          }
+        ],
+        "negative": [
+          {
+            "zh": "若 AI 只是附赠功能，价值会被大型套件吸收",
+            "en": "If AI remains merely bundled functionality, its value can be absorbed by larger suites"
+          },
+          {
+            "zh": "若 outcome 定义不清晰，客户可能质疑计费公平性",
+            "en": "If outcomes are not clearly defined, customers may challenge billing fairness"
+          },
+          {
+            "zh": "若 AI 功能太快扩张，却没有足够治理与控制，企业市场 adoption 会受限",
+            "en": "If AI expands too quickly without sufficient governance and control, enterprise adoption will be constrained"
+          }
+        ]
+      }
+    }
+  ]
+}

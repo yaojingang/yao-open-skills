@@ -1,0 +1,865 @@
+{
+  "analysis_mode": "model_diagnosis",
+  "entity": {
+    "input": "https://globalsupport.ai",
+    "name": "GlobalSupport AI",
+    "type": "private_company_or_product",
+    "domain": "globalsupport.ai",
+    "legal_name": "GlobalSupport AI Pte. Ltd.",
+    "jurisdiction": "Singapore",
+    "region": {
+      "zh": "中国团队服务全球商家",
+      "en": "China team serving global merchants"
+    },
+    "confidence": 81
+  },
+  "market_environment": {
+    "company_origin": "china",
+    "target_market": "overseas",
+    "delivery_direction": "china_to_overseas",
+    "primary_buyer": [
+      "SMB",
+      "merchant",
+      "support_team"
+    ],
+    "payment_environment": [
+      "credit_card",
+      "annual_contract",
+      "invoice_for_larger_accounts"
+    ],
+    "channel_environment": [
+      "seo",
+      "shopify_app_store",
+      "partner_referrals",
+      "content_led_growth"
+    ],
+    "compliance_environment": [
+      "consumer_privacy",
+      "data_cross_border",
+      "platform_policy_dependence"
+    ],
+    "trust_environment": [
+      "trial_required",
+      "case_studies_required",
+      "response_sla_matters"
+    ],
+    "service_environment": [
+      "self_serve_onboarding",
+      "localized_support",
+      "light_implementation"
+    ],
+    "competition_environment": [
+      "suite_pressure",
+      "fragmented_support_stack",
+      "price_sensitive_mid_market"
+    ],
+    "channel_fit": 76,
+    "payment_fit": 72,
+    "compliance_fit": 63,
+    "trust_fit": 68,
+    "service_fit": 74,
+    "competition_fit": 61,
+    "environment_fit_score": 69,
+    "fit_summary": {
+      "zh": "核心的订阅加 AI 用量模式，整体适合海外中小商家的客服团队，但信任建立、数据跨境和套件型竞争仍然会带来明显摩擦。",
+      "en": "The core subscription plus AI-usage model fits overseas SMB support teams, but trust-building, cross-border data handling, and suite-player competition create friction."
+    },
+    "regional_constraints": [
+      {
+        "zh": "需要更强的英文案例证明和更容易识别的客户 logo",
+        "en": "Needs stronger English proof points and recognizable logos"
+      },
+      {
+        "zh": "面向企业客户时，必须更明确地说明跨境数据处理立场",
+        "en": "Cross-border data position must be explicit for enterprise buyers"
+      },
+      {
+        "zh": "应用市场分发能帮助获客，但会提高对平台的依赖",
+        "en": "App-market distribution helps acquisition but increases platform dependence"
+      }
+    ],
+    "regional_opportunities": [
+      {
+        "zh": "清晰的基础套餐加 AI 点数，更符合海外买家的价格预期",
+        "en": "A clear base plan plus AI credits matches buyer expectations"
+      },
+      {
+        "zh": "更深的 Shopify 和 helpdesk 集成可以降低信任摩擦",
+        "en": "Shopify and helpdesk integrations can reduce trust friction"
+      },
+      {
+        "zh": "按用量计费的 AI 包装，更适合重客服场景的商业化",
+        "en": "Usage-based AI packaging can monetize heavier support operations"
+      }
+    ]
+  },
+  "evidence_items": [
+    {
+      "id": "E1",
+      "claim": "The product offers automated multilingual replies for ecommerce support.",
+      "source_url": "https://globalsupport.ai/product",
+      "source_tier": "A",
+      "source_type": "official_site",
+      "source_date": "2026-04-10",
+      "quote": "Automate replies across email, live chat, and marketplace messages."
+    },
+    {
+      "id": "E2",
+      "claim": "Pricing includes a seat-based starter plan and AI ticket credits.",
+      "source_url": "https://globalsupport.ai/pricing",
+      "source_tier": "A",
+      "source_type": "pricing",
+      "source_date": "2026-04-10",
+      "quote": "Starter includes 5 seats and 2,000 AI resolutions."
+    },
+    {
+      "id": "E3",
+      "claim": "The product is distributed through the Shopify app ecosystem.",
+      "source_url": "https://apps.shopify.com/globalsupport-ai",
+      "source_tier": "B",
+      "source_type": "app_marketplace",
+      "source_date": "2026-04-09",
+      "quote": "Built for Shopify customer support automation."
+    },
+    {
+      "id": "E4",
+      "claim": "Customer stories emphasize support cost reduction and reply speed.",
+      "source_url": "https://globalsupport.ai/customers",
+      "source_tier": "A",
+      "source_type": "official_site",
+      "source_date": "2026-04-11",
+      "quote": "Reduced first-response time by 42 percent."
+    },
+    {
+      "id": "E5",
+      "claim": "The target buyer overlaps with merchant support teams using Gorgias, Zendesk, and Intercom.",
+      "source_url": "https://www.g2.com/categories/customer-support-software",
+      "source_tier": "B",
+      "source_type": "software_directory",
+      "source_date": "2026-04-08",
+      "quote": "Ecommerce support and AI helpdesk tools cluster around similar buyer needs."
+    },
+    {
+      "id": "E6",
+      "claim": "Hiring signals suggest ongoing work in AI workflow orchestration and customer support operations.",
+      "source_url": "https://globalsupport.ai/careers",
+      "source_tier": "C",
+      "source_type": "hiring",
+      "source_date": "2026-04-07",
+      "quote": "Hiring for applied AI engineer and support operations lead."
+    },
+    {
+      "id": "E7",
+      "claim": "Platform buyers increasingly expect automation priced as usage or outcomes.",
+      "source_url": "https://www.intercom.com/fin",
+      "source_tier": "A",
+      "source_type": "competitor_pricing",
+      "source_date": "2026-04-09",
+      "quote": "AI support products are normalizing automation-linked pricing."
+    },
+    {
+      "id": "E8",
+      "claim": "Cross-border data handling remains a trust blocker for support software sold into larger brands.",
+      "source_url": "https://example.com/privacy-research",
+      "source_tier": "C",
+      "source_type": "industry_research",
+      "source_date": "2026-04-05",
+      "quote": "Enterprise support buyers increasingly request data location and subprocess clarity."
+    }
+  ],
+  "current_business_models": [
+    {
+      "model_label": {
+        "zh": "面向小型客服团队的免费增值入口",
+        "en": "Freemium entry for small support teams"
+      },
+      "taxonomy_id": "BM-SAAS-FREE",
+      "payer": "merchant support lead",
+      "pricing_unit": "workspace/month",
+      "revenue_basis": "subscription",
+      "status": "confirmed",
+      "confidence": 82,
+      "evidence_ids": [
+        "E2",
+        "E3"
+      ],
+      "notes": {
+        "zh": "通过应用市场生态提供免费入口，降低试用摩擦。",
+        "en": "Free entry lowers trial friction through the app ecosystem."
+      }
+    },
+    {
+      "model_label": {
+        "zh": "面向成长型客服团队的席位订阅",
+        "en": "Seat subscription for growing support teams"
+      },
+      "taxonomy_id": "BM-SAAS-SEAT",
+      "payer": "support manager",
+      "pricing_unit": "seat/month",
+      "revenue_basis": "recognized revenue",
+      "status": "confirmed",
+      "confidence": 78,
+      "evidence_ids": [
+        "E2",
+        "E4"
+      ],
+      "notes": {
+        "zh": "当前的核心经常性收入层。",
+        "en": "Core recurring revenue layer."
+      }
+    },
+    {
+      "model_label": {
+        "zh": "面向工单自动化的 AI 用量点数",
+        "en": "AI usage credits for ticket automation"
+      },
+      "taxonomy_id": "BM-AI-USAGE",
+      "payer": "support operations owner",
+      "pricing_unit": "resolved ticket or AI credits",
+      "revenue_basis": "usage revenue",
+      "status": "confirmed",
+      "confidence": 74,
+      "evidence_ids": [
+        "E2",
+        "E7"
+      ],
+      "notes": {
+        "zh": "比纯席位定价更能匹配 AI 成本波动。",
+        "en": "Matches cost variability better than flat seat pricing alone."
+      }
+    },
+    {
+      "model_label": {
+        "zh": "托管式初始化与流程调优",
+        "en": "Managed setup and workflow tuning"
+      },
+      "taxonomy_id": "BM-SVC-LIGHT",
+      "payer": "mid-market merchant",
+      "pricing_unit": "one-time onboarding fee",
+      "revenue_basis": "services revenue",
+      "status": "latent",
+      "confidence": 55,
+      "evidence_ids": [
+        "E4",
+        "E6"
+      ],
+      "notes": {
+        "zh": "对于需要迁移支持的中端客户，这一层可能具备收费潜力。",
+        "en": "Likely monetizable for mid-market buyers needing migration support."
+      }
+    }
+  ],
+  "financial_estimates": [
+    {
+      "label": {
+        "zh": "席位订阅收入",
+        "en": "Seat subscription revenue"
+      },
+      "formula": "paying_accounts * avg_seats * avg_monthly_price * 12",
+      "variables": [
+        "paying_accounts",
+        "avg_seats",
+        "avg_monthly_price"
+      ],
+      "range": {
+        "low": 480000,
+        "base": 1320000,
+        "high": 2640000,
+        "currency": "USD"
+      },
+      "gross_margin_range": {
+        "low": 280000,
+        "base": 860000,
+        "high": 1810000,
+        "currency": "USD"
+      },
+      "confidence": 68,
+      "basis": "estimate",
+      "assumptions": [
+        "Uses visible pricing anchors and inferred seat counts by segment"
+      ]
+    },
+    {
+      "label": {
+        "zh": "AI 用量点数收入",
+        "en": "AI usage-credit revenue"
+      },
+      "formula": "monthly_ai_volume * unit_price * 12",
+      "variables": [
+        "monthly_ai_volume",
+        "unit_price"
+      ],
+      "range": {
+        "low": 180000,
+        "base": 620000,
+        "high": 1380000,
+        "currency": "USD"
+      },
+      "gross_margin_range": {
+        "low": 60000,
+        "base": 260000,
+        "high": 690000,
+        "currency": "USD"
+      },
+      "confidence": 61,
+      "basis": "estimate",
+      "assumptions": [
+        "AI margin depends on model routing and ticket complexity"
+      ]
+    },
+    {
+      "label": {
+        "zh": "初始化与流程调优服务",
+        "en": "Setup and workflow tuning services"
+      },
+      "formula": "projects_per_year * average_project_fee",
+      "variables": [
+        "projects_per_year",
+        "average_project_fee"
+      ],
+      "range": {
+        "low": 90000,
+        "base": 240000,
+        "high": 540000,
+        "currency": "USD"
+      },
+      "gross_margin_range": {
+        "low": 25000,
+        "base": 85000,
+        "high": 220000,
+        "currency": "USD"
+      },
+      "confidence": 49,
+      "basis": "hypothesis",
+      "assumptions": [
+        "Would require clearer packaging and implementation bandwidth"
+      ]
+    }
+  ],
+  "direct_competitors": [
+    {
+      "type": "direct",
+      "name": "Gorgias",
+      "url": "https://www.gorgias.com",
+      "category": "Ecommerce helpdesk",
+      "model_tags": [
+        "seat_subscription",
+        "automation",
+        "ecommerce"
+      ],
+      "score": 84.2,
+      "selection_reason": "Strong overlap in ecommerce support workflows, merchant buyer, and automation packaging."
+    },
+    {
+      "type": "direct",
+      "name": "Zendesk AI",
+      "url": "https://www.zendesk.com",
+      "category": "Support suite",
+      "model_tags": [
+        "seat_subscription",
+        "suite",
+        "ai_add_on"
+      ],
+      "score": 79.6,
+      "selection_reason": "Suite pressure reference for larger support teams."
+    },
+    {
+      "type": "direct",
+      "name": "Intercom Fin",
+      "url": "https://www.intercom.com/fin",
+      "category": "AI support automation",
+      "model_tags": [
+        "automation",
+        "outcome_pricing",
+        "enterprise"
+      ],
+      "score": 78.7,
+      "selection_reason": "Important reference for AI automation pricing evolution."
+    },
+    {
+      "type": "direct",
+      "name": "Freshdesk",
+      "url": "https://www.freshworks.com/freshdesk",
+      "category": "Support software",
+      "model_tags": [
+        "seat_subscription",
+        "helpdesk"
+      ],
+      "score": 73.1,
+      "selection_reason": "Broader helpdesk baseline with mid-market packaging."
+    },
+    {
+      "type": "direct",
+      "name": "Help Scout",
+      "url": "https://www.helpscout.com",
+      "category": "Support software",
+      "model_tags": [
+        "subscription",
+        "team_support"
+      ],
+      "score": 71.8,
+      "selection_reason": "Useful benchmark for lightweight support operations teams."
+    },
+    {
+      "type": "direct",
+      "name": "Ada",
+      "url": "https://www.ada.cx",
+      "category": "AI customer service automation",
+      "model_tags": [
+        "automation",
+        "enterprise"
+      ],
+      "score": 70.4,
+      "selection_reason": "Automation-focused direct competitor for higher-end buyers."
+    },
+    {
+      "type": "direct",
+      "name": "Tidio",
+      "url": "https://www.tidio.com",
+      "category": "SMB support automation",
+      "model_tags": [
+        "subscription",
+        "chat",
+        "ai"
+      ],
+      "score": 69.7,
+      "selection_reason": "Closer to SMB chat-first support motion."
+    },
+    {
+      "type": "direct",
+      "name": "Forethought",
+      "url": "https://forethought.ai",
+      "category": "AI support platform",
+      "model_tags": [
+        "ai",
+        "automation",
+        "enterprise"
+      ],
+      "score": 68.9,
+      "selection_reason": "Good automation reference though more enterprise weighted."
+    },
+    {
+      "type": "direct",
+      "name": "Gladly",
+      "url": "https://www.gladly.com",
+      "category": "Support platform",
+      "model_tags": [
+        "subscription",
+        "commerce_support"
+      ],
+      "score": 66.8,
+      "selection_reason": "Relevant for premium commerce support positioning."
+    },
+    {
+      "type": "direct",
+      "name": "Kustomer",
+      "url": "https://www.kustomer.com",
+      "category": "Customer service CRM",
+      "model_tags": [
+        "subscription",
+        "support_suite"
+      ],
+      "score": 65.9,
+      "selection_reason": "Enterprise-biased but important for platform consolidation pressure."
+    }
+  ],
+  "cross_industry_analogs": [
+    {
+      "type": "cross_industry",
+      "name": "GitHub Copilot",
+      "url": "https://github.com/features/copilot",
+      "category": "Developer productivity AI",
+      "model_tags": [
+        "seat_subscription",
+        "ai_add_on"
+      ],
+      "score": 77.4,
+      "selection_reason": "Useful reference for base subscription plus AI attach motion."
+    },
+    {
+      "type": "cross_industry",
+      "name": "Grammarly",
+      "url": "https://www.grammarly.com",
+      "category": "Writing productivity",
+      "model_tags": [
+        "freemium",
+        "team_subscription"
+      ],
+      "score": 74.9,
+      "selection_reason": "Strong personal-to-team upgrade playbook."
+    },
+    {
+      "type": "cross_industry",
+      "name": "Notion AI",
+      "url": "https://www.notion.so/product/ai",
+      "category": "Knowledge work AI",
+      "model_tags": [
+        "suite_add_on",
+        "subscription"
+      ],
+      "score": 72.8,
+      "selection_reason": "Shows how AI can be bundled without losing upsell flexibility."
+    },
+    {
+      "type": "cross_industry",
+      "name": "HubSpot",
+      "url": "https://www.hubspot.com/pricing",
+      "category": "SMB software suite",
+      "model_tags": [
+        "freemium",
+        "suite_expansion"
+      ],
+      "score": 71.6,
+      "selection_reason": "Reference for land-and-expand in SMB ops software."
+    },
+    {
+      "type": "cross_industry",
+      "name": "Loom",
+      "url": "https://www.loom.com",
+      "category": "Async communication",
+      "model_tags": [
+        "freemium",
+        "team_subscription"
+      ],
+      "score": 69.5,
+      "selection_reason": "Useful for lightweight PLG and viral team adoption."
+    },
+    {
+      "type": "cross_industry",
+      "name": "Canva",
+      "url": "https://www.canva.com/pricing",
+      "category": "Design collaboration",
+      "model_tags": [
+        "freemium",
+        "template_ecosystem"
+      ],
+      "score": 68.3,
+      "selection_reason": "Reference for template-led expansion and app ecosystem design."
+    },
+    {
+      "type": "cross_industry",
+      "name": "Mailchimp",
+      "url": "https://mailchimp.com/pricing",
+      "category": "Marketing automation",
+      "model_tags": [
+        "tiered_subscription",
+        "contact_based_pricing"
+      ],
+      "score": 67.9,
+      "selection_reason": "Good analog for usage-linked packaging in SMB software."
+    },
+    {
+      "type": "cross_industry",
+      "name": "Calendly",
+      "url": "https://calendly.com/pricing",
+      "category": "Scheduling automation",
+      "model_tags": [
+        "freemium",
+        "team_subscription"
+      ],
+      "score": 67.1,
+      "selection_reason": "Clean PLG and simple packaging reference."
+    },
+    {
+      "type": "cross_industry",
+      "name": "Shopify Apps",
+      "url": "https://apps.shopify.com",
+      "category": "App ecosystem",
+      "model_tags": [
+        "app_marketplace",
+        "merchant_distribution"
+      ],
+      "score": 64.8,
+      "selection_reason": "Reference for ecosystem-driven acquisition economics."
+    },
+    {
+      "type": "cross_industry",
+      "name": "Duolingo Max",
+      "url": "https://www.duolingo.com",
+      "category": "Consumer AI tier",
+      "model_tags": [
+        "premium_ai_tier",
+        "subscription"
+      ],
+      "score": 58.7,
+      "selection_reason": "Shows the upside and ceiling of AI premium-tier pricing psychology."
+    }
+  ],
+  "benchmark": {
+    "summary": "GlobalSupport AI is well aligned with ecommerce support automation, but it needs stronger differentiation against suites and clearer packaging for larger buyers.",
+    "scorecard": [
+      {
+        "dimension": "support_workflow_fit",
+        "target": 82,
+        "peer_median": 79,
+        "gap_note": "Good workflow focus, but narrower brand trust."
+      },
+      {
+        "dimension": "pricing_clarity",
+        "target": 74,
+        "peer_median": 71,
+        "gap_note": "Base plus AI credits is understandable, but outcome pricing is still absent."
+      },
+      {
+        "dimension": "distribution_strength",
+        "target": 68,
+        "peer_median": 77,
+        "gap_note": "App ecosystem helps, yet direct international brand pull remains weaker."
+      },
+      {
+        "dimension": "enterprise_readiness",
+        "target": 57,
+        "peer_median": 73,
+        "gap_note": "Data trust and deployment options hold back enterprise expansion."
+      }
+    ],
+    "price_benchmark": [
+      {
+        "plan": "Starter",
+        "target_position": "below Gorgias and Zendesk entry price",
+        "comment": "Good for acquisition but may under-signal quality."
+      },
+      {
+        "plan": "Growth with AI credits",
+        "target_position": "close to Tidio and lower than Intercom Fin equivalents",
+        "comment": "Reasonable for SMB support teams."
+      }
+    ],
+    "unit_economics": [
+      {
+        "metric": "gross_margin_risk",
+        "comment": "AI resolution costs can compress margin if bundle allowances stay too generous."
+      },
+      {
+        "metric": "cac_efficiency",
+        "comment": "Marketplace installs reduce CAC but can cap brand-owned demand."
+      }
+    ]
+  },
+  "upgrade_recommendations": [
+    {
+      "title": {
+        "zh": "把定价拆成平台费加 AI 自动化点数",
+        "en": "Split the packaging into platform fee plus AI automation credits"
+      },
+      "mechanism": "subscription_plus_usage",
+      "impact": 82,
+      "effort": 51,
+      "risk": 43,
+      "confidence": 72,
+      "formula": "ARR = paying_accounts * platform_fee * 12 + automation_volume * credit_price",
+      "validation": {
+        "zh": "访谈 20 个活跃商家，验证他们是否接受与用量挂钩的 AI 收费层。",
+        "en": "Interview 20 active merchants and test willingness to pay for a usage-linked AI layer."
+      },
+      "environment_adjustment": {
+        "zh": "适合海外买家对计费透明和用量可控的预期。",
+        "en": "Fits overseas buyers who expect billing transparency and usage control."
+      }
+    },
+    {
+      "title": {
+        "zh": "为更大客户推出信任增强包",
+        "en": "Launch a trust package for larger merchants"
+      },
+      "mechanism": "enterprise_add_on",
+      "impact": 71,
+      "effort": 64,
+      "risk": 39,
+      "confidence": 65,
+      "formula": "Enterprise uplift = qualified_accounts * enterprise_attach_rate * annual_add_on_fee",
+      "validation": {
+        "zh": "在企业演示中测试数据位置、审计能力和 SLA 功能的需求。",
+        "en": "Test demand for data-location, audit, and SLA features in enterprise demos."
+      },
+      "environment_adjustment": {
+        "zh": "对于中企出海来说，信任摩擦是一级约束，因此这一层尤其重要。",
+        "en": "Important for china_to_overseas selling where trust friction is a first-order constraint."
+      }
+    },
+    {
+      "title": {
+        "zh": "把 onboarding 与流程调优打包成付费实施层",
+        "en": "Package onboarding and workflow tuning as a paid implementation layer"
+      },
+      "mechanism": "light_services",
+      "impact": 58,
+      "effort": 36,
+      "risk": 34,
+      "confidence": 54,
+      "formula": "Services revenue = projects_per_quarter * average_setup_fee * 4",
+      "validation": {
+        "zh": "向 5 个中端潜客提供付费试点 onboarding。",
+        "en": "Offer paid pilot onboarding to 5 mid-market prospects."
+      },
+      "environment_adjustment": {
+        "zh": "适用于那些在信任自助 AI 自动化之前，先需要迁移帮助的买家。",
+        "en": "Works for buyers that need migration help before they trust self-serve AI automation."
+      }
+    },
+    {
+      "title": {
+        "zh": "通过更深的 Shopify 与应用市场流程集成来守住分发入口",
+        "en": "Build deeper Shopify and marketplace workflows to defend distribution"
+      },
+      "mechanism": "ecosystem_lock_in",
+      "impact": 67,
+      "effort": 57,
+      "risk": 48,
+      "confidence": 61,
+      "formula": "Retention uplift = active_integrated_accounts * retention_delta * account_gross_profit",
+      "validation": {
+        "zh": "比较新工作流模板上线前后的安装到付费转化率。",
+        "en": "Measure install-to-paid conversion before and after new workflow templates."
+      },
+      "environment_adjustment": {
+        "zh": "强化当前这一路线中最重要的获客通道。",
+        "en": "Strengthens the acquisition channel already favored in this route-to-market."
+      }
+    }
+  ],
+  "risk_flags": [
+    {
+      "type": "cross_border_data_trust",
+      "severity": "high",
+      "evidence": [
+        "E8"
+      ],
+      "safe_control": {
+        "zh": "在进入更大客户之前，明确数据处理角色、存储区域和子处理方。",
+        "en": "Clarify data-processing roles, storage regions, and subprocessors before targeting larger accounts."
+      }
+    },
+    {
+      "type": "suite_player_pressure",
+      "severity": "medium",
+      "evidence": [
+        "E5",
+        "E7"
+      ],
+      "safe_control": {
+        "zh": "通过更强的电商专用工作流和更快的商家 onboarding 做差异化。",
+        "en": "Differentiate on commerce-specific workflows and faster merchant onboarding."
+      }
+    },
+    {
+      "type": "ai_margin_volatility",
+      "severity": "medium",
+      "evidence": [
+        "E2",
+        "E7"
+      ],
+      "safe_control": {
+        "zh": "通过 AI 点数、模型路由和额度上限，防止过于慷慨的套餐侵蚀毛利。",
+        "en": "Use AI credits, routing, and allowance limits to prevent generous bundles from eroding margin."
+      }
+    }
+  ],
+  "unknowns": [
+    {
+      "zh": "不同客户分层的真实 AI 工单处理量尚未披露。",
+      "en": "Actual AI ticket-resolution volume by customer segment is not disclosed."
+    },
+    {
+      "zh": "应用市场分发客户与直接销售客户的收入占比尚不清楚。",
+      "en": "The share of revenue from marketplace-distributed customers versus direct sales is unknown."
+    },
+    {
+      "zh": "企业扩张潜力仍然取决于尚未被直接验证的信任与部署顾虑。",
+      "en": "Enterprise expansion potential depends on trust and deployment concerns that are not yet directly observed."
+    }
+  ],
+  "next_validation": [
+    {
+      "title": {
+        "zh": "执行平台费加 AI 点数的价格访谈",
+        "en": "Run pricing interviews for platform fee plus AI credits"
+      },
+      "owner": "product_and_founder",
+      "time_horizon": "30 days",
+      "success_signal": {
+        "zh": "20 个受访者中至少有 8 个接受在基础席位费之上再叠加与用量挂钩的 AI 账单。",
+        "en": "At least 8 of 20 interviewees accept a usage-linked AI bill on top of base seats."
+      }
+    },
+    {
+      "title": {
+        "zh": "在企业外拓演示中测试信任增强包",
+        "en": "Test a trust package in outbound enterprise demos"
+      },
+      "owner": "sales",
+      "time_horizon": "45 days",
+      "success_signal": {
+        "zh": "至少有 3 个较大潜客主动询问审计、数据位置或 SLA 控制能力。",
+        "en": "At least 3 larger prospects ask for audit, data-location, or SLA controls."
+      }
+    },
+    {
+      "title": {
+        "zh": "测量应用市场安装到试用到付费的转化漏斗",
+        "en": "Measure app-store install to trial to paid conversion"
+      },
+      "owner": "growth",
+      "time_horizon": "30 days",
+      "success_signal": {
+        "zh": "在优化 onboarding 后，安装到付费转化率达到或超过 5%。",
+        "en": "Installs convert to paid at 5 percent or higher after onboarding improvements."
+      }
+    }
+  ],
+  "ai_fit": {
+    "role": "mixed",
+    "summary": {
+      "zh": "AI 既是核心差异化能力，也是主要的毛利风险来源。它应该保持可收费、可见，并尽量和客服结果挂钩，而不是完全埋进席位价格里。",
+      "en": "AI is both the core differentiator and the main margin risk. It should stay billable, visible, and tied to support outcomes rather than being buried entirely inside seat pricing."
+    },
+    "leverage_points": [
+      {
+        "zh": "AI 工单分流与优先级排序",
+        "en": "AI ticket triage and prioritization"
+      },
+      {
+        "zh": "多语言回复生成",
+        "en": "Multilingual reply generation"
+      },
+      {
+        "zh": "推荐宏命令与流程路由",
+        "en": "Suggested macros and workflow routing"
+      },
+      {
+        "zh": "解决质量分析",
+        "en": "Analytics on resolution quality"
+      }
+    ],
+    "disruption_risks": [
+      {
+        "zh": "套件型厂商可以把基础 AI 直接打包进现有客服套餐",
+        "en": "Suite vendors can bundle baseline AI into existing support plans"
+      },
+      {
+        "zh": "如果 AI 成本上升，过于宽松的套餐会压缩毛利",
+        "en": "If AI costs spike, generous bundles can compress gross margin"
+      },
+      {
+        "zh": "如果工作流深度不提升，通用 LLM 外壳会削弱差异化",
+        "en": "Generic LLM wrappers reduce differentiation unless workflow depth improves"
+      }
+    ],
+    "pricing_implication": "base_plan_plus_ai_usage"
+  },
+  "appendix": {
+    "formulas": [
+      "Confidence score = 0.28*source_quality + 0.22*direct_observability + 0.18*triangulation + 0.12*benchmark_fit + 0.10*recency + 0.10*accounting_clarity - risk_penalty",
+      "Environment fit = 0.22*channel_fit + 0.20*payment_fit + 0.20*compliance_fit + 0.15*trust_fit + 0.13*service_fit + 0.10*competition_fit"
+    ],
+    "assumptions": [
+      "Marketplace presence contributes to acquisition but does not prove revenue scale.",
+      "AI usage pricing remains more margin-safe than unlimited seat-only bundles.",
+      "Trust features become monetizable when moving from SMB to larger brands."
+    ],
+    "source_notes": [
+      "This is a synthetic sample report designed to exercise the schema and HTML renderer.",
+      "The structure reflects the April 2026 business model design materials."
+    ]
+  }
+}

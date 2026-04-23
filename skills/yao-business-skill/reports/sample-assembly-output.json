@@ -1,0 +1,770 @@
+{
+  "analysis_mode": "model_diagnosis",
+  "entity": {
+    "input": "https://globalsupport.ai",
+    "name": "GlobalSupport AI",
+    "type": "private_company_or_product",
+    "domain": "globalsupport.ai",
+    "legal_name": "GlobalSupport AI Pte. Ltd.",
+    "jurisdiction": "Singapore",
+    "region": "China team serving global merchants",
+    "confidence": 68.0,
+    "confidence_band": "moderate_estimate"
+  },
+  "market_environment": {
+    "company_origin": "china",
+    "target_market": "overseas",
+    "delivery_direction": "china_to_overseas",
+    "primary_buyer": [
+      "SMB",
+      "merchant",
+      "support_team"
+    ],
+    "payment_environment": [
+      "credit_card",
+      "annual_contract",
+      "invoice_for_larger_accounts"
+    ],
+    "channel_environment": [
+      "seo",
+      "shopify_app_store",
+      "partner_referrals",
+      "content_led_growth"
+    ],
+    "compliance_environment": [
+      "consumer_privacy",
+      "data_cross_border",
+      "platform_policy_dependence"
+    ],
+    "trust_environment": [
+      "trial_required",
+      "case_studies_required",
+      "response_sla_matters"
+    ],
+    "service_environment": [
+      "self_serve_onboarding",
+      "localized_support",
+      "light_implementation"
+    ],
+    "competition_environment": [
+      "suite_pressure",
+      "fragmented_support_stack",
+      "price_sensitive_mid_market"
+    ],
+    "channel_fit": 76,
+    "payment_fit": 72,
+    "compliance_fit": 63,
+    "trust_fit": 68,
+    "service_fit": 74,
+    "competition_fit": 61,
+    "regional_constraints": [
+      "Needs stronger English proof points and recognizable logos",
+      "Cross-border data position must be explicit for enterprise buyers"
+    ],
+    "regional_opportunities": [
+      "A clear base plan plus AI credits matches buyer expectations",
+      "Shopify and helpdesk integrations can reduce trust friction"
+    ],
+    "environment_fit_score": 69.6,
+    "environment_fit_band": "strong",
+    "fit_summary": "Environment fit is strong at 69.6. Strongest dimensions: channel, service. Weakest dimensions: compliance, competition."
+  },
+  "evidence_items": [
+    {
+      "id": "E1",
+      "claim": "The product offers automated multilingual replies for ecommerce support.",
+      "source_url": "https://globalsupport.ai/product",
+      "source_tier": "A",
+      "source_type": "official_site",
+      "source_date": "2026-04-10"
+    },
+    {
+      "id": "E2",
+      "claim": "Pricing includes a seat-based starter plan and AI ticket credits.",
+      "source_url": "https://globalsupport.ai/pricing",
+      "source_tier": "A",
+      "source_type": "pricing",
+      "source_date": "2026-04-10"
+    }
+  ],
+  "current_business_models": [
+    {
+      "model_label": "Seat subscription for growing support teams",
+      "taxonomy_id": "BM-SAAS-SEAT",
+      "payer": "support manager",
+      "pricing_unit": "seat/month",
+      "revenue_basis": "recognized revenue",
+      "status": "confirmed",
+      "evidence_ids": [
+        "E2"
+      ],
+      "notes": "Core recurring revenue layer.",
+      "confidence": 68.4,
+      "confidence_band": "moderate_estimate"
+    },
+    {
+      "model_label": "AI usage credits for ticket automation",
+      "taxonomy_id": "BM-AI-USAGE",
+      "payer": "support operations owner",
+      "pricing_unit": "resolved ticket or AI credits",
+      "revenue_basis": "usage revenue",
+      "status": "confirmed",
+      "evidence_ids": [
+        "E2"
+      ],
+      "notes": "Matches cost variability better than flat seat pricing alone.",
+      "confidence": 62.2,
+      "confidence_band": "moderate_estimate"
+    }
+  ],
+  "financial_estimates": [
+    {
+      "label": "Seat subscription revenue",
+      "formula": "paying_accounts * avg_seats * avg_monthly_price * 12",
+      "variables": [
+        "paying_accounts",
+        "avg_seats",
+        "avg_monthly_price"
+      ],
+      "range": {
+        "low": 480000,
+        "base": 1320000,
+        "high": 2640000,
+        "currency": "USD"
+      },
+      "gross_margin_range": {
+        "low": 280000,
+        "base": 860000,
+        "high": 1810000,
+        "currency": "USD"
+      },
+      "basis": "estimate",
+      "assumptions": [
+        "Uses visible pricing anchors and inferred seat counts by segment"
+      ],
+      "confidence": 61.5,
+      "confidence_band": "moderate_estimate"
+    }
+  ],
+  "direct_competitors": [
+    {
+      "type": "direct",
+      "name": "Gorgias",
+      "url": "https://www.gorgias.com",
+      "category": "Ecommerce helpdesk",
+      "model_tags": [
+        "seat_subscription",
+        "automation",
+        "ecommerce"
+      ],
+      "selection_reason": "Strong overlap in ecommerce support workflows, merchant buyer, and automation packaging.",
+      "score": 83.6,
+      "score_band": "very_strong"
+    },
+    {
+      "type": "direct",
+      "name": "Zendesk AI",
+      "url": "https://www.zendesk.com",
+      "category": "Support suite",
+      "model_tags": [
+        "seat_subscription",
+        "suite",
+        "ai_add_on"
+      ],
+      "selection_reason": "Suite pressure reference for larger support teams.",
+      "score": 79.5,
+      "score_band": "strong"
+    }
+  ],
+  "cross_industry_analogs": [
+    {
+      "type": "cross_industry",
+      "name": "GitHub Copilot",
+      "url": "https://github.com/features/copilot",
+      "category": "Developer productivity AI",
+      "model_tags": [
+        "seat_subscription",
+        "ai_add_on"
+      ],
+      "selection_reason": "Useful reference for base subscription plus AI attach motion.",
+      "score": 74.0,
+      "score_band": "strong"
+    },
+    {
+      "type": "cross_industry",
+      "name": "Grammarly",
+      "url": "https://www.grammarly.com",
+      "category": "Writing productivity",
+      "model_tags": [
+        "freemium",
+        "team_subscription"
+      ],
+      "selection_reason": "Strong personal-to-team upgrade playbook.",
+      "score": 71.7,
+      "score_band": "strong"
+    }
+  ],
+  "benchmark": {
+    "summary": "GlobalSupport AI is well aligned with ecommerce support automation, but it needs stronger differentiation against suites and clearer packaging for larger buyers."
+  },
+  "upgrade_recommendations": [
+    {
+      "title": "Split the packaging into platform fee plus AI automation credits",
+      "mechanism": "subscription_plus_usage",
+      "impact": 82,
+      "effort": 51,
+      "risk": 43,
+      "formula": "ARR = paying_accounts * platform_fee * 12 + automation_volume * credit_price",
+      "validation": "Interview 20 active merchants and test willingness to pay for a usage-linked AI layer.",
+      "environment_adjustment": "Fits overseas buyers who expect billing transparency and usage control.",
+      "confidence": 62.7,
+      "confidence_band": "moderate_estimate"
+    }
+  ],
+  "risk_flags": [
+    {
+      "type": "cross_border_data_trust",
+      "severity": "high",
+      "evidence": [
+        "E1"
+      ],
+      "safe_control": "Clarify data-processing roles, storage regions, and subprocessors before targeting larger accounts."
+    }
+  ],
+  "unknowns": [
+    "Actual AI ticket-resolution volume by customer segment is not disclosed."
+  ],
+  "next_validation": [
+    {
+      "title": "Run pricing interviews for platform fee plus AI credits",
+      "owner": "product_and_founder",
+      "time_horizon": "30 days",
+      "success_signal": "At least 8 of 20 interviewees accept a usage-linked AI bill on top of base seats."
+    }
+  ],
+  "ai_fit": {
+    "role": "mixed",
+    "summary": "AI is both the core differentiator and the main margin risk.",
+    "leverage_points": [
+      "AI ticket triage and prioritization",
+      "Multilingual reply generation"
+    ],
+    "disruption_risks": [
+      "Suite vendors can bundle baseline AI into existing support plans"
+    ],
+    "pricing_implication": "base_plan_plus_ai_usage"
+  },
+  "appendix": {
+    "source_notes": [
+      "This is a structured input example intended for assemble_report.py."
+    ]
+  },
+  "chart_modules": [
+    {
+      "id": "environment_radar",
+      "chart_type": "radar",
+      "title": {
+        "zh": "经营环境六维雷达图",
+        "en": "Operating Environment Radar"
+      },
+      "subtitle": {
+        "zh": "用六个经营维度看这个模式的外部适配轮廓。",
+        "en": "Six operating dimensions show the shape of environment fit."
+      },
+      "insight": {
+        "zh": "最强维度是渠道和服务，最弱维度是合规和竞争。",
+        "en": "The strongest dimensions are Channel and Service, while the weakest are Compliance and Competition."
+      },
+      "data": {
+        "metrics": [
+          {
+            "label": {
+              "zh": "渠道",
+              "en": "Channel"
+            },
+            "value": 76.0
+          },
+          {
+            "label": {
+              "zh": "支付",
+              "en": "Payment"
+            },
+            "value": 72.0
+          },
+          {
+            "label": {
+              "zh": "合规",
+              "en": "Compliance"
+            },
+            "value": 63.0
+          },
+          {
+            "label": {
+              "zh": "信任",
+              "en": "Trust"
+            },
+            "value": 68.0
+          },
+          {
+            "label": {
+              "zh": "服务",
+              "en": "Service"
+            },
+            "value": 74.0
+          },
+          {
+            "label": {
+              "zh": "竞争",
+              "en": "Competition"
+            },
+            "value": 61.0
+          }
+        ],
+        "max_value": 100
+      }
+    },
+    {
+      "id": "environment_heatmap",
+      "chart_type": "heatmap",
+      "title": {
+        "zh": "经营环境热力图",
+        "en": "Environment Heatmap"
+      },
+      "subtitle": {
+        "zh": "把六维适配度压缩成高低温区，优先识别短板。",
+        "en": "Compress the six fit scores into a quick hot-cold view."
+      },
+      "insight": {
+        "zh": "低于 80 分的维度需要优先补强；当前最需要关注的是合规。",
+        "en": "Anything below 80 needs active reinforcement; the first watch item is Compliance."
+      },
+      "data": {
+        "cells": [
+          {
+            "label": {
+              "zh": "渠道",
+              "en": "Channel"
+            },
+            "value": 76.0
+          },
+          {
+            "label": {
+              "zh": "支付",
+              "en": "Payment"
+            },
+            "value": 72.0
+          },
+          {
+            "label": {
+              "zh": "合规",
+              "en": "Compliance"
+            },
+            "value": 63.0
+          },
+          {
+            "label": {
+              "zh": "信任",
+              "en": "Trust"
+            },
+            "value": 68.0
+          },
+          {
+            "label": {
+              "zh": "服务",
+              "en": "Service"
+            },
+            "value": 74.0
+          },
+          {
+            "label": {
+              "zh": "竞争",
+              "en": "Competition"
+            },
+            "value": 61.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "evidence_tier_distribution",
+      "chart_type": "ranked_bar",
+      "title": {
+        "zh": "证据层级分布图",
+        "en": "Evidence Tier Distribution"
+      },
+      "subtitle": {
+        "zh": "看结论到底依赖强证据还是弱证据。",
+        "en": "See whether the report stands on strong or weak evidence."
+      },
+      "insight": {
+        "zh": "当前共有 2 条证据，其中强证据（S/A）占 2 条。",
+        "en": "The report currently uses 2 evidence items, with 2 in the strongest S/A tiers."
+      },
+      "data": {
+        "items": [
+          {
+            "label": "S",
+            "value": 0,
+            "meta": {
+              "zh": "证据数量",
+              "en": "Evidence count"
+            }
+          },
+          {
+            "label": "A",
+            "value": 2,
+            "meta": {
+              "zh": "证据数量",
+              "en": "Evidence count"
+            }
+          },
+          {
+            "label": "B",
+            "value": 0,
+            "meta": {
+              "zh": "证据数量",
+              "en": "Evidence count"
+            }
+          },
+          {
+            "label": "C",
+            "value": 0,
+            "meta": {
+              "zh": "证据数量",
+              "en": "Evidence count"
+            }
+          },
+          {
+            "label": "D",
+            "value": 0,
+            "meta": {
+              "zh": "证据数量",
+              "en": "Evidence count"
+            }
+          }
+        ],
+        "max_value": 2
+      }
+    },
+    {
+      "id": "evidence_recency_timeline",
+      "chart_type": "timeline",
+      "title": {
+        "zh": "证据时间线",
+        "en": "Evidence Recency Timeline"
+      },
+      "subtitle": {
+        "zh": "看主要证据是否足够新，避免报告被旧信息主导。",
+        "en": "Check whether the report is anchored in current evidence."
+      },
+      "insight": {
+        "zh": "最新证据主要集中在 2026 年，共 2 条。",
+        "en": "The most recent evidence is concentrated in 2026, with 2 items."
+      },
+      "data": {
+        "items": [
+          {
+            "label": "2026",
+            "value": 2,
+            "meta": {
+              "zh": "证据条数",
+              "en": "Evidence count"
+            }
+          }
+        ],
+        "max_value": 2
+      }
+    },
+    {
+      "id": "model_confidence_ranking",
+      "chart_type": "ranked_bar",
+      "title": {
+        "zh": "商业模式置信度排行",
+        "en": "Business Model Confidence Ranking"
+      },
+      "subtitle": {
+        "zh": "对比各模式线的确定性，避免把潜在线当成核心盘。",
+        "en": "Compare certainty across monetization lines."
+      },
+      "insight": {
+        "zh": "当前最确定的模式线是Seat subscription for growing support teams，可信度 68.4。",
+        "en": "The highest-confidence model line is Seat subscription for growing support teams, at 68.4."
+      },
+      "data": {
+        "items": [
+          {
+            "label": {
+              "zh": "Seat subscription for growing support teams",
+              "en": "Seat subscription for growing support teams"
+            },
+            "value": 68.4,
+            "meta": {
+              "zh": "confirmed",
+              "en": "confirmed"
+            }
+          },
+          {
+            "label": {
+              "zh": "AI usage credits for ticket automation",
+              "en": "AI usage credits for ticket automation"
+            },
+            "value": 62.2,
+            "meta": {
+              "zh": "confirmed",
+              "en": "confirmed"
+            }
+          }
+        ],
+        "max_value": 100
+      }
+    },
+    {
+      "id": "financial_range_comparison",
+      "chart_type": "range_bar",
+      "title": {
+        "zh": "财务区间对比图",
+        "en": "Financial Range Comparison"
+      },
+      "subtitle": {
+        "zh": "所有关键收入线都以 low / base / high 区间展示。",
+        "en": "Every key financial line is shown as low / base / high instead of fake precision."
+      },
+      "insight": {
+        "zh": "基准情景下最大的收入线是Seat subscription revenue，约 1.32M USD。",
+        "en": "In the base case, the largest revenue line is Seat subscription revenue at about 1.32M USD."
+      },
+      "data": {
+        "items": [
+          {
+            "label": {
+              "zh": "Seat subscription revenue",
+              "en": "Seat subscription revenue"
+            },
+            "low": 480000,
+            "base": 1320000,
+            "high": 2640000,
+            "unit": "USD"
+          }
+        ]
+      }
+    },
+    {
+      "id": "financial_mix_share",
+      "chart_type": "stacked_bar",
+      "title": {
+        "zh": "收入结构堆叠图",
+        "en": "Revenue Mix Share"
+      },
+      "subtitle": {
+        "zh": "看主要收入盘和第二曲线的结构。",
+        "en": "See the main revenue engine and the secondary curves."
+      },
+      "insight": {
+        "zh": "当前收入结构高度集中在Seat subscription revenue，约占基准情景的 100.0%。",
+        "en": "The revenue mix is concentrated in Seat subscription revenue, which represents about 100.0% of the base case."
+      },
+      "data": {
+        "items": [
+          {
+            "label": {
+              "zh": "Seat subscription revenue",
+              "en": "Seat subscription revenue"
+            },
+            "value": 1320000,
+            "unit": "USD"
+          }
+        ],
+        "total": 1320000
+      }
+    },
+    {
+      "id": "direct_competitor_ranking",
+      "chart_type": "ranked_bar",
+      "title": {
+        "zh": "直接竞品得分排行",
+        "en": "Direct Competitor Ranking"
+      },
+      "subtitle": {
+        "zh": "最值得持续监控的正面对手。",
+        "en": "The direct threats that deserve the closest watch."
+      },
+      "insight": {
+        "zh": "当前最强的正面对手是Gorgias，竞争相似度 83.6。",
+        "en": "The strongest direct threat is Gorgias with a similarity score of 83.6."
+      },
+      "data": {
+        "items": [
+          {
+            "label": {
+              "zh": "Gorgias",
+              "en": "Gorgias"
+            },
+            "value": 83.6,
+            "meta": {
+              "zh": "Ecommerce helpdesk",
+              "en": "Ecommerce helpdesk"
+            }
+          },
+          {
+            "label": {
+              "zh": "Zendesk AI",
+              "en": "Zendesk AI"
+            },
+            "value": 79.5,
+            "meta": {
+              "zh": "Support suite",
+              "en": "Support suite"
+            }
+          }
+        ],
+        "max_value": 100
+      }
+    },
+    {
+      "id": "cross_industry_analog_ranking",
+      "chart_type": "ranked_bar",
+      "title": {
+        "zh": "跨行业类比分排行",
+        "en": "Cross-Industry Analog Ranking"
+      },
+      "subtitle": {
+        "zh": "看哪些模式值得迁移，而不是只盯同类产品。",
+        "en": "Show which models are most transferable from other categories."
+      },
+      "insight": {
+        "zh": "当前最强的跨行业类比是GitHub Copilot，说明其平台扩展逻辑最值得借鉴。",
+        "en": "The strongest cross-industry analog is GitHub Copilot, suggesting its expansion logic is highly transferable."
+      },
+      "data": {
+        "items": [
+          {
+            "label": {
+              "zh": "GitHub Copilot",
+              "en": "GitHub Copilot"
+            },
+            "value": 74.0,
+            "meta": {
+              "zh": "Developer productivity AI",
+              "en": "Developer productivity AI"
+            }
+          },
+          {
+            "label": {
+              "zh": "Grammarly",
+              "en": "Grammarly"
+            },
+            "value": 71.7,
+            "meta": {
+              "zh": "Writing productivity",
+              "en": "Writing productivity"
+            }
+          }
+        ],
+        "max_value": 100
+      }
+    },
+    {
+      "id": "upgrade_impact_effort",
+      "chart_type": "quadrant",
+      "title": {
+        "zh": "升级建议影响-投入矩阵",
+        "en": "Upgrade Impact-Effort Matrix"
+      },
+      "subtitle": {
+        "zh": "先做高影响、低投入，再决定哪些建议值得重投入。",
+        "en": "Prioritize high-impact, low-effort upgrades first."
+      },
+      "insight": {
+        "zh": "当前可优先推进的 quick wins 有 0 项。",
+        "en": "There are 0 clear quick wins in the current recommendation set."
+      },
+      "data": {
+        "items": [
+          {
+            "label": {
+              "zh": "Split the packaging into platform fee plus AI automation credits",
+              "en": "Split the packaging into platform fee plus AI automation credits"
+            },
+            "x": 51,
+            "y": 82,
+            "tone": "balanced",
+            "risk": 43
+          }
+        ],
+        "x_label": {
+          "zh": "投入",
+          "en": "Effort"
+        },
+        "y_label": {
+          "zh": "影响",
+          "en": "Impact"
+        }
+      }
+    },
+    {
+      "id": "risk_severity_map",
+      "chart_type": "heatmap",
+      "title": {
+        "zh": "风险热力图",
+        "en": "Risk Severity Map"
+      },
+      "subtitle": {
+        "zh": "把风险强度和风险类型一起摆出来。",
+        "en": "Keep downside visible by mapping risk type and severity."
+      },
+      "insight": {
+        "zh": "当前最高风险项是cross_border_data_trust。",
+        "en": "The highest-severity current risk is cross_border_data_trust."
+      },
+      "data": {
+        "cells": [
+          {
+            "label": {
+              "zh": "cross_border_data_trust",
+              "en": "cross_border_data_trust"
+            },
+            "value": 75,
+            "meta": {
+              "zh": "high",
+              "en": "high"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "ai_leverage_balance",
+      "chart_type": "balance",
+      "title": {
+        "zh": "AI 杠杆与冲击平衡图",
+        "en": "AI Leverage Balance"
+      },
+      "subtitle": {
+        "zh": "同时看 AI 带来的增长点和它带来的新压力。",
+        "en": "Hold AI upside and AI pressure in the same frame."
+      },
+      "insight": {
+        "zh": "当前识别出 2 个 AI 杠杆点，和 1 个 AI 冲击风险。",
+        "en": "The report identifies 2 AI leverage points and 1 disruption risks."
+      },
+      "data": {
+        "positive": [
+          {
+            "zh": "AI ticket triage and prioritization",
+            "en": "AI ticket triage and prioritization"
+          },
+          {
+            "zh": "Multilingual reply generation",
+            "en": "Multilingual reply generation"
+          }
+        ],
+        "negative": [
+          {
+            "zh": "Suite vendors can bundle baseline AI into existing support plans",
+            "en": "Suite vendors can bundle baseline AI into existing support plans"
+          }
+        ]
+      }
+    }
+  ]
+}

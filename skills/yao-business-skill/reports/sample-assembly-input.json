@@ -1,0 +1,326 @@
+{
+  "analysis_mode": "model_diagnosis",
+  "entity": {
+    "input": "https://globalsupport.ai",
+    "name": "GlobalSupport AI",
+    "type": "private_company_or_product",
+    "domain": "globalsupport.ai",
+    "legal_name": "GlobalSupport AI Pte. Ltd.",
+    "jurisdiction": "Singapore",
+    "region": "China team serving global merchants"
+  },
+  "entity_confidence_inputs": {
+    "source_quality": 82,
+    "direct_observability": 74,
+    "triangulation": 68,
+    "benchmark_fit": 64,
+    "recency": 88,
+    "accounting_clarity": 70,
+    "risk_penalty": 7
+  },
+  "market_environment": {
+    "company_origin": "china",
+    "target_market": "overseas",
+    "delivery_direction": "china_to_overseas",
+    "primary_buyer": [
+      "SMB",
+      "merchant",
+      "support_team"
+    ],
+    "payment_environment": [
+      "credit_card",
+      "annual_contract",
+      "invoice_for_larger_accounts"
+    ],
+    "channel_environment": [
+      "seo",
+      "shopify_app_store",
+      "partner_referrals",
+      "content_led_growth"
+    ],
+    "compliance_environment": [
+      "consumer_privacy",
+      "data_cross_border",
+      "platform_policy_dependence"
+    ],
+    "trust_environment": [
+      "trial_required",
+      "case_studies_required",
+      "response_sla_matters"
+    ],
+    "service_environment": [
+      "self_serve_onboarding",
+      "localized_support",
+      "light_implementation"
+    ],
+    "competition_environment": [
+      "suite_pressure",
+      "fragmented_support_stack",
+      "price_sensitive_mid_market"
+    ],
+    "channel_fit": 76,
+    "payment_fit": 72,
+    "compliance_fit": 63,
+    "trust_fit": 68,
+    "service_fit": 74,
+    "competition_fit": 61,
+    "regional_constraints": [
+      "Needs stronger English proof points and recognizable logos",
+      "Cross-border data position must be explicit for enterprise buyers"
+    ],
+    "regional_opportunities": [
+      "A clear base plan plus AI credits matches buyer expectations",
+      "Shopify and helpdesk integrations can reduce trust friction"
+    ]
+  },
+  "evidence_items": [
+    {
+      "id": "E1",
+      "claim": "The product offers automated multilingual replies for ecommerce support.",
+      "source_url": "https://globalsupport.ai/product",
+      "source_tier": "A",
+      "source_type": "official_site",
+      "source_date": "2026-04-10"
+    },
+    {
+      "id": "E2",
+      "claim": "Pricing includes a seat-based starter plan and AI ticket credits.",
+      "source_url": "https://globalsupport.ai/pricing",
+      "source_tier": "A",
+      "source_type": "pricing",
+      "source_date": "2026-04-10"
+    }
+  ],
+  "current_business_models": [
+    {
+      "model_label": "Seat subscription for growing support teams",
+      "taxonomy_id": "BM-SAAS-SEAT",
+      "payer": "support manager",
+      "pricing_unit": "seat/month",
+      "revenue_basis": "recognized revenue",
+      "status": "confirmed",
+      "evidence_ids": [
+        "E2"
+      ],
+      "notes": "Core recurring revenue layer.",
+      "confidence_inputs": {
+        "source_quality": 75,
+        "direct_observability": 80,
+        "triangulation": 62,
+        "benchmark_fit": 68,
+        "recency": 88,
+        "accounting_clarity": 77,
+        "risk_penalty": 6
+      }
+    },
+    {
+      "model_label": "AI usage credits for ticket automation",
+      "taxonomy_id": "BM-AI-USAGE",
+      "payer": "support operations owner",
+      "pricing_unit": "resolved ticket or AI credits",
+      "revenue_basis": "usage revenue",
+      "status": "confirmed",
+      "evidence_ids": [
+        "E2"
+      ],
+      "notes": "Matches cost variability better than flat seat pricing alone.",
+      "confidence_inputs": {
+        "source_quality": 72,
+        "direct_observability": 74,
+        "triangulation": 58,
+        "benchmark_fit": 64,
+        "recency": 88,
+        "accounting_clarity": 68,
+        "risk_penalty": 8
+      }
+    }
+  ],
+  "financial_estimates": [
+    {
+      "label": "Seat subscription revenue",
+      "formula": "paying_accounts * avg_seats * avg_monthly_price * 12",
+      "variables": [
+        "paying_accounts",
+        "avg_seats",
+        "avg_monthly_price"
+      ],
+      "range": {
+        "low": 480000,
+        "base": 1320000,
+        "high": 2640000,
+        "currency": "USD"
+      },
+      "gross_margin_range": {
+        "low": 280000,
+        "base": 860000,
+        "high": 1810000,
+        "currency": "USD"
+      },
+      "basis": "estimate",
+      "assumptions": [
+        "Uses visible pricing anchors and inferred seat counts by segment"
+      ],
+      "confidence_inputs": {
+        "source_quality": 70,
+        "direct_observability": 64,
+        "triangulation": 61,
+        "benchmark_fit": 66,
+        "recency": 86,
+        "accounting_clarity": 73,
+        "risk_penalty": 7
+      }
+    }
+  ],
+  "direct_competitors": [
+    {
+      "type": "direct",
+      "name": "Gorgias",
+      "url": "https://www.gorgias.com",
+      "category": "Ecommerce helpdesk",
+      "model_tags": [
+        "seat_subscription",
+        "automation",
+        "ecommerce"
+      ],
+      "selection_reason": "Strong overlap in ecommerce support workflows, merchant buyer, and automation packaging.",
+      "scoring_inputs": {
+        "customer_overlap": 92,
+        "need_overlap": 90,
+        "feature_overlap": 88,
+        "pricing_model_overlap": 86,
+        "channel_overlap": 82,
+        "financial_comparability": 76,
+        "evidence_quality": 72,
+        "scale_signal": 78,
+        "risk_similarity": 65
+      }
+    },
+    {
+      "type": "direct",
+      "name": "Zendesk AI",
+      "url": "https://www.zendesk.com",
+      "category": "Support suite",
+      "model_tags": [
+        "seat_subscription",
+        "suite",
+        "ai_add_on"
+      ],
+      "selection_reason": "Suite pressure reference for larger support teams.",
+      "scoring_inputs": {
+        "customer_overlap": 78,
+        "need_overlap": 80,
+        "feature_overlap": 74,
+        "pricing_model_overlap": 72,
+        "channel_overlap": 88,
+        "financial_comparability": 84,
+        "evidence_quality": 82,
+        "scale_signal": 90,
+        "risk_similarity": 68
+      }
+    }
+  ],
+  "cross_industry_analogs": [
+    {
+      "type": "cross_industry",
+      "name": "GitHub Copilot",
+      "url": "https://github.com/features/copilot",
+      "category": "Developer productivity AI",
+      "model_tags": [
+        "seat_subscription",
+        "ai_add_on"
+      ],
+      "selection_reason": "Useful reference for base subscription plus AI attach motion.",
+      "scoring_inputs": {
+        "revenue_mechanism_similarity": 86,
+        "unit_economics_similarity": 74,
+        "growth_flywheel_similarity": 71,
+        "supply_demand_structure_similarity": 60,
+        "pricing_psychology_similarity": 78,
+        "operating_constraint_similarity": 63,
+        "stage_adaptation": 70
+      }
+    },
+    {
+      "type": "cross_industry",
+      "name": "Grammarly",
+      "url": "https://www.grammarly.com",
+      "category": "Writing productivity",
+      "model_tags": [
+        "freemium",
+        "team_subscription"
+      ],
+      "selection_reason": "Strong personal-to-team upgrade playbook.",
+      "scoring_inputs": {
+        "revenue_mechanism_similarity": 80,
+        "unit_economics_similarity": 71,
+        "growth_flywheel_similarity": 74,
+        "supply_demand_structure_similarity": 58,
+        "pricing_psychology_similarity": 75,
+        "operating_constraint_similarity": 61,
+        "stage_adaptation": 69
+      }
+    }
+  ],
+  "benchmark": {
+    "summary": "GlobalSupport AI is well aligned with ecommerce support automation, but it needs stronger differentiation against suites and clearer packaging for larger buyers."
+  },
+  "upgrade_recommendations": [
+    {
+      "title": "Split the packaging into platform fee plus AI automation credits",
+      "mechanism": "subscription_plus_usage",
+      "impact": 82,
+      "effort": 51,
+      "risk": 43,
+      "formula": "ARR = paying_accounts * platform_fee * 12 + automation_volume * credit_price",
+      "validation": "Interview 20 active merchants and test willingness to pay for a usage-linked AI layer.",
+      "environment_adjustment": "Fits overseas buyers who expect billing transparency and usage control.",
+      "confidence_inputs": {
+        "source_quality": 68,
+        "direct_observability": 62,
+        "triangulation": 64,
+        "benchmark_fit": 74,
+        "recency": 84,
+        "accounting_clarity": 72,
+        "risk_penalty": 6
+      }
+    }
+  ],
+  "risk_flags": [
+    {
+      "type": "cross_border_data_trust",
+      "severity": "high",
+      "evidence": [
+        "E1"
+      ],
+      "safe_control": "Clarify data-processing roles, storage regions, and subprocessors before targeting larger accounts."
+    }
+  ],
+  "unknowns": [
+    "Actual AI ticket-resolution volume by customer segment is not disclosed."
+  ],
+  "next_validation": [
+    {
+      "title": "Run pricing interviews for platform fee plus AI credits",
+      "owner": "product_and_founder",
+      "time_horizon": "30 days",
+      "success_signal": "At least 8 of 20 interviewees accept a usage-linked AI bill on top of base seats."
+    }
+  ],
+  "ai_fit": {
+    "role": "mixed",
+    "summary": "AI is both the core differentiator and the main margin risk.",
+    "leverage_points": [
+      "AI ticket triage and prioritization",
+      "Multilingual reply generation"
+    ],
+    "disruption_risks": [
+      "Suite vendors can bundle baseline AI into existing support plans"
+    ],
+    "pricing_implication": "base_plan_plus_ai_usage"
+  },
+  "appendix": {
+    "source_notes": [
+      "This is a structured input example intended for assemble_report.py."
+    ]
+  }
+}
