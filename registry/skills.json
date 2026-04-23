@@ -52,7 +52,7 @@
       "source_local_path": "/Users/laoyao/AI Coding/03-Development/Skills/yao-bayesian-skill",
       "collection_path": "skills/yao-bayesian-skill",
       "lifecycle": "active",
-      "sync_status": "staged",
+      "sync_status": "published",
       "github_repo": "yao-open-skills",
       "github_url": "https://github.com/yaojingang/yao-open-skills/tree/main/skills/yao-bayesian-skill",
       "guide_path": "docs/skills/yao-bayesian-skill.md",
@@ -64,7 +64,7 @@
         "export",
         "workflow"
       ],
-      "last_synced_at": null,
+      "last_synced_at": "2026-04-23",
       "updated_at": "2026-04-23"
     },
     {

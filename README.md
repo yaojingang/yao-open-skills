@@ -150,7 +150,7 @@ yao-open-skills/
 | --- | --- | --- | --- | --- | --- | --- |
 | [learning-builder](skills/learning-builder/SKILL.md) | [guide](docs/skills/learning-builder.md) | `active` | `published` | [skills/learning-builder](skills/learning-builder) | `external-local-source` | [link](https://github.com/yaojingang/yao-open-skills/tree/main/skills/learning-builder) |
 | [skill-doctor](skills/skill-doctor/SKILL.md) | [guide](docs/skills/skill-doctor.md) | `active` | `published` | [skills/skill-doctor](skills/skill-doctor) | `external-local-source` | [link](https://github.com/yaojingang/yao-open-skills/tree/main/skills/skill-doctor) |
-| [yao-bayesian-skill](skills/yao-bayesian-skill/SKILL.md) | [guide](docs/skills/yao-bayesian-skill.md) | `active` | `staged` | [skills/yao-bayesian-skill](skills/yao-bayesian-skill) | `external-local-source` | [link](https://github.com/yaojingang/yao-open-skills/tree/main/skills/yao-bayesian-skill) |
+| [yao-bayesian-skill](skills/yao-bayesian-skill/SKILL.md) | [guide](docs/skills/yao-bayesian-skill.md) | `active` | `published` | [skills/yao-bayesian-skill](skills/yao-bayesian-skill) | `external-local-source` | [link](https://github.com/yaojingang/yao-open-skills/tree/main/skills/yao-bayesian-skill) |
 | [yao-open-skills-sync](skills/yao-open-skills-sync/SKILL.md) | [guide](docs/skills/yao-open-skills-sync.md) | `active` | `published` | [skills/yao-open-skills-sync](skills/yao-open-skills-sync) | [skills/yao-open-skills-sync](skills/yao-open-skills-sync) | [link](https://github.com/yaojingang/yao-open-skills/tree/main/skills/yao-open-skills-sync) |
 <!-- catalog:end -->
 
