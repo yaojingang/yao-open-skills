@@ -17,6 +17,7 @@ Yao Open Skills is a growing collection of AI-native skills designed for real-wo
 - [OpenYao 理念](#openyao-理念)
 - [推荐入口](#推荐入口)
 - [Published Skill Guides](#published-skill-guides)
+- [Featured Published Skill](#featured-published-skill)
 - [Skill Catalog](#skill-catalog)
 - [发布规则](docs/publishing-rules.md)
 - [命名规范](docs/naming-conventions.md)
@@ -113,6 +114,30 @@ yao-open-skills/
 - [Skill Doctor](docs/skills/skill-doctor.md)
 - [Yao Bayesian Skill](docs/skills/yao-bayesian-skill.md)
 - [Yao Business Skill](docs/skills/yao-business-skill.md)
+
+## Featured Published Skill
+
+### Yao Bayesian Skill
+
+[`yao-bayesian-skill`](docs/skills/yao-bayesian-skill.md) 是当前公开合集里最完整的一类“证据到行动”型 Skill。
+
+它的重点不是把贝叶斯定理讲一遍，而是把一个现实里的不确定问题，压缩成一个能执行、能复盘、能继续迭代的决策流程。
+
+它的公开版本现在有这些比较突出的特点：
+
+- 支持从不完整输入开始，先给弱先验和初步判断
+- 支持多轮追问，持续更新先验、后验和决策准备度
+- 会记录每一轮对话里，哪些信息改变了判断
+- 报告先给普通用户可读的结论，再展示技术细节
+- 默认生成 `Markdown + 双语 HTML`
+- HTML 支持中英切换、粘性导航、打印，以及在浏览器里直接存储为 PDF
+
+如果你想快速理解这个 Skill，建议按这个顺序看：
+
+1. [公开说明文档](docs/skills/yao-bayesian-skill.md)
+2. [Skill 入口](skills/yao-bayesian-skill/SKILL.md)
+3. [详细案例输入](skills/yao-bayesian-skill/input/detailed_growth_case.json)
+4. [导出脚本](skills/yao-bayesian-skill/scripts/generate_report_bundle.py)
 
 ## 工作流
 
