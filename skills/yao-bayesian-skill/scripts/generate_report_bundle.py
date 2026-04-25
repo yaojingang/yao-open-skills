@@ -1216,7 +1216,7 @@ def build_html(request: dict, report: dict) -> str:
         <span class="pill">{dual_html("默认简版只看结论和行动", "Simple mode shows only the conclusion and action")}</span>
         {process_badge_html}
       </div>
-      <div class="grid">
+      <div class="grid hero-grid">
         <div class="metric-card">
           <div class="metric-label">{dual_html("后验概率", "Posterior")}</div>
           <div class="metric-value">{html_text(fmt_pct(report["summary"]["posterior_probability"]))}</div>
@@ -1297,7 +1297,7 @@ def build_html(request: dict, report: dict) -> str:
         "先验设置",
         "Prior setup",
         f'''
-      <div class="grid compact-grid">
+          <div class="grid compact-grid process-grid">
         <div class="metric-card">
           <div class="metric-label">{dual_html("先验概率", "Prior probability")}</div>
           <div class="metric-value">{html_text(fmt_pct(report["prior"]["probability"]))}</div>
