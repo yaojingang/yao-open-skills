@@ -74,10 +74,14 @@ The HTML report should also include:
 - section anchor links for the main report sections
 - a one-click Chinese / English language toggle
 - an executive-summary style top section that ordinary users can understand without reading the full Bayesian details
-- a `简版 / 专业版` display toggle with `简版` as the default
+- the professional view as the default presentation
 - collapsible advanced sections so evidence, prior, sensitivity, and appendix stay closed until requested
 - a conversation-process section with a change chart when the input includes multi-turn dialogue rounds
 - the same workflow and capability summary as the PDF and Word versions
+
+## PDF Table Rule
+
+Long Chinese or mixed Chinese-English text inside PDF tables must wrap within the cell width. Do not allow the text to run past the right edge of the page.
 
 ## Automation Rule
 

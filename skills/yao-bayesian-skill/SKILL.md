@@ -42,8 +42,9 @@ description: Convert uncertain real-world choices into an auditable Bayesian evi
 - Human-facing reports default to Simplified Chinese; HTML must also provide bilingual Chinese/English switching with sticky top navigation.
 - The bundle must explicitly state that it was auto-generated from one structured input.
 - Put a plain-language executive summary first: what to do now, why, and why not the other options before the technical sections.
-- HTML should offer a `简版 / 专业版` switch. Default to `简版`, showing only the conclusion and action area; advanced sections should stay collapsed until opened.
+- HTML should default to the full professional view while keeping advanced sections collapsible.
 - HTML should also show a conversation-process section with a change chart when a multi-turn log is present.
+- PDF tables must wrap long CJK or mixed Chinese-English text inside the cell width and must not overflow beyond the right margin.
 
 ## Reference Map
 

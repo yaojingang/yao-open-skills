@@ -6,6 +6,7 @@ import importlib.util
 import json
 import math
 import os
+import subprocess
 import sys
 from html import escape
 from pathlib import Path
@@ -57,6 +58,7 @@ from bayesian_decision_report import build_report, load_request, localize_text
 
 ROOT = Path(__file__).resolve().parent.parent
 CSS_PATH = ROOT / "templates" / "report-theme.css"
+PRINT_CSS_PATH = ROOT / "templates" / "report-print.css"
 
 TOP_NAV = [
     ("summary", "先看结论", "Summary"),
@@ -1358,7 +1360,6 @@ def build_html(request: dict, report: dict) -> str:
     (function () {{
       const root = document.body;
       const buttons = Array.from(document.querySelectorAll("[data-lang-button]"));
-      const viewButtons = Array.from(document.querySelectorAll("[data-view-button]"));
       function setLang(lang) {{
         root.dataset.lang = lang;
         buttons.forEach((button) => {{
@@ -1369,21 +1370,8 @@ def build_html(request: dict, report: dict) -> str:
         }} catch (error) {{
         }}
       }}
-      function setView(view) {{
-        root.dataset.view = view;
-        viewButtons.forEach((button) => {{
-          button.classList.toggle("is-active", button.dataset.viewButton === view);
-        }});
-        try {{
-          window.localStorage.setItem("yao-bayesian-report-view", view);
-        }} catch (error) {{
-        }}
-      }}
       buttons.forEach((button) => {{
         button.addEventListener("click", () => setLang(button.dataset.langButton));
-      }});
-      viewButtons.forEach((button) => {{
-        button.addEventListener("click", () => setView(button.dataset.viewButton));
       }});
       document.querySelectorAll('a.menu-link').forEach((link) => {{
         link.addEventListener('click', () => {{
@@ -1400,16 +1388,6 @@ def build_html(request: dict, report: dict) -> str:
           setLang(saved);
         }}
       }} catch (error) {{
-      }}
-      try {{
-        const savedView = window.localStorage.getItem("yao-bayesian-report-view");
-        if (savedView === "pro" || savedView === "simple") {{
-          setView(savedView);
-        }} else {{
-          setView("simple");
-        }}
-      }} catch (error) {{
-        setView("simple");
       }}
       if (!root.dataset.lang) {{
         setLang("zh");
@@ -1474,22 +1452,35 @@ def paragraph(text: str, style: ParagraphStyle) -> Paragraph:
     return Paragraph(escape(text).replace("\n", "<br/>"), style)
 
 
+def pdf_table_paragraph(text: str, header: bool = False) -> Paragraph:
+    style = ParagraphStyle(
+        "PdfTableHeader" if header else "PdfTableCell",
+        fontName="STSong-Light",
+        fontSize=8.6 if header else 8.8,
+        leading=11 if header else 12,
+        textColor=colors.HexColor("#141413" if header else "#3d3d3a"),
+        wordWrap="CJK",
+        splitLongWords=True,
+    )
+    return Paragraph(escape(str(text)).replace("\n", "<br/>"), style)
+
+
 def make_pdf_table(rows: list[list[str]], widths: list[float]) -> Table:
-    table = Table(rows, colWidths=widths, repeatRows=1)
+    normalized_rows = []
+    for row_index, row in enumerate(rows):
+        normalized_rows.append([pdf_table_paragraph(cell, header=(row_index == 0)) for cell in row])
+    table = Table(normalized_rows, colWidths=widths, repeatRows=1)
     table.setStyle(
         TableStyle(
             [
-                ("FONTNAME", (0, 0), (-1, -1), "STSong-Light"),
-                ("FONTSIZE", (0, 0), (-1, -1), 9),
-                ("LEADING", (0, 0), (-1, -1), 12),
                 ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#EEF2F7")),
                 ("TEXTCOLOR", (0, 0), (-1, 0), colors.HexColor("#141413")),
                 ("GRID", (0, 0), (-1, -1), 0.5, colors.HexColor("#e8e5da")),
                 ("VALIGN", (0, 0), (-1, -1), "TOP"),
-                ("LEFTPADDING", (0, 0), (-1, -1), 6),
-                ("RIGHTPADDING", (0, 0), (-1, -1), 6),
-                ("TOPPADDING", (0, 0), (-1, -1), 5),
-                ("BOTTOMPADDING", (0, 0), (-1, -1), 5),
+                ("LEFTPADDING", (0, 0), (-1, -1), 4.5),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 4.5),
+                ("TOPPADDING", (0, 0), (-1, -1), 4.5),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 4.5),
             ]
         )
     )
@@ -1548,7 +1539,7 @@ def build_pdf(request: dict, report: dict, output_path: Path) -> None:
                     item.get("interim_judgment") or "-",
                 ]
             )
-        story.append(make_pdf_table(round_rows, [10 * mm, 24 * mm, 18 * mm, 18 * mm, 18 * mm, 74 * mm]))
+        story.append(make_pdf_table(round_rows, [10 * mm, 24 * mm, 16 * mm, 16 * mm, 16 * mm, 72 * mm]))
         story.append(Spacer(1, 3 * mm))
 
     story.append(paragraph("决策问题", heading_style))
@@ -1591,7 +1582,7 @@ def build_pdf(request: dict, report: dict, output_path: Path) -> None:
                 item.get("summary") or "-",
             ]
         )
-    story.append(make_pdf_table(evidence_rows, [40 * mm, 12 * mm, 14 * mm, 16 * mm, 18 * mm, 78 * mm]))
+    story.append(make_pdf_table(evidence_rows, [34 * mm, 10 * mm, 12 * mm, 14 * mm, 14 * mm, 80 * mm]))
     story.append(Spacer(1, 3 * mm))
 
     story.append(paragraph("贝叶斯更新", heading_style))
@@ -1618,7 +1609,7 @@ def build_pdf(request: dict, report: dict, output_path: Path) -> None:
                 fmt_pct(action["action_threshold"]),
             ]
         )
-    story.append(make_pdf_table(action_rows, [54 * mm, 28 * mm, 28 * mm, 24 * mm, 24 * mm]))
+    story.append(make_pdf_table(action_rows, [44 * mm, 22 * mm, 22 * mm, 20 * mm, 18 * mm]))
     story.append(Spacer(1, 3 * mm))
 
     story.append(paragraph("敏感性分析", heading_style))
