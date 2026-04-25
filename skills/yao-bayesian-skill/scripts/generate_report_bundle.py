@@ -1178,21 +1178,16 @@ def build_html(request: dict, report: dict) -> str:
 {css}
   </style>
 </head>
-<body data-lang="zh" data-view="simple">
+<body data-lang="zh" data-view="pro">
   <header class="topbar">
     <div class="topbar-inner">
       <div class="brand-block">
         <div class="brand-mark">YAO</div>
         <div>
           <div class="brand-title">{dual_html("贝叶斯决策报告", "Bayesian Decision Report")}</div>
-          <div class="brand-subtitle">{dual_html("自动生成 HTML / PDF / Word bundle", "Auto-generated HTML / PDF / Word bundle")}</div>
         </div>
       </div>
       <nav class="menu">{nav_links}</nav>
-      <div class="view-toggle" aria-label="View mode">
-        <button class="view-button is-active" type="button" data-view-button="simple">简版</button>
-        <button class="view-button" type="button" data-view-button="pro">专业版</button>
-      </div>
       <div class="lang-toggle" aria-label="Language switcher">
         <button class="lang-button is-active" type="button" data-lang-button="zh">中文</button>
         <button class="lang-button" type="button" data-lang-button="en">EN</button>
@@ -1213,7 +1208,7 @@ def build_html(request: dict, report: dict) -> str:
       <div class="hero-meta">
         <span class="pill">{dual_html("自动生成", "Auto-generated")}</span>
         <span class="pill">{dual_html("中文主报告 + 英文切换", "Chinese-primary + English toggle")}</span>
-        <span class="pill">{dual_html("默认简版只看结论和行动", "Simple mode shows only the conclusion and action")}</span>
+        <span class="pill">{dual_html("默认完整专业版", "Professional view by default")}</span>
         {process_badge_html}
       </div>
       <div class="grid hero-grid">
