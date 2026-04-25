@@ -13,47 +13,6 @@ from html import escape
 from pathlib import Path
 from typing import Any
 
-
-def maybe_reexec_with_bundled_python() -> None:
-    missing = [name for name in ("docx", "reportlab") if importlib.util.find_spec(name) is None]
-    if not missing:
-        return
-    if os.environ.get("CODEX_BUNDLED_PYTHON_REEXEC") == "1":
-        raise SystemExit(f"Missing Python packages after re-exec: {', '.join(missing)}")
-
-    candidates = [
-        os.environ.get("CODEX_PRIMARY_RUNTIME_PYTHON"),
-        str(Path.home() / ".cache" / "codex-runtimes" / "codex-primary-runtime" / "dependencies" / "python" / "bin" / "python3"),
-    ]
-    for candidate in candidates:
-        if not candidate:
-            continue
-        path = Path(candidate)
-        if not path.exists():
-            continue
-        if path.resolve() == Path(sys.executable).resolve():
-            continue
-        env = os.environ.copy()
-        env["CODEX_BUNDLED_PYTHON_REEXEC"] = "1"
-        os.execve(str(path), [str(path), __file__, *sys.argv[1:]], env)
-
-    raise SystemExit(f"Unable to locate a bundled Python runtime with: {', '.join(missing)}")
-
-
-maybe_reexec_with_bundled_python()
-
-from docx import Document
-from docx.enum.text import WD_ALIGN_PARAGRAPH
-from docx.oxml.ns import qn
-from docx.shared import Pt
-from reportlab.lib import colors
-from reportlab.lib.pagesizes import A4
-from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
-from reportlab.lib.units import mm
-from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.cidfonts import UnicodeCIDFont
-from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
-
 from bayesian_decision_report import build_report, load_request, localize_text
 
 
