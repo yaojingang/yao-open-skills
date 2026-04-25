@@ -8,11 +8,11 @@ body {
   background: #f5f4ed !important;
 }
 
-body[data-print-engine="pagedjs"] {
+body[data-print-engine="browser-print"] {
   color: #141413;
 }
 
-body[data-print-engine="pagedjs"] .topbar {
+body[data-print-engine="browser-print"] .topbar {
   position: static;
   padding: 0 0 10mm;
   background: transparent;
@@ -20,71 +20,71 @@ body[data-print-engine="pagedjs"] .topbar {
   backdrop-filter: none;
 }
 
-body[data-print-engine="pagedjs"] .topbar-inner {
+body[data-print-engine="browser-print"] .topbar-inner {
   width: auto;
   display: block;
 }
 
-body[data-print-engine="pagedjs"] .menu,
-body[data-print-engine="pagedjs"] .lang-toggle,
-body[data-print-engine="pagedjs"] .hero-meta,
-body[data-print-engine="pagedjs"] .fold-indicator,
-body[data-print-engine="pagedjs"] .footer-note,
-body[data-print-engine="pagedjs"] .meter {
+body[data-print-engine="browser-print"] .menu,
+body[data-print-engine="browser-print"] .lang-toggle,
+body[data-print-engine="browser-print"] .hero-meta,
+body[data-print-engine="browser-print"] .fold-indicator,
+body[data-print-engine="browser-print"] .footer-note,
+body[data-print-engine="browser-print"] .meter {
   display: none !important;
 }
 
-body[data-print-engine="pagedjs"] .page {
+body[data-print-engine="browser-print"] .page {
   width: auto;
   margin: 0;
 }
 
-body[data-print-engine="pagedjs"] .hero,
-body[data-print-engine="pagedjs"] .section,
-body[data-print-engine="pagedjs"] .fold-section,
-body[data-print-engine="pagedjs"] .callout {
+body[data-print-engine="browser-print"] .hero,
+body[data-print-engine="browser-print"] .section,
+body[data-print-engine="browser-print"] .fold-section,
+body[data-print-engine="browser-print"] .callout {
   box-shadow: none;
   break-inside: avoid-page;
 }
 
-body[data-print-engine="pagedjs"] .hero,
-body[data-print-engine="pagedjs"] .section,
-body[data-print-engine="pagedjs"] .fold-panel,
-body[data-print-engine="pagedjs"] .fold-section > summary {
+body[data-print-engine="browser-print"] .hero,
+body[data-print-engine="browser-print"] .section,
+body[data-print-engine="browser-print"] .fold-panel,
+body[data-print-engine="browser-print"] .fold-section > summary {
   padding-left: 0;
   padding-right: 0;
 }
 
-body[data-print-engine="pagedjs"] .fold-section {
+body[data-print-engine="browser-print"] .fold-section {
   border: 0;
   background: transparent;
 }
 
-body[data-print-engine="pagedjs"] .fold-section > summary {
+body[data-print-engine="browser-print"] .fold-section > summary {
   cursor: default;
   padding-top: 0;
   padding-bottom: 6mm;
 }
 
-body[data-print-engine="pagedjs"] .fold-panel {
+body[data-print-engine="browser-print"] .fold-panel {
   border-top: 0 !important;
   padding-bottom: 5mm;
 }
 
-body[data-print-engine="pagedjs"] .trajectory-shell,
-body[data-print-engine="pagedjs"] .round-card,
-body[data-print-engine="pagedjs"] .table-wrap {
+body[data-print-engine="browser-print"] .trajectory-shell,
+body[data-print-engine="browser-print"] .round-card,
+body[data-print-engine="browser-print"] .table-wrap {
   break-inside: avoid-page;
 }
 
-body[data-print-engine="pagedjs"] .table-wrap {
+body[data-print-engine="browser-print"] .table-wrap {
   background: #fcfbf8;
 }
 
-body[data-print-engine="pagedjs"] table {
+body[data-print-engine="browser-print"] table {
   font-size: 12px;
 }
 
-body[data-print-engine="pagedjs"] .trajectory-chart {
+body[data-print-engine="browser-print"] .trajectory-chart {
   max-height: 150mm;
 }
