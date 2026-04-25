@@ -7,6 +7,10 @@
     "zh": "团队是否应该现在投入两名工程师，用 30 天完成这个功能的 MVP？",
     "en": "Should the team spend two engineers for 30 days building the MVP now?"
   },
+  "current_state": {
+    "zh": "用户目前只给了方向性问题、少量访谈反馈和模糊资源约束，信息还不完整。",
+    "en": "The user has only provided the directional choice, a few interview signals, and fuzzy resource constraints, so the picture is still incomplete."
+  },
   "hypothesis": {
     "zh": "目标用户在接触该功能后的 14 天内，会表现出足够强的付费意愿。",
     "en": "Target users will show enough willingness to pay for the feature within 14 days of exposure."
@@ -165,6 +169,159 @@
       {
         "zh": "基于更可比的产品类型和买方细分重新校准参考类。",
         "en": "Re-check the reference class using comparable products and buyer segments."
+      }
+    ]
+  },
+  "conversation": {
+    "initial_problem_statement": {
+      "zh": "我们只有模糊方向判断，想先知道值不值得继续推进。",
+      "en": "We only have a rough directional question and want to know whether it is worth pushing further."
+    },
+    "initial_state": {
+      "zh": "样本量小、证据混杂、还没有真实行为数据。",
+      "en": "The sample is small, the evidence is mixed, and there is no real behavioral data yet."
+    },
+    "decision_ready_threshold": 0.75,
+    "final_readiness": 0.78,
+    "decision_status": "ready",
+    "open_questions": [],
+    "rounds": [
+      {
+        "round": 1,
+        "stage": {
+          "zh": "初始问题澄清",
+          "en": "Initial framing"
+        },
+        "user_input_summary": {
+          "zh": "用户先描述方向、目标用户和资源约束，但没有给真实转化行为数据。",
+          "en": "The user describes the direction, target user, and resource constraints, but provides no real conversion behavior yet."
+        },
+        "assistant_focus": {
+          "zh": "先给一个弱先验，并明确缺的关键信息是什么。",
+          "en": "Start with a weak prior and make the missing information explicit."
+        },
+        "new_information": [
+          {
+            "zh": "当前只有少量访谈和类比信息。",
+            "en": "Only a few interviews and analogy signals are available."
+          }
+        ],
+        "assistant_next_questions": [
+          {
+            "zh": "有没有真实预订、押金或点击数据？",
+            "en": "Do we have any real pre-order, deposit, or click data?"
+          },
+          {
+            "zh": "历史上最接近的参考类转化率是多少？",
+            "en": "What is the closest historical reference-class conversion rate?"
+          }
+        ],
+        "missing_information": [
+          {
+            "zh": "真实行为信号",
+            "en": "Real behavioral signal"
+          },
+          {
+            "zh": "可比参考类基率",
+            "en": "Comparable base rate"
+          }
+        ],
+        "prior_probability_before": 0.14,
+        "bayes_update": {
+          "update_method": "odds-update",
+          "likelihood_ratio": 1.3,
+          "direction": "support",
+          "dependency_discount": 0.8
+        },
+        "posterior_probability_after": 0.175,
+        "decision_readiness": 0.32,
+        "interim_judgment": {
+          "zh": "还不能决定是否投入开发，先补行为数据。",
+          "en": "It is too early to commit to development; gather behavior data first."
+        }
+      },
+      {
+        "round": 2,
+        "stage": {
+          "zh": "加入试验数据",
+          "en": "Add experiment data"
+        },
+        "user_input_summary": {
+          "zh": "用户补充了 concierge 测试中的预订和押金数据。",
+          "en": "The user adds pre-order and deposit data from a concierge test."
+        },
+        "assistant_focus": {
+          "zh": "用更强的行为证据重跑判断，并检查旧证据是否重复计入。",
+          "en": "Re-run the judgment with stronger behavioral evidence and check for double-counting."
+        },
+        "new_information": [
+          {
+            "zh": "拿到了早期用户的真实预订行为。",
+            "en": "Early users produced real pre-order behavior."
+          }
+        ],
+        "assistant_next_questions": [
+          {
+            "zh": "这些高意向用户后续会不会持续使用？",
+            "en": "Will these high-intent users keep using it afterward?"
+          }
+        ],
+        "missing_information": [
+          {
+            "zh": "留存与使用频率",
+            "en": "Retention and usage frequency"
+          }
+        ],
+        "prior_probability_before": 0.175,
+        "bayes_update": {
+          "update_method": "beta-binomial",
+          "prior_alpha": 9,
+          "prior_beta": 41,
+          "trials": 20,
+          "successes": 6
+        },
+        "posterior_probability_after": 0.2143,
+        "decision_readiness": 0.59,
+        "interim_judgment": {
+          "zh": "方向开始变得更可信，但还没有足够信息支持重投入。",
+          "en": "The direction is becoming more credible, but still does not justify a heavy commitment."
+        }
+      },
+      {
+        "round": 3,
+        "stage": {
+          "zh": "补执行条件和阈值",
+          "en": "Add execution constraints and thresholds"
+        },
+        "user_input_summary": {
+          "zh": "用户补充了成本约束、实验阈值和成功条件。",
+          "en": "The user provides cost constraints, experiment thresholds, and success conditions."
+        },
+        "assistant_focus": {
+          "zh": "把更新后的概率映射到行动阈值，判断是否具备决策条件。",
+          "en": "Map the updated belief to action thresholds and decide whether the case is ready."
+        },
+        "new_information": [
+          {
+            "zh": "有了明确的实验阈值与下一步行动门槛。",
+            "en": "The experiment thresholds and next-step gates are now explicit."
+          }
+        ],
+        "assistant_next_questions": [],
+        "missing_information": [],
+        "prior_probability_before": 0.2143,
+        "bayes_update": {
+          "update_method": "odds-update",
+          "likelihood_ratio": 2.1,
+          "direction": "support",
+          "dependency_discount": 0.9
+        },
+        "posterior_probability_after": 0.3358,
+        "decision_readiness": 0.78,
+        "interim_judgment": {
+          "zh": "现在可以做正式决策，但最优动作仍然是先跑低成本验证，而不是直接重投入。",
+          "en": "The case is now ready for a formal decision, but the best move is still a low-cost validation before a full build."
+        }
       }
     ]
   }

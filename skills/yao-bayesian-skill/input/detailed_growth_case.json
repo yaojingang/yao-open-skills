@@ -7,6 +7,10 @@
     "zh": "产品团队是否应该在本季度投入 3 名工程师和 1 名产品经理，用 8 周时间把 AI Deal Coach 增值包上线到所有付费工作区？",
     "en": "Should the product team commit three engineers and one product manager for eight weeks to launch the AI Deal Coach add-on to all paying workspaces this quarter?"
   },
+  "current_state": {
+    "zh": "团队目前只有设计伙伴试点、少量管理员访谈和原型阶段的支持反馈，还没有足够把握直接做全量上线判断。",
+    "en": "The team currently has a design-partner pilot, a handful of admin interviews, and prototype support feedback, but not enough confidence for an immediate broad-launch call."
+  },
   "hypothesis": {
     "zh": "至少 12% 的符合条件付费工作区会启用 AI Deal Coach，且其中 70% 的启用者在 60 天后仍持续使用。",
     "en": "At least 12% of eligible paying workspaces will activate the AI Deal Coach and 70% of activators will still use it after 60 days."
@@ -187,6 +191,209 @@
       {
         "zh": "验证设计伙伴支付的订金是否会在 30 天内转化为真实的周活跃使用。",
         "en": "Test whether design-partner deposits convert into active weekly usage within 30 days."
+      }
+    ]
+  },
+  "conversation": {
+    "initial_problem_statement": {
+      "zh": "我们想判断这个增值包能不能在本季度直接全面上线，但目前信息还不够完整。",
+      "en": "We want to know whether this add-on can launch broadly this quarter, but the current picture is still incomplete."
+    },
+    "initial_state": {
+      "zh": "已有设计伙伴兴趣和少量产品信号，但还没有形成对上线风险和阈值的完整判断。",
+      "en": "There is early design-partner interest and a few product signals, but not a full read on launch risk and thresholds."
+    },
+    "decision_ready_threshold": 0.74,
+    "final_readiness": 0.81,
+    "decision_status": "ready",
+    "open_questions": [],
+    "rounds": [
+      {
+        "round": 1,
+        "stage": {
+          "zh": "初始先验与缺口澄清",
+          "en": "Initial prior and gaps"
+        },
+        "user_input_summary": {
+          "zh": "用户先给了产品方向、设计伙伴兴趣和目标指标，但还没有真实行为与执行风险拆解。",
+          "en": "The user starts with the product direction, design-partner interest, and target metrics, but without real behavior data or a breakdown of execution risk."
+        },
+        "assistant_focus": {
+          "zh": "先给出弱先验，并明确还缺哪类证据才能做季度上线决策。",
+          "en": "Start with a weak prior and identify the evidence still required for a quarterly launch decision."
+        },
+        "new_information": [
+          {
+            "zh": "至少存在设计伙伴层面的兴趣信号。",
+            "en": "There is at least some design-partner interest."
+          }
+        ],
+        "assistant_next_questions": [
+          {
+            "zh": "是否有真实付费或订金行为？",
+            "en": "Is there any real paid or deposit behavior?"
+          },
+          {
+            "zh": "原型需要多少人工支持？",
+            "en": "How much manual support does the prototype require?"
+          }
+        ],
+        "missing_information": [
+          {
+            "zh": "真实付费行为",
+            "en": "Real payment behavior"
+          },
+          {
+            "zh": "执行成本与支持负担",
+            "en": "Execution cost and support burden"
+          }
+        ],
+        "prior_probability_before": 0.18,
+        "bayes_update": {
+          "update_method": "odds-update",
+          "likelihood_ratio": 1.45,
+          "direction": "support",
+          "dependency_discount": 0.85
+        },
+        "posterior_probability_after": 0.2421,
+        "decision_readiness": 0.36,
+        "interim_judgment": {
+          "zh": "目前只能说明方向有机会，还不能直接做全量上线决策。",
+          "en": "So far the direction looks plausible, but not strong enough for a broad launch decision."
+        }
+      },
+      {
+        "round": 2,
+        "stage": {
+          "zh": "加入付费试点行为",
+          "en": "Add paid-pilot behavior"
+        },
+        "user_input_summary": {
+          "zh": "用户补充了设计伙伴试点中愿意支付订金的工作区数据。",
+          "en": "The user adds design-partner pilot data showing which workspaces accepted a paid pilot deposit."
+        },
+        "assistant_focus": {
+          "zh": "把真实行为数据纳入更新，并检查对先验的修正幅度。",
+          "en": "Fold real behavior into the update and see how much it moves the prior."
+        },
+        "new_information": [
+          {
+            "zh": "72 个工作区里有 15 个接受付费试点订金。",
+            "en": "15 of 72 workspaces accepted a paid pilot deposit."
+          }
+        ],
+        "assistant_next_questions": [
+          {
+            "zh": "这些工作区在启用后会不会持续使用？",
+            "en": "Will these workspaces keep using the feature after activation?"
+          }
+        ],
+        "missing_information": [
+          {
+            "zh": "60 天留存风险",
+            "en": "60-day retention risk"
+          }
+        ],
+        "prior_probability_before": 0.2421,
+        "bayes_update": {
+          "update_method": "beta-binomial",
+          "prior_alpha": 13,
+          "prior_beta": 37,
+          "trials": 72,
+          "successes": 15
+        },
+        "posterior_probability_after": 0.2410,
+        "decision_readiness": 0.58,
+        "interim_judgment": {
+          "zh": "真实付费意愿并不差，但还不足以证明全量上线后的留存和交付成本可控。",
+          "en": "The paid signal is meaningful, but it still does not prove retention and delivery cost are under control for a broad launch."
+        }
+      },
+      {
+        "round": 3,
+        "stage": {
+          "zh": "补充执行风险和管理员控制条件",
+          "en": "Add execution risk and admin-control conditions"
+        },
+        "user_input_summary": {
+          "zh": "用户补充了人工支持负担，以及两家设计伙伴对管理员控制能力的明确前提。",
+          "en": "The user adds the manual support burden and the explicit admin-control condition stated by two design partners."
+        },
+        "assistant_focus": {
+          "zh": "识别哪些证据真正推动上线，哪些证据拉低留存和规模化概率。",
+          "en": "Separate the signals that support launch from the ones that reduce retention and scalability."
+        },
+        "new_information": [
+          {
+            "zh": "支持负担高于预期，会压低直接全量上线的成功率。",
+            "en": "Support burden is higher than expected and lowers the odds of a direct broad launch."
+          },
+          {
+            "zh": "如果先补管理员控制能力，设计伙伴愿意扩大 seat 覆盖。",
+            "en": "If admin controls are added first, design partners are willing to expand seat coverage."
+          }
+        ],
+        "assistant_next_questions": [
+          {
+            "zh": "先做带管理员控制能力的试点，验证留存是否达到阈值。",
+            "en": "Run a pilot with admin controls and verify whether retention reaches the threshold."
+          }
+        ],
+        "missing_information": [
+          {
+            "zh": "更强的留存与支持成本证据",
+            "en": "Stronger evidence on retention and support cost"
+          }
+        ],
+        "prior_probability_before": 0.2410,
+        "bayes_update": {
+          "update_method": "odds-update",
+          "likelihood_ratio": 1.85,
+          "direction": "support",
+          "dependency_discount": 0.78
+        },
+        "posterior_probability_after": 0.3708,
+        "decision_readiness": 0.69,
+        "interim_judgment": {
+          "zh": "现在已经足够判断‘不适合直接全量上线，但适合先跑付费试点’。",
+          "en": "There is now enough signal to say no to a direct broad launch, but yes to a paid pilot first."
+        }
+      },
+      {
+        "round": 4,
+        "stage": {
+          "zh": "行动阈值与最终决策收口",
+          "en": "Thresholds and final decision gate"
+        },
+        "user_input_summary": {
+          "zh": "用户补充了本季度资源成本、试点成本和成功阈值，允许做行动比较。",
+          "en": "The user adds quarterly resource cost, pilot cost, and success thresholds, making action comparison possible."
+        },
+        "assistant_focus": {
+          "zh": "把最新后验映射到行动阈值，判断是否已具备正式决策条件。",
+          "en": "Map the latest posterior to action thresholds and decide whether the case is now ready for a formal decision."
+        },
+        "new_information": [
+          {
+            "zh": "已经有明确的全量上线、付费试点和延后方案的收益损失参数。",
+            "en": "The payoffs for broad launch, paid pilot, and delay are now explicit."
+          }
+        ],
+        "assistant_next_questions": [],
+        "missing_information": [],
+        "prior_probability_before": 0.3708,
+        "bayes_update": {
+          "update_method": "odds-update",
+          "likelihood_ratio": 0.84,
+          "direction": "against",
+          "dependency_discount": 0.95
+        },
+        "posterior_probability_after": 0.3306,
+        "decision_readiness": 0.81,
+        "interim_judgment": {
+          "zh": "现在已经可以做正式决策：不建议本季度直接大范围上线，建议先跑 6 周带管理员控制能力的付费试点。",
+          "en": "The case is now ready for a formal decision: do not launch broadly this quarter; run the 6-week paid pilot with admin controls first."
+        }
       }
     ]
   }

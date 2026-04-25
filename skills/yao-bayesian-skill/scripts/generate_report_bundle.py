@@ -62,6 +62,7 @@ TOP_NAV = [
     ("summary", "先看结论", "Summary"),
     ("action-plan", "行动建议", "Action"),
     ("why", "为什么这样判断", "Why"),
+    ("conversation", "对话过程", "Conversation"),
     ("decision", "问题定义", "Decision"),
     ("evidence", "证据", "Evidence"),
     ("update", "概率判断", "Update"),
@@ -73,11 +74,14 @@ TOP_NAV = [
 
 SKILL_FLOW = [
     {"zh": "问题结构化", "en": "Structure the decision"},
+    {"zh": "基于当前信息给初步先验", "en": "Set an initial prior from the current information"},
+    {"zh": "通过多轮追问补齐关键缺口", "en": "Close the key gaps through iterative questioning"},
     {"zh": "检索与分级证据", "en": "Collect and grade evidence"},
     {"zh": "构造先验与参考类", "en": "Build priors and reference classes"},
     {"zh": "执行贝叶斯更新", "en": "Run the Bayesian update"},
     {"zh": "做敏感性与阈值分析", "en": "Stress-test thresholds and sensitivity"},
     {"zh": "给出行动与下一步信息建议", "en": "Recommend the next action and information step"},
+    {"zh": "记录每轮变化并输出过程日志", "en": "Record each round and export a process log"},
 ]
 
 SKILL_CAPABILITIES = [
@@ -117,6 +121,18 @@ SKILL_CAPABILITIES = [
         "en_title": "Automated report bundle",
         "en_body": "Automatically generates synchronized JSON, Markdown, bilingual HTML, PDF, and Word reports from the same structured input.",
     },
+    {
+        "zh_title": "多轮对话决策循环",
+        "zh_body": "先基于当前信息给弱先验和初步判断，再通过多轮对话追问缺失信息，持续更新先验、后验和决策准备度。",
+        "en_title": "Multi-turn decision loop",
+        "en_body": "Starts with a weak prior and an initial read, then iteratively asks for missing information and updates the prior, posterior, and decision readiness over multiple turns.",
+    },
+    {
+        "zh_title": "过程日志与变化图表",
+        "zh_body": "自动记录每一轮对话里新增了什么信息、如何完成贝叶斯更新、判断为什么改变，并在报告中输出轨迹图和过程表。",
+        "en_title": "Process log and change chart",
+        "en_body": "Records what changed in each round, how the Bayesian update was applied, why the judgment moved, and renders both a trajectory chart and a process table in the report.",
+    },
 ]
 
 WARNING_TRANSLATIONS = {
@@ -138,6 +154,20 @@ STABILITY_EN = {
     "stable": "Stable",
     "mixed": "Mixed",
     "unstable": "Unstable",
+}
+
+READINESS_EN = {
+    "可以决策": "Ready to decide",
+    "接近可决策": "Nearly ready",
+    "仍需补信息": "Need more information",
+    "未评估": "Not evaluated",
+}
+
+DECISION_STATUS_EN = {
+    "ready": "Ready to decide",
+    "needs-more-info": "Need more information",
+    "in-progress": "Keep iterating",
+    "blocked": "Blocked",
 }
 
 DIRECTION_EN = {
