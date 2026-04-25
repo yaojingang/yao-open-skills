@@ -83,6 +83,15 @@ The HTML report should also include:
 
 Long Chinese or mixed Chinese-English text inside PDF tables must wrap within the cell width. Do not allow the text to run past the right edge of the page.
 
+## Experimental Paged-CSS Branch
+
+The exporter may optionally generate:
+
+- `print.html`
+- `pagedjs.pdf`
+
+Use this branch when you want to compare the default programmatic PDF against a paged-CSS PDF that stays closer to the HTML layout.
+
 ## Automation Rule
 
 The rendered reports are not hand-written examples. They should be generated automatically from the same input request so the bundle stays reproducible.
