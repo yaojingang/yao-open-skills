@@ -9,6 +9,8 @@ description: Convert uncertain real-world choices into an auditable Bayesian evi
 
 - turning a vague decision into one explicit hypothesis, time horizon, success metric, and action set
 - separating priors, evidence quality, posterior result, sensitivity, and action choice
+- starting from incomplete user input, issuing a weak initial prior plus a preliminary judgment, then guiding the user through multiple follow-up turns
+- recording each decision round so the final report can explain how priors, posteriors, and readiness changed over time
 - exporting one synchronized report bundle: Chinese-first `markdown/pdf/docx` plus bilingual `html`
 
 ## Do Not Route Here
@@ -20,26 +22,33 @@ description: Convert uncertain real-world choices into an auditable Bayesian evi
 ## Default Workflow
 
 1. Use `references/intake-contract.md` to convert the request into one structured decision brief.
-2. Use `references/evidence-prior-playbook.md` to grade evidence and choose the lightest valid update path.
-3. Run `scripts/bayesian_decision_report.py` for canonical JSON or `scripts/generate_report_bundle.py` for the full bundle.
-4. Read `references/report-export-pipeline.md` before export. The normal bundle is `json + markdown + html + pdf + docx`.
-5. Finalize with `references/decision-report-contract.md` and `references/sensitivity-and-safety.md`.
+2. If the input is incomplete, read `references/multi-turn-dialogue-loop.md` and start with a weak prior plus a preliminary judgment instead of pretending certainty.
+3. Use `references/evidence-prior-playbook.md` to grade evidence and choose the lightest valid update path.
+4. Maintain a structured conversation log for each round: what the user added, what gap remained, how the Bayesian update changed, and whether the case is now ready to decide.
+5. Run `scripts/bayesian_decision_report.py` for canonical JSON or `scripts/generate_report_bundle.py` for the full bundle.
+6. Read `references/report-export-pipeline.md` before export. The normal bundle is `json + markdown + html + pdf + docx`.
+7. Finalize with `references/decision-report-contract.md` and `references/sensitivity-and-safety.md`.
 
 ## Output Contract
 
 - Deliver one Bayesian decision report bundle, not a formula dump.
 - Mark each number as observed, estimated, or assumed.
 - Surface weak evidence, dependence risk, and model limits.
+- When the user starts with only a question plus current state, begin with a weak prior and a preliminary action read; then ask the minimum next questions needed to improve the decision.
+- For multi-turn use, keep a round-by-round log of the evolving prior, posterior, decision readiness, remaining gaps, and the exact Bayesian formula or update path used in that round.
+- Final reports must analyze the dialogue process itself: what changed in each round, which information moved the belief the most, whether the decision is now ready, and what is still missing if it is not.
 - If the result is unstable, recommend a lower-cost test before a heavier commitment.
 - In high-risk domains, label the output as decision support only.
 - Human-facing reports default to Simplified Chinese; HTML must also provide bilingual Chinese/English switching with sticky top navigation.
 - The bundle must explicitly state that it was auto-generated from one structured input.
 - Put a plain-language executive summary first: what to do now, why, and why not the other options before the technical sections.
 - HTML should offer a `简版 / 专业版` switch. Default to `简版`, showing only the conclusion and action area; advanced sections should stay collapsed until opened.
+- HTML should also show a conversation-process section with a change chart when a multi-turn log is present.
 
 ## Reference Map
 
 - `references/intake-contract.md`: request-to-brief conversion
+- `references/multi-turn-dialogue-loop.md`: incomplete-input handling and iterative questioning
 - `references/evidence-prior-playbook.md`: evidence tiers, priors, update-path selection
 - `references/decision-report-contract.md`: required report sections and schema alignment
 - `references/report-export-pipeline.md`: automatic bundle generation and bilingual HTML rules
