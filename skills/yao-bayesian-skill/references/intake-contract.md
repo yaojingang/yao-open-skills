@@ -41,6 +41,13 @@ If one of these is missing, do not hide the gap:
 
 State the blockers first, then propose the smallest additional information needed.
 
+When the user only gives a decision question plus current state:
+
+- start with a weak prior and label it as provisional
+- give one preliminary judgment instead of pretending the final decision is ready
+- ask only the next 1 to 3 highest-value follow-up questions
+- begin a multi-turn log so each new answer can update the prior or posterior cleanly
+
 ## Action Framing Rule
 
 Do not ask only "Is H true?"

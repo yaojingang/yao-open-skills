@@ -5,17 +5,18 @@ Every report should follow this structure.
 ## Required Sections
 
 1. One-sentence conclusion
-2. Decision question
-3. Prior setup
-4. New evidence table
-5. Bayesian update
-6. Natural-frequency explanation
-7. Action thresholds
-8. Expected value comparison
-9. Sensitivity analysis
-10. Next information to collect
-11. Caveats and risks
-12. Appendix or calculation note
+2. If available, multi-turn dialogue process and decision readiness
+3. Decision question
+4. Prior setup
+5. New evidence table
+6. Bayesian update
+7. Natural-frequency explanation
+8. Action thresholds
+9. Expected value comparison
+10. Sensitivity analysis
+11. Next information to collect
+12. Caveats and risks
+13. Appendix or calculation note
 
 When export is enabled, the same report should be rendered consistently to:
 
@@ -69,3 +70,4 @@ The conclusion must answer:
 - why that action is justified
 - what evidence would change the recommendation
 - when to reopen the decision
+- if a dialogue log exists, whether the decision is now mature enough to act on
