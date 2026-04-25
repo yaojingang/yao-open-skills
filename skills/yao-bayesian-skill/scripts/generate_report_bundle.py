@@ -6,6 +6,7 @@ import importlib.util
 import json
 import math
 import os
+import shutil
 import subprocess
 import sys
 from html import escape
@@ -1412,18 +1413,31 @@ def build_print_html(request: dict, report: dict) -> str:
     return html
 
 
-def build_pagedjs_pdf(print_html_path: Path, output_pdf_path: Path) -> None:
+def find_browser_binary() -> str:
+    candidates = [
+        os.environ.get("YAO_BAYESIAN_PRINT_BROWSER"),
+        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+        "/Applications/Chromium.app/Contents/MacOS/Chromium",
+        shutil.which("google-chrome"),
+        shutil.which("chromium"),
+    ]
+    for candidate in candidates:
+        if candidate and Path(candidate).exists():
+            return candidate
+    raise FileNotFoundError("No usable Chrome/Chromium binary found for experimental print-PDF export.")
+
+
+def build_browser_pdf(print_html_path: Path, output_pdf_path: Path) -> None:
+    browser = find_browser_binary()
     command = [
-        "npx",
-        "-y",
-        "pagedjs-cli",
-        str(print_html_path),
-        "-o",
-        str(output_pdf_path),
-        "-s",
-        "A4",
-        "-t",
-        "120000",
+        browser,
+        "--headless=new",
+        "--disable-gpu",
+        "--no-sandbox",
+        "--run-all-compositor-stages-before-draw",
+        "--virtual-time-budget=15000",
+        f"--print-to-pdf={output_pdf_path}",
+        print_html_path.resolve().as_uri(),
     ]
     subprocess.run(command, check=True, cwd=str(ROOT))
 
@@ -1848,13 +1862,13 @@ def generate_bundle(input_path: Path, output_dir: Path, basename: str | None, pd
         "pdf": str(pdf_path),
         "docx": str(docx_path),
     }
-    if pdf_engine in {"pagedjs", "both"}:
+    if pdf_engine in {"browser", "both"}:
         print_html_path = output_dir / f"{stem}.print.html"
-        pagedjs_pdf_path = output_dir / f"{stem}.pagedjs.pdf"
+        browser_pdf_path = output_dir / f"{stem}.browser.pdf"
         print_html_path.write_text(build_print_html(request, report), encoding="utf-8")
-        build_pagedjs_pdf(print_html_path, pagedjs_pdf_path)
+        build_browser_pdf(print_html_path, browser_pdf_path)
         generated["print_html"] = str(print_html_path)
-        generated["pagedjs_pdf"] = str(pagedjs_pdf_path)
+        generated["browser_pdf"] = str(browser_pdf_path)
     return generated
 
 
@@ -1865,9 +1879,9 @@ def main() -> None:
     parser.add_argument("--basename", help="Optional basename for output files. Defaults to the input filename stem.")
     parser.add_argument(
         "--pdf-engine",
-        choices=("reportlab", "pagedjs", "both"),
+        choices=("reportlab", "browser", "both"),
         default="reportlab",
-        help="Keep the default reportlab PDF, or also generate an experimental Paged.js PDF from print HTML.",
+        help="Keep the default reportlab PDF, or also generate an experimental browser-print PDF from print HTML.",
     )
     args = parser.parse_args()
 
