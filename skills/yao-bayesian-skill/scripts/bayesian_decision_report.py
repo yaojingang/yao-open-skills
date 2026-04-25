@@ -254,6 +254,260 @@ def apply_beta_binomial(prior_payload: dict, observations: dict) -> dict:
     }
 
 
+def readiness_code(value: float | None) -> str | None:
+    if value is None:
+        return None
+    if value >= 0.75:
+        return "ready"
+    if value >= 0.45:
+        return "nearly-ready"
+    return "collecting"
+
+
+def readiness_label_zh(value: float | None) -> str:
+    mapping = {
+        "ready": "可以决策",
+        "nearly-ready": "接近可决策",
+        "collecting": "仍需补信息",
+    }
+    return mapping.get(readiness_code(value), "未评估")
+
+
+def status_labels(code: str | None) -> tuple[str, str]:
+    mapping = {
+        "ready": ("可以进入决策", "Ready to decide"),
+        "needs-more-info": ("还需补充信息", "Need more information"),
+        "in-progress": ("继续迭代判断", "Keep iterating"),
+        "blocked": ("当前被阻塞", "Blocked"),
+    }
+    return mapping.get(code or "", ("继续迭代判断", "Keep iterating"))
+
+
+def _fmt_pct_text(value: float | None) -> str:
+    if value is None:
+        return "-"
+    return f"{float(value) * 100:.1f}%"
+
+
+def build_round_formula(round_item: dict, prior_before: float | None, posterior_after: float | None, index: int) -> dict:
+    bayes_update = round_item.get("bayes_update") or {}
+    method = bayes_update.get("update_method") or round_item.get("update_method") or "manual"
+    detail = {
+        "update_method": method,
+        "formula_zh": "本轮没有足够的结构化参数，采用记录中的更新结果。",
+        "formula_en": "This round does not provide enough structured parameters, so the recorded update result is used directly.",
+    }
+
+    if method == "odds-update" and prior_before is not None:
+        likelihood_ratio = bayes_update.get("likelihood_ratio")
+        if likelihood_ratio is not None:
+            direction = bayes_update.get("direction", "support")
+            dependency_discount = clamp(float(bayes_update.get("dependency_discount", 1.0)), 0.0, 1.0)
+            item = {
+                "name": f"round-{index}",
+                "likelihood_ratio": likelihood_ratio,
+                "direction": direction,
+                "dependency_discount": dependency_discount,
+            }
+            computed_probability, _, prior_odds, posterior_odds = apply_odds_update(float(prior_before), [item])
+            if posterior_after is None:
+                posterior_after = computed_probability
+            detail.update(
+                {
+                    "prior_odds": round_float(prior_odds),
+                    "posterior_odds": round_float(posterior_odds),
+                    "likelihood_ratio": round_float(float(likelihood_ratio)),
+                    "dependency_discount": round_float(dependency_discount),
+                    "direction": direction,
+                    "posterior_probability": round_float(posterior_after),
+                    "formula_zh": (
+                        f"把本轮起点概率 {_fmt_pct_text(prior_before)} 转成先验 odds {prior_odds:.3f}，"
+                        f"再乘以校正后的证据强度，得到后验 odds {posterior_odds:.3f}，"
+                        f"对应概率约 {_fmt_pct_text(posterior_after)}。"
+                    ),
+                    "formula_en": (
+                        f"Convert the starting belief {_fmt_pct_text(prior_before)} into prior odds {prior_odds:.3f}, "
+                        f"apply the adjusted evidence strength, and you get posterior odds {posterior_odds:.3f}, "
+                        f"which maps to about {_fmt_pct_text(posterior_after)}."
+                    ),
+                }
+            )
+            return detail
+
+    if method == "beta-binomial":
+        prior_alpha = bayes_update.get("prior_alpha")
+        prior_beta = bayes_update.get("prior_beta")
+        trials = bayes_update.get("trials")
+        successes = bayes_update.get("successes")
+        if None not in (prior_alpha, prior_beta, trials, successes):
+            posterior_block = apply_beta_binomial(
+                {"alpha": float(prior_alpha), "beta": float(prior_beta)},
+                {"trials": int(trials), "successes": int(successes)},
+            )
+            posterior_after = posterior_after if posterior_after is not None else posterior_block["posterior_probability"]
+            detail.update(
+                {
+                    "prior_alpha": round_float(float(prior_alpha)),
+                    "prior_beta": round_float(float(prior_beta)),
+                    "posterior_alpha": round_float(float(posterior_block["posterior_alpha"])),
+                    "posterior_beta": round_float(float(posterior_block["posterior_beta"])),
+                    "trials": int(trials),
+                    "successes": int(successes),
+                    "posterior_probability": round_float(posterior_after),
+                    "formula_zh": (
+                        f"把先验 Beta({round_float(float(prior_alpha))}, {round_float(float(prior_beta))}) "
+                        f"与新观察 {int(successes)}/{int(trials)} 合并，得到后验 "
+                        f"Beta({round_float(float(posterior_block['posterior_alpha']))}, {round_float(float(posterior_block['posterior_beta']))})，"
+                        f"均值约 {_fmt_pct_text(posterior_after)}。"
+                    ),
+                    "formula_en": (
+                        f"Combine the prior Beta({round_float(float(prior_alpha))}, {round_float(float(prior_beta))}) "
+                        f"with new observations {int(successes)}/{int(trials)} to get posterior "
+                        f"Beta({round_float(float(posterior_block['posterior_alpha']))}, {round_float(float(posterior_block['posterior_beta']))}), "
+                        f"with a mean near {_fmt_pct_text(posterior_after)}."
+                    ),
+                }
+            )
+            return detail
+
+    if prior_before is not None and posterior_after is not None:
+        detail.update(
+            {
+                "posterior_probability": round_float(posterior_after),
+                "formula_zh": f"本轮把判断从 {_fmt_pct_text(prior_before)} 更新到了 {_fmt_pct_text(posterior_after)}。",
+                "formula_en": f"This round moves the belief from {_fmt_pct_text(prior_before)} to {_fmt_pct_text(posterior_after)}.",
+            }
+        )
+    return detail
+
+
+def build_conversation_process(request: dict, initial_prior_probability: float, final_posterior_probability: float, recommendation: str) -> dict | None:
+    conversation = request.get("conversation") or {}
+    rounds_input = conversation.get("rounds") or []
+    current_state = localize_text(conversation.get("initial_state"), "zh") or localize_text(request.get("current_state"), "zh")
+    if not rounds_input and not current_state:
+        return None
+
+    threshold = clamp(float(conversation.get("decision_ready_threshold", 0.75)), 0.0, 1.0)
+    rounds = []
+    trajectory = []
+    last_posterior = initial_prior_probability
+
+    for index, item in enumerate(rounds_input, start=1):
+        prior_before = item.get("prior_probability_before")
+        if prior_before is None:
+            prior_before = last_posterior
+        prior_before = clamp(float(prior_before), 1e-6, 1 - 1e-6) if prior_before is not None else None
+
+        posterior_after = item.get("posterior_probability_after")
+        posterior_after = clamp(float(posterior_after), 1e-6, 1 - 1e-6) if posterior_after is not None else None
+        formula = build_round_formula(item, prior_before, posterior_after, index)
+        if posterior_after is None and formula.get("posterior_probability") is not None:
+            posterior_after = clamp(float(formula["posterior_probability"]), 1e-6, 1 - 1e-6)
+
+        readiness = item.get("decision_readiness")
+        readiness = clamp(float(readiness), 0.0, 1.0) if readiness is not None else None
+        delta = None
+        if prior_before is not None and posterior_after is not None:
+            delta = posterior_after - prior_before
+            last_posterior = posterior_after
+
+        round_payload = {
+            "round": int(item.get("round", index)),
+            "stage": localize_text(item.get("stage"), "zh") or f"第 {index} 轮",
+            "prior_probability_before": round_float(prior_before),
+            "posterior_probability_after": round_float(posterior_after),
+            "delta_probability": round_float(delta),
+            "decision_readiness": round_float(readiness),
+            "decision_readiness_label": readiness_label_zh(readiness),
+            "user_input_summary": localize_text(item.get("user_input_summary"), "zh"),
+            "assistant_focus": localize_text(item.get("assistant_focus"), "zh"),
+            "new_information": localize_list(item.get("new_information"), "zh"),
+            "assistant_next_questions": localize_list(item.get("assistant_next_questions"), "zh"),
+            "missing_information": localize_list(item.get("missing_information"), "zh"),
+            "interim_judgment": localize_text(item.get("interim_judgment"), "zh"),
+            "bayes_update": normalize_value(formula),
+        }
+        rounds.append(round_payload)
+        trajectory.append(
+            {
+                "round": round_payload["round"],
+                "stage": round_payload["stage"],
+                "prior_probability": round_payload["prior_probability_before"],
+                "posterior_probability": round_payload["posterior_probability_after"],
+                "decision_readiness": round_payload["decision_readiness"],
+                "delta_probability": round_payload["delta_probability"],
+            }
+        )
+
+    final_readiness = conversation.get("final_readiness")
+    if final_readiness is None and rounds:
+        final_readiness = rounds[-1].get("decision_readiness")
+    final_readiness = clamp(float(final_readiness), 0.0, 1.0) if final_readiness is not None else None
+
+    open_questions = localize_list(conversation.get("open_questions"), "zh")
+    if not open_questions and rounds:
+        open_questions = rounds[-1].get("missing_information", [])
+
+    decision_ready = conversation.get("decision_ready")
+    if decision_ready is None:
+        decision_ready = bool(final_readiness is not None and final_readiness >= threshold and not open_questions)
+
+    status_code = localize_text(conversation.get("decision_status"), "zh")
+    if status_code not in {"ready", "needs-more-info", "in-progress", "blocked"}:
+        if decision_ready:
+            status_code = "ready"
+        elif open_questions:
+            status_code = "needs-more-info"
+        else:
+            status_code = "in-progress"
+
+    status_zh, status_en = status_labels(status_code)
+    strongest_round = None
+    if rounds:
+        strongest_round = max(rounds, key=lambda item: abs(float(item.get("delta_probability") or 0.0)))
+
+    strongest_text = ""
+    if strongest_round and strongest_round.get("delta_probability") is not None:
+        strongest_text = (
+            f"变化最大的轮次是第 {strongest_round['round']} 轮，概率变动约为 "
+            f"{float(strongest_round['delta_probability']) * 100:+.1f} 个百分点。"
+        )
+
+    analysis_zh = (
+        f"本次决策一共记录了 {len(rounds)} 轮对话，判断从初始先验 {_fmt_pct_text(initial_prior_probability)} "
+        f"演化到了当前后验 {_fmt_pct_text(final_posterior_probability)}。{strongest_text} "
+        f"当前决策准备度约为 {_fmt_pct_text(final_readiness)}，阈值为 {_fmt_pct_text(threshold)}，"
+        f"{'已经' if decision_ready else '尚未'}达到“可以进入决策”的状态。"
+    )
+    analysis_en = (
+        f"This decision captured {len(rounds)} rounds of dialogue, moving from an initial prior of "
+        f"{_fmt_pct_text(initial_prior_probability)} to a current posterior of {_fmt_pct_text(final_posterior_probability)}. "
+        f"The current readiness is {_fmt_pct_text(final_readiness)} versus a threshold of {_fmt_pct_text(threshold)}, "
+        f"so the session has {'reached' if decision_ready else 'not yet reached'} a ready-to-decide state."
+    )
+
+    return {
+        "enabled": True,
+        "initial_state": current_state or "-",
+        "initial_problem_statement": localize_text(conversation.get("initial_problem_statement"), "zh") or localize_text(request.get("question"), "zh"),
+        "round_count": len(rounds),
+        "decision_ready_threshold": round_float(threshold),
+        "final_readiness": round_float(final_readiness),
+        "final_readiness_label": readiness_label_zh(final_readiness),
+        "decision_ready": bool(decision_ready),
+        "status": status_zh,
+        "status_code": status_code,
+        "status_en": status_en,
+        "analysis": analysis_zh,
+        "analysis_en": analysis_en,
+        "open_questions": open_questions,
+        "recommended_action_at_close": recommendation,
+        "trajectory": trajectory,
+        "rounds": rounds,
+    }
+
+
 def update_interval_with_evidence(interval: list[float], evidence: list[dict]) -> list[float]:
     updated = [apply_odds_update(value, evidence)[0] for value in interval]
     return sorted(updated)
