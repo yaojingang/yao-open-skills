@@ -1,0 +1,370 @@
+{
+  "title": {
+    "zh": "是否应该在 2026 年下半年启动一家面向美国客户的海外 GEO 重服务公司？",
+    "en": "Should we launch a heavy-service GEO company for U.S. clients in the second half of 2026?"
+  },
+  "question": {
+    "zh": "创始人是否应该从现在开始用 2-3 个月做验证式准备，并在 2026 年 7-8 月启动一家面向美国客户的海外 GEO 重服务公司，目标是在启动后 12 个月内做到月营收 30 万元以上、且人效达到 10 万元/人/月以上？",
+    "en": "Should the founder spend the next 2-3 months on validation-oriented preparation and launch a heavy-service GEO company for U.S. clients in July-August 2026, targeting at least CNY 300k in monthly revenue and at least CNY 100k monthly revenue per person within 12 months of launch?"
+  },
+  "current_state": {
+    "zh": "目前方向明确为海外 GEO 重服务，主要面向美国客户，目标客单价约为 1 万美元/月。团队暂无海外品牌、渠道或现成客户资产，手上有部分国内案例，计划后续补做海外流量与销售验证。",
+    "en": "The direction is now defined as a heavy-service GEO business for U.S. clients at roughly $10k MRR per client. There is no existing overseas brand, channel, or customer asset yet. Some domestic case studies exist, and the team plans to build overseas traffic and sales validation next."
+  },
+  "hypothesis": {
+    "zh": "如果现在启动验证式准备，并在 2026 年 7-8 月正式启动，那么这家海外 GEO 重服务公司有较大概率在启动后 12 个月内拿下至少 4 个稳定的美国付费客户，从而做到月营收 30 万元以上，并保持至少 10 万元/人/月的人效。",
+    "en": "If validation work starts now and the company launches in July-August 2026, the overseas GEO service business has a meaningful chance of landing at least four stable paying U.S. clients within 12 months, reaching at least CNY 300k in monthly revenue while sustaining at least CNY 100k monthly revenue per person."
+  },
+  "time_horizon": {
+    "zh": "从现在到正式启动前 2-3 个月准备期，以及启动后 12 个月经营结果",
+    "en": "The next 2-3 months of preparation plus the first 12 months after launch"
+  },
+  "decision_deadline": "2026-07-15",
+  "success_metric": {
+    "zh": "在启动后 12 个月内达到至少 4 个稳定美国付费客户，单客户月费约 1 万美元，整体月营收不低于 30 万元，且团队人效不低于 10 万元/人/月。",
+    "en": "Within 12 months of launch, reach at least four stable paying U.S. clients at roughly $10k MRR each, with total monthly revenue of at least CNY 300k and at least CNY 100k monthly revenue per person."
+  },
+  "domain": {
+    "zh": "跨境服务型创业决策",
+    "en": "cross-border service business decision"
+  },
+  "high_risk_domain": false,
+  "method": "auto",
+  "prior": {
+    "probability": 0.22,
+    "alpha": 4.4,
+    "beta": 15.6,
+    "equivalent_sample_size": 20,
+    "source_summary": [
+      {
+        "zh": "创始人驱动的跨境服务型新业务通常可以较快验证第一批客户，但稳定做到高客单价和持续续费并不容易。",
+        "en": "Founder-led cross-border service businesses can often validate early clients relatively quickly, but reaching stable high-ticket recurring revenue and renewals is difficult."
+      },
+      {
+        "zh": "海外 AI 搜索与答案引擎流量入口正在变强，但 GEO 还没有被平台官方定义成一条完全独立的新护城河。",
+        "en": "AI search and answer-engine distribution is strengthening, but GEO has not yet been established by platforms as a fully independent moat."
+      }
+    ],
+    "source_quality": "C/D",
+    "confidence": "low"
+  },
+  "evidence": [
+    {
+      "name": {
+        "zh": "AI 搜索与答案引擎流量入口继续扩张",
+        "en": "AI search and answer-engine traffic surfaces keep expanding"
+      },
+      "summary": {
+        "zh": "Google 在 2025 年明确扩大 AI Overviews 与 AI Mode，OpenAI 也持续推进 ChatGPT Search 与商家接入，说明 GEO 对应的需求场景并非伪命题。",
+        "en": "Google expanded AI Overviews and AI Mode in 2025, and OpenAI kept pushing ChatGPT Search and merchant integrations, suggesting the underlying GEO demand is real."
+      },
+      "likelihood_ratio": 1.5,
+      "quality": "A",
+      "dependency_discount": 0.85,
+      "direction": "support",
+      "notes": {
+        "zh": "这证明市场方向存在，但并不自动证明一家新公司能获得客户。",
+        "en": "This supports market existence, but it does not automatically prove a new company can win clients."
+      }
+    },
+    {
+      "name": {
+        "zh": "重服务模式更容易先拿到第一批收入",
+        "en": "A heavy-service model can reach first revenue faster"
+      },
+      "summary": {
+        "zh": "相较于直接做 SaaS，重服务模式更适合在资产不足时由创始人亲自销售与交付，先换取真实需求与现金流。",
+        "en": "Compared with starting as SaaS, a heavy-service model is more suitable when assets are limited and the founder needs to sell and deliver directly to capture demand and cash flow."
+      },
+      "likelihood_ratio": 1.9,
+      "quality": "D",
+      "dependency_discount": 0.8,
+      "direction": "support",
+      "notes": {
+        "zh": "这是经验性判断，不是直接观测数据。",
+        "en": "This is a judgment call rather than direct observed data."
+      }
+    },
+    {
+      "name": {
+        "zh": "目标营收只需要约 4 个高客单价客户",
+        "en": "The revenue target needs only about four high-ticket clients"
+      },
+      "summary": {
+        "zh": "若单客户月费约 1 万美元，则月营收 30 万元左右对应约 4 个稳定客户，目标在算术上并非极端夸张。",
+        "en": "At roughly $10k MRR per client, reaching about CNY 300k per month requires around four stable clients, so the arithmetic target is not extreme."
+      },
+      "likelihood_ratio": 1.7,
+      "quality": "D",
+      "dependency_discount": 0.9,
+      "direction": "support",
+      "notes": {
+        "zh": "这是目标拆解，不等于真实销售难度已经被证明。",
+        "en": "This is target decomposition, not proof that sales difficulty has been solved."
+      }
+    },
+    {
+      "name": {
+        "zh": "已有部分国内案例可作为能力起点",
+        "en": "Existing domestic cases provide a capability starting point"
+      },
+      "summary": {
+        "zh": "虽然还不是海外案例，但已有国内案例意味着交付能力并非从零开始，至少可以沉淀方法论与部分 proof points。",
+        "en": "They are not overseas cases, but existing domestic cases mean delivery capability is not starting from zero and can provide process and proof points."
+      },
+      "likelihood_ratio": 1.8,
+      "quality": "C",
+      "dependency_discount": 0.75,
+      "direction": "support",
+      "notes": {
+        "zh": "国内案例向美国客户转化时会有市场、语言与信任折损。",
+        "en": "Domestic cases lose force when translated to U.S. buyers because of market, language, and trust gaps."
+      }
+    },
+    {
+      "name": {
+        "zh": "当前没有海外品牌、渠道或客户资产",
+        "en": "There is no overseas brand, channel, or customer asset yet"
+      },
+      "summary": {
+        "zh": "目前没有现成的美国客户管道、品牌背书、海外案例或已验证的销售网络，这会直接拉高首单获取成本与启动摩擦。",
+        "en": "There is no existing U.S. pipeline, brand proof, overseas case study, or validated sales network, which directly raises the cost and friction of getting the first deal."
+      },
+      "likelihood_ratio": 1.9,
+      "quality": "C",
+      "dependency_discount": 0.95,
+      "direction": "against",
+      "notes": {
+        "zh": "这条是当前最强的负面证据之一。",
+        "en": "This is one of the strongest negative pieces of evidence right now."
+      }
+    },
+    {
+      "name": {
+        "zh": "ICP 和获客路径还没有收窄",
+        "en": "The ICP and acquisition path are still too broad"
+      },
+      "summary": {
+        "zh": "当前只明确了主要服务美国市场，还没有收窄到具体行业、买方角色、切入场景和最可能成交的获客路径。",
+        "en": "The plan only specifies the U.S. market so far, without narrowing to a concrete industry, buyer role, wedge use case, or the acquisition path most likely to close."
+      },
+      "likelihood_ratio": 1.7,
+      "quality": "C",
+      "dependency_discount": 0.9,
+      "direction": "against",
+      "notes": {
+        "zh": "如果不先收窄 ICP，海外流量和销售动作很容易被摊薄。",
+        "en": "Without a narrowed ICP, overseas traffic and sales efforts are likely to get diluted."
+      }
+    }
+  ],
+  "actions": [
+    {
+      "name": {
+        "zh": "现在就按正式公司路径启动，并在 7-8 月全面开售",
+        "en": "Commit to a full company launch now and sell broadly in July-August"
+      },
+      "cost": 300000,
+      "upside_if_h_true": 900000,
+      "downside_if_h_false": -200000,
+      "opportunity_cost": 0
+    },
+    {
+      "name": {
+        "zh": "先做 8-10 周验证式准备，再依据真实信号决定是否正式启动",
+        "en": "Run 8-10 weeks of validation-first preparation and decide based on real signals"
+      },
+      "cost": 90000,
+      "upside_if_h_true": 420000,
+      "downside_if_h_false": -60000,
+      "opportunity_cost": 0
+    },
+    {
+      "name": {
+        "zh": "暂缓 6 个月，继续积累案例与海外资产",
+        "en": "Delay for 6 months and keep accumulating cases and overseas assets"
+      },
+      "cost": 15000,
+      "upside_if_h_true": 120000,
+      "downside_if_h_false": -15000,
+      "opportunity_cost": -100000
+    }
+  ],
+  "sensitivity": {
+    "prior_probabilities": [
+      0.14,
+      0.22,
+      0.3
+    ],
+    "lr_power_factors": [
+      0.75,
+      1.0,
+      1.25
+    ]
+  },
+  "next_information": {
+    "candidates": [
+      {
+        "zh": "在未来 30 天内锁定一个极窄 ICP，做 100 个美国目标账户的 founder-led outbound，至少拿到 10 个有效销售通话和 1 个付费试点或押金信号。",
+        "en": "In the next 30 days, pick a very narrow ICP and run founder-led outbound to 100 qualified U.S. accounts, aiming for at least 10 real sales calls and 1 paid pilot or deposit signal."
+      },
+      {
+        "zh": "把现有国内案例重写成英文案例页和一份单页 offer，验证美国客户对案例迁移的信任度。",
+        "en": "Rewrite the current domestic cases into an English case-study page plus a one-page offer to test whether U.S. buyers trust the translated proof."
+      },
+      {
+        "zh": "在正式建团队前，先验证一个具体交付范围能否在 2-3 人内稳定交付，从而守住 10 万元/人/月的人效门槛。",
+        "en": "Before building the team, validate whether one concrete delivery scope can be executed reliably by 2-3 people while still protecting the CNY 100k monthly revenue per person bar."
+      }
+    ]
+  },
+  "conversation": {
+    "initial_problem_statement": {
+      "zh": "用户想判断是否要在下半年启动一家海外 GEO 公司，并且希望它能做到较高人效和较稳的收入水平。",
+      "en": "The user wants to know whether to start an overseas GEO company in the second half of the year with strong efficiency and revenue targets."
+    },
+    "initial_state": {
+      "zh": "一开始只有方向、时间窗口和目标结果，没有模式、市场、客单价和资产情况。",
+      "en": "Initially there was only a rough direction, time window, and desired outcome, without the operating model, market, ticket size, or asset picture."
+    },
+    "decision_ready_threshold": 0.74,
+    "final_readiness": 0.63,
+    "decision_status": "needs-more-info",
+    "open_questions": [
+      {
+        "zh": "第一个要打的美国 ICP 到底是谁？",
+        "en": "Who exactly is the first U.S. ICP?"
+      },
+      {
+        "zh": "第一条成交路径是 founder-led outbound、内容获客还是合作转介绍？",
+        "en": "Will the first acquisition path be founder-led outbound, content-led inbound, or partner referrals?"
+      },
+      {
+        "zh": "单个项目的稳定交付边界和续费条件是否已经验证？",
+        "en": "Has the stable delivery scope and renewal condition for a single client been validated?"
+      }
+    ],
+    "rounds": [
+      {
+        "round": 1,
+        "stage": {
+          "zh": "初始方向与目标澄清",
+          "en": "Initial direction and outcome framing"
+        },
+        "user_input_summary": {
+          "zh": "用户先给出想做海外 GEO 公司、准备期大约 2-3 个月、希望月营收 30 万左右且人效达到 10 万以上。",
+          "en": "The user first shared the desire to build an overseas GEO company, prepare for about 2-3 months, and target around CNY 300k monthly revenue with monthly revenue per person above CNY 100k."
+        },
+        "assistant_focus": {
+          "zh": "先确认这是一个创业决策而不是抽象想法，并用弱先验判断赛道本身是否成立。",
+          "en": "First confirm that this is a startup decision rather than an abstract idea, and use a weak prior to judge whether the market itself is real."
+        },
+        "new_information": [
+          {
+            "zh": "明确了时间窗口和结果门槛。",
+            "en": "The time window and outcome bar became explicit."
+          }
+        ],
+        "assistant_next_questions": [
+          {
+            "zh": "你打算做服务、产品化服务还是 SaaS？",
+            "en": "Will this be a service, productized service, or SaaS model?"
+          },
+          {
+            "zh": "第一个客户市场、客单价和手上的初始资产是什么？",
+            "en": "What are the first market, ticket size, and existing assets?"
+          }
+        ],
+        "missing_information": [
+          {
+            "zh": "商业模式",
+            "en": "Business model"
+          },
+          {
+            "zh": "目标市场与客单价",
+            "en": "Target market and price point"
+          },
+          {
+            "zh": "现有资产",
+            "en": "Existing assets"
+          }
+        ],
+        "prior_probability_before": 0.22,
+        "bayes_update": {
+          "update_method": "odds-update",
+          "likelihood_ratio": 1.4,
+          "direction": "support",
+          "dependency_discount": 0.85
+        },
+        "posterior_probability_after": 0.2833,
+        "decision_readiness": 0.38,
+        "interim_judgment": {
+          "zh": "赛道本身可以看，但还不能直接下“正式启动公司”的结论。",
+          "en": "The market is worth looking at, but not enough to commit to a formal company launch."
+        }
+      },
+      {
+        "round": 2,
+        "stage": {
+          "zh": "模式、市场与资产补充",
+          "en": "Model, market, and asset clarification"
+        },
+        "user_input_summary": {
+          "zh": "用户补充了重服务模式、主要服务美国、客单价约 1 万美元/月、暂无海外资产但有部分国内案例，准备做海外流量。",
+          "en": "The user added that the plan is a heavy-service model for U.S. clients at around $10k MRR, with no overseas assets yet but some domestic cases and a plan to build overseas traffic."
+        },
+        "assistant_focus": {
+          "zh": "把正面与负面证据同时纳入，并判断当前最合理的动作是直接启动、验证式启动还是暂缓。",
+          "en": "Incorporate both supporting and opposing evidence and decide whether the right move is a full launch, a validation-first start, or a delay."
+        },
+        "new_information": [
+          {
+            "zh": "商业模式从模糊方向变成了重服务。",
+            "en": "The operating model moved from vague to clearly heavy service."
+          },
+          {
+            "zh": "目标市场、客单价和资产缺口被明确了。",
+            "en": "The target market, price point, and asset gaps became clearer."
+          }
+        ],
+        "assistant_next_questions": [
+          {
+            "zh": "第一个要打的美国 ICP 是哪一类公司和哪种买方？",
+            "en": "What exact type of U.S. company and buyer will be the first ICP?"
+          },
+          {
+            "zh": "你打算用哪条最先成交的路径去拿首单？",
+            "en": "Which path will you use to land the first deal?"
+          }
+        ],
+        "missing_information": [
+          {
+            "zh": "具体 ICP",
+            "en": "Concrete ICP"
+          },
+          {
+            "zh": "首单成交路径",
+            "en": "First-deal acquisition path"
+          },
+          {
+            "zh": "交付边界与续费验证",
+            "en": "Delivery scope and renewal validation"
+          }
+        ],
+        "prior_probability_before": 0.2833,
+        "bayes_update": {
+          "update_method": "odds-update",
+          "likelihood_ratio": 1.35,
+          "direction": "support",
+          "dependency_discount": 0.8
+        },
+        "posterior_probability_after": 0.3468,
+        "decision_readiness": 0.63,
+        "interim_judgment": {
+          "zh": "更合理的动作是先做验证式准备，而不是直接按正式公司规模下注。",
+          "en": "The more rational move is validation-first preparation rather than betting immediately at full company scale."
+        }
+      }
+    ]
+  }
+}
