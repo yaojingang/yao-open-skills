@@ -339,6 +339,98 @@ def decision_reason_en(report: dict) -> str:
     return "No action-utility inputs were provided, so the skill cannot rank actions directly."
 
 
+def conversation_raw_rounds(request: dict) -> list[dict]:
+    return ((request.get("conversation") or {}).get("rounds") or [])
+
+
+def conversation_round_en(raw_round: dict, key: str, default: str = "-") -> str:
+    value = request_text(raw_round.get(key), "en")
+    return value if value != "-" else default
+
+
+def readiness_en(label_zh: str) -> str:
+    return READINESS_EN.get(label_zh, label_zh)
+
+
+def decision_status_en(report: dict) -> str:
+    process = report.get("conversation_process") or {}
+    code = process.get("status_code")
+    return DECISION_STATUS_EN.get(code, process.get("status_en") or code or "-")
+
+
+def conversation_chart_svg(report: dict) -> str:
+    process = report.get("conversation_process") or {}
+    points = process.get("trajectory") or []
+    if not points:
+        return ""
+
+    width = 760
+    height = 260
+    margin_left = 48
+    margin_right = 20
+    margin_top = 20
+    margin_bottom = 42
+    inner_width = width - margin_left - margin_right
+    inner_height = height - margin_top - margin_bottom
+    count = len(points)
+    step = inner_width / max(count - 1, 1)
+
+    def x_at(index: int) -> float:
+        return margin_left + step * index
+
+    def y_at(value: float | None) -> float:
+        safe = 0.0 if value is None else max(0.0, min(1.0, float(value)))
+        return margin_top + (1.0 - safe) * inner_height
+
+    def polyline(values: list[float | None]) -> str:
+        coords = [f"{x_at(index):.1f},{y_at(value):.1f}" for index, value in enumerate(values) if value is not None]
+        return " ".join(coords)
+
+    grid_lines = []
+    for ratio in (0.0, 0.25, 0.5, 0.75, 1.0):
+        y = y_at(ratio)
+        grid_lines.append(f'<line x1="{margin_left}" y1="{y:.1f}" x2="{width - margin_right}" y2="{y:.1f}" class="chart-grid" />')
+        grid_lines.append(
+            f'<text x="{margin_left - 10}" y="{y + 4:.1f}" text-anchor="end" class="chart-axis-label">{ratio * 100:.0f}%</text>'
+        )
+
+    prior_values = [item.get("prior_probability") for item in points]
+    posterior_values = [item.get("posterior_probability") for item in points]
+    readiness_values = [item.get("decision_readiness") for item in points]
+
+    readiness_bars = []
+    point_markers = []
+    for index, point in enumerate(points):
+        x = x_at(index)
+        readiness = point.get("decision_readiness")
+        if readiness is not None:
+            y = y_at(readiness)
+            height_value = margin_top + inner_height - y
+            readiness_bars.append(
+                f'<rect x="{x - 18:.1f}" y="{y:.1f}" width="36" height="{height_value:.1f}" class="chart-readiness-bar" rx="8" />'
+            )
+        for value, class_name in (
+            (point.get("prior_probability"), "chart-point-prior"),
+            (point.get("posterior_probability"), "chart-point-posterior"),
+        ):
+            if value is not None:
+                point_markers.append(f'<circle cx="{x:.1f}" cy="{y_at(value):.1f}" r="5" class="{class_name}" />')
+        grid_lines.append(
+            f'<text x="{x:.1f}" y="{height - 16:.1f}" text-anchor="middle" class="chart-axis-label">R{point["round"]}</text>'
+        )
+
+    return f"""
+      <svg class="trajectory-chart" viewBox="0 0 {width} {height}" role="img" aria-label="Belief trajectory chart">
+        <rect x="0" y="0" width="{width}" height="{height}" fill="transparent"></rect>
+        {''.join(grid_lines)}
+        {''.join(readiness_bars)}
+        <polyline points="{polyline(prior_values)}" class="chart-line-prior" />
+        <polyline points="{polyline(posterior_values)}" class="chart-line-posterior" />
+        {''.join(point_markers)}
+      </svg>
+    """
+
+
 def confidence_phrase_zh(code: str | None) -> str:
     return {
         "low": "把握偏低",
@@ -432,6 +524,7 @@ def plain_language_pack(request: dict, report: dict) -> dict[str, Any]:
     state_copy = DECISION_STATES[state]
     confidence_code = report["summary"].get("confidence_code")
     stability_code = report["sensitivity"].get("conclusion_stability_code")
+    process = report.get("conversation_process") or {}
     deadline = report["question"].get("decision_deadline")
     success_metric = report["question"].get("success_metric") or "-"
     time_horizon = report["question"].get("time_horizon") or "-"
@@ -472,6 +565,18 @@ def plain_language_pack(request: dict, report: dict) -> dict[str, Any]:
     summary_en = (
         f"{state_copy['tone_en']} The current recommendation carries {confidence_phrase_en(confidence_code)}, and {stability_phrase_en(stability_code)}"
     )
+    if process:
+        gate_zh = (
+            f"多轮对话后的决策准备度约为 {fmt_pct(process.get('final_readiness'))}，"
+            f"{'已经' if process.get('decision_ready') else '还没有'}达到可决策状态。"
+        )
+        gate_en = (
+            f"After the multi-turn loop, decision readiness is about {fmt_pct(process.get('final_readiness'))}, "
+            f"and the case has {'reached' if process.get('decision_ready') else 'not yet reached'} a ready-to-decide state."
+        )
+    else:
+        gate_zh = "这份判断基于当前一次性输入，没有额外的多轮过程记录。"
+        gate_en = "This judgment is based on the current single-pass input and does not include a multi-turn process log."
 
     return {
         "state": state,
@@ -504,11 +609,14 @@ def plain_language_pack(request: dict, report: dict) -> dict[str, Any]:
         "support_cards": top_reason_cards(request, report, "support"),
         "risk_cards": top_reason_cards(request, report, "against"),
         "alternatives": alternative_cards(request, report),
+        "decision_gate_zh": gate_zh,
+        "decision_gate_en": gate_en,
     }
 
 
 def build_markdown(request: dict, report: dict) -> str:
     plain = plain_language_pack(request, report)
+    process = report.get("conversation_process") or {}
     lines = [
         f"# 贝叶斯决策报告：{report['title']}",
         "",
@@ -534,10 +642,49 @@ def build_markdown(request: dict, report: dict) -> str:
     else:
         lines.append("- 当前没有足够的备选行动用于比较。")
 
+    if process:
+        lines.extend(
+            [
+                "",
+                "## 5. 多轮对话过程与决策准备度",
+                f"- 初始现状：{process.get('initial_state') or '-'}",
+                f"- 对话轮次：{process.get('round_count')}",
+                f"- 当前状态：{process.get('status')}",
+                f"- 决策准备度：{fmt_pct(process.get('final_readiness'))}",
+                f"- 决策阈值：{fmt_pct(process.get('decision_ready_threshold'))}",
+                f"- 是否可以进入正式决策：{'可以' if process.get('decision_ready') else '还不可以'}",
+                f"- 过程分析：{process.get('analysis')}",
+                "",
+                "| 轮次 | 阶段 | 起点概率 | 更新后概率 | 概率变化 | 决策准备度 | 中间判断 |",
+                "|---:|---|---:|---:|---:|---:|---|",
+            ]
+        )
+        for item in process.get("rounds", []):
+            lines.append(
+                f"| {item['round']} | {item['stage']} | {fmt_pct(item.get('prior_probability_before'))} | {fmt_pct(item.get('posterior_probability_after'))} | {fmt_pct(item.get('delta_probability'))} | {fmt_pct(item.get('decision_readiness'))} | {item.get('interim_judgment') or '-'} |"
+            )
+        if process.get("open_questions"):
+            lines.extend(
+                [
+                    "",
+                    "- 当前仍需关注的问题：",
+                    *[f"  - {item}" for item in process["open_questions"]],
+                ]
+            )
+        lines.extend(
+            [
+                "",
+                "- 贝叶斯过程日志：",
+            ]
+        )
+        for item in process.get("rounds", []):
+            formula = (item.get("bayes_update") or {}).get("formula_zh")
+            lines.append(f"  - 第 {item['round']} 轮：{formula or '本轮只记录了结果，没有完整公式参数。'}")
+
     lines.extend(
         [
             "",
-            "## 5. 决策问题",
+            "## 6. 决策问题",
             f"- 决策问题：{report['question']['decision_question']}",
             f"- 要判断的假设：{report['question']['hypothesis']}",
             f"- 时间范围：{report['question']['time_horizon']}",
@@ -545,7 +692,7 @@ def build_markdown(request: dict, report: dict) -> str:
             f"- 成功标准：{report['question']['success_metric']}",
             f"- 领域：{report['question']['domain']}",
             "",
-            "## 6. 先验设置",
+            "## 7. 先验设置",
             f"- 先验概率：{fmt_pct(report['prior']['probability'])}",
             f"- 先验分布：{report['prior']['distribution']}",
             f"- 先验区间：{fmt_interval(report['prior']['credible_interval'])}",
@@ -562,7 +709,7 @@ def build_markdown(request: dict, report: dict) -> str:
 
     lines.extend(
         [
-            "## 7. 证据摘要",
+            "## 8. 证据摘要",
             "| 证据 | 可信度 | 方向 | 似然比 | 依赖折扣 | 摘要 |",
             "|---|---|---|---:|---:|---|",
         ]
@@ -575,15 +722,17 @@ def build_markdown(request: dict, report: dict) -> str:
     lines.extend(
         [
             "",
-            "## 8. 贝叶斯更新",
+            "## 9. 贝叶斯更新",
             f"- 更新方法：{report['posterior']['method']}",
             f"- 后验概率：{fmt_pct(report['posterior']['probability'])}",
             f"- 后验区间：{fmt_interval(report['posterior']['credible_interval'])}",
             f"- 自然频率解释：{report['natural_frequency']['explanation']}",
             "",
-            "## 9. 行动比较",
+            "## 10. 行动比较",
             f"- 推荐行动：{report['decision']['recommended_action']}",
             f"- 推荐理由：{report['decision']['reason']}",
+            f"- 决策状态：{report['decision'].get('decision_status') or '未单独评估'}",
+            f"- 决策准备度：{fmt_pct(report['decision'].get('decision_readiness'))}",
             "",
             "| 行动 | H 为真时效用 | H 为假时效用 | 期望值 | 行动阈值 |",
             "|---|---:|---:|---:|---:|",
@@ -597,7 +746,7 @@ def build_markdown(request: dict, report: dict) -> str:
     lines.extend(
         [
             "",
-            "## 10. 敏感性分析",
+            "## 11. 敏感性分析",
             f"- 后验范围：{fmt_interval(report['sensitivity']['posterior_range'])}",
             f"- 结论稳定性：{report['sensitivity']['conclusion_stability']}",
             "",
@@ -613,11 +762,11 @@ def build_markdown(request: dict, report: dict) -> str:
     lines.extend(
         [
             "",
-            "## 11. 下一步最有价值的信息",
+            "## 12. 下一步最有价值的信息",
             f"- 推荐下一步信息：{report['next_information']['recommended_next_information']}",
             f"- 判断原因：{report['next_information']['reason']}",
             "",
-            "## 12. 风险与注意事项",
+            "## 13. 风险与注意事项",
         ]
     )
     if report["warnings"]:
@@ -628,7 +777,7 @@ def build_markdown(request: dict, report: dict) -> str:
     lines.extend(
         [
             "",
-            "## 13. Skill 流程",
+            "## 14. Skill 流程",
         ]
     )
     for index, item in enumerate(SKILL_FLOW, start=1):
@@ -637,7 +786,7 @@ def build_markdown(request: dict, report: dict) -> str:
     lines.extend(
         [
             "",
-            "## 14. Skill 能力",
+            "## 15. Skill 能力",
         ]
     )
     for capability in SKILL_CAPABILITIES:
@@ -646,9 +795,10 @@ def build_markdown(request: dict, report: dict) -> str:
     lines.extend(
         [
             "",
-            "## 15. 自动生成说明",
+            "## 16. 自动生成说明",
             "- 本报告不是手写示例，而是由同一个结构化输入自动渲染出来的正式输出。",
             "- HTML 提供中英双语一键切换，PDF 和 Word 默认采用简体中文主报告。",
+            f"- {plain['decision_gate_zh']}",
         ]
     )
     return "\n".join(lines).strip() + "\n"
@@ -657,6 +807,8 @@ def build_markdown(request: dict, report: dict) -> str:
 def build_html(request: dict, report: dict) -> str:
     css = CSS_PATH.read_text(encoding="utf-8")
     plain = plain_language_pack(request, report)
+    process = report.get("conversation_process") or {}
+    raw_rounds = conversation_raw_rounds(request)
     title_zh = report["title"]
     title_en = request_text(request.get("title"), "en")
     decision_zh = report["question"]["decision_question"]
@@ -735,6 +887,12 @@ def build_html(request: dict, report: dict) -> str:
         f"<li>{dual_html(plain['premises_zh'][index], plain['premises_en'][index])}</li>"
         for index in range(len(plain["premises_zh"]))
     )
+    process_badge_html = ""
+    if process:
+        process_badge_html = f"""
+          <span class="pill">{dual_html(process.get("status") or "-", decision_status_en(report))}</span>
+          <span class="pill">{dual_html(f"对话 {process.get('round_count')} 轮", f"{process.get('round_count')} rounds")}</span>
+        """
     evidence_rows = []
     for zh_item, source_item in zip(report["evidence"], request.get("evidence", [])):
         evidence_rows.append(
@@ -820,6 +978,110 @@ def build_html(request: dict, report: dict) -> str:
         """.format(title=dual_html(item["zh_title"], item["en_title"]), body=dual_html(item["zh_body"], item["en_body"]))
         for item in SKILL_CAPABILITIES
     )
+    conversation_rounds_html = ""
+    conversation_section_html = ""
+    if process:
+        for index, item in enumerate(process.get("rounds", [])):
+            raw_round = raw_rounds[index] if index < len(raw_rounds) else {}
+            formula = item.get("bayes_update") or {}
+            conversation_rounds_html += """
+            <article class="round-card">
+              <div class="round-card-top">
+                <div>
+                  <div class="section-kicker">{round_label}</div>
+                  <h3>{stage}</h3>
+                </div>
+                <div class="round-badge">{readiness}</div>
+              </div>
+              <div class="round-metrics">
+                <div class="metric-chip"><strong>{prior_label}</strong><span>{prior_value}</span></div>
+                <div class="metric-chip"><strong>{posterior_label}</strong><span>{posterior_value}</span></div>
+                <div class="metric-chip"><strong>{delta_label}</strong><span>{delta_value}</span></div>
+                <div class="metric-chip"><strong>{ready_label}</strong><span>{ready_value}</span></div>
+              </div>
+              <p><strong>{user_label}</strong> {user_value}</p>
+              <p><strong>{focus_label}</strong> {focus_value}</p>
+              <p><strong>{judgment_label}</strong> {judgment_value}</p>
+              <div class="callout process-callout">
+                <p><strong>{formula_label}</strong> {formula_value}</p>
+              </div>
+              <div class="round-two-col">
+                <div>
+                  <h4>{new_info_label}</h4>
+                  <ul>{new_info_items}</ul>
+                </div>
+                <div>
+                  <h4>{next_q_label}</h4>
+                  <ul>{next_q_items}</ul>
+                </div>
+              </div>
+            </article>
+            """.format(
+                round_label=dual_html(f"第 {item['round']} 轮", f"Round {item['round']}"),
+                stage=dual_html(item.get("stage") or "-", conversation_round_en(raw_round, "stage")),
+                readiness=dual_html(item.get("decision_readiness_label") or "-", readiness_en(item.get("decision_readiness_label") or "-")),
+                prior_label=dual_html("起点概率", "Starting belief"),
+                prior_value=html_text(fmt_pct(item.get("prior_probability_before"))),
+                posterior_label=dual_html("更新后概率", "Updated belief"),
+                posterior_value=html_text(fmt_pct(item.get("posterior_probability_after"))),
+                delta_label=dual_html("概率变化", "Change"),
+                delta_value=html_text(fmt_pct(item.get("delta_probability"))),
+                ready_label=dual_html("准备度", "Readiness"),
+                ready_value=html_text(fmt_pct(item.get("decision_readiness"))),
+                user_label=dual_html("用户补充了什么：", "What the user added:"),
+                user_value=dual_html(item.get("user_input_summary") or "-", conversation_round_en(raw_round, "user_input_summary")),
+                focus_label=dual_html("这一轮我在判断什么：", "What the skill focused on:"),
+                focus_value=dual_html(item.get("assistant_focus") or "-", conversation_round_en(raw_round, "assistant_focus")),
+                judgment_label=dual_html("中间判断：", "Interim judgment:"),
+                judgment_value=dual_html(item.get("interim_judgment") or "-", conversation_round_en(raw_round, "interim_judgment")),
+                formula_label=dual_html("贝叶斯变化：", "Bayesian change:"),
+                formula_value=dual_html(formula.get("formula_zh") or "-", formula.get("formula_en") or "-"),
+                new_info_label=dual_html("新增信息", "New information"),
+                new_info_items="".join(
+                    f"<li>{dual_html(item['new_information'][i], request_text((raw_round.get('new_information') or [])[i] if i < len(raw_round.get('new_information') or []) else item['new_information'][i], 'en'))}</li>"
+                    for i in range(len(item.get("new_information", [])))
+                ) or f"<li>{dual_html('本轮没有新增结构化信息。', 'No new structured information was recorded for this round.')}</li>",
+                next_q_label=dual_html("下一步追问 / 剩余缺口", "Next questions / remaining gaps"),
+                next_q_items="".join(
+                    f"<li>{dual_html((item.get('assistant_next_questions') or item.get('missing_information') or ['-'])[i], request_text(((raw_round.get('assistant_next_questions') or raw_round.get('missing_information') or ['-'])[i]), 'en'))}</li>"
+                    for i in range(max(len(item.get('assistant_next_questions', [])), len(item.get('missing_information', []))))
+                ) or f"<li>{dual_html('本轮后已经没有剩余关键缺口。', 'There are no remaining critical gaps after this round.')}</li>",
+            )
+
+        conversation_section_html = f"""
+          <div class="grid compact-grid">
+            <div class="metric-card">
+              <div class="metric-label">{dual_html("对话轮次", "Rounds")}</div>
+              <div class="metric-value">{html_text(fmt_num(process.get("round_count")))}</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">{dual_html("决策准备度", "Decision readiness")}</div>
+              <div class="metric-value">{html_text(fmt_pct(process.get("final_readiness")))}</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">{dual_html("决策阈值", "Readiness threshold")}</div>
+              <div class="metric-value">{html_text(fmt_pct(process.get("decision_ready_threshold")))}</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">{dual_html("当前状态", "Current status")}</div>
+              <div class="metric-value metric-text">{dual_html(process.get("status") or "-", decision_status_en(report))}</div>
+            </div>
+          </div>
+          <p>{dual_html(process.get("analysis") or "-", process.get("analysis_en") or "-")}</p>
+          <p class="muted-note">{dual_html(plain['decision_gate_zh'], plain['decision_gate_en'])}</p>
+          <div class="trajectory-shell">
+            <div class="trajectory-head">
+              <h3>{dual_html("变化图表", "Trajectory chart")}</h3>
+              <div class="trajectory-legend">
+                <span class="legend-item"><span class="legend-dot legend-dot-prior"></span>{dual_html("起点概率", "Prior")}</span>
+                <span class="legend-item"><span class="legend-dot legend-dot-posterior"></span>{dual_html("更新后概率", "Posterior")}</span>
+                <span class="legend-item"><span class="legend-bar"></span>{dual_html("决策准备度", "Readiness")}</span>
+              </div>
+            </div>
+            {conversation_chart_svg(report)}
+          </div>
+          <div class="round-grid">{conversation_rounds_html}</div>
+        """
     nav_links = "".join(
         f'<a class="menu-link{" nav-pro-only" if anchor not in {"summary", "action-plan"} else ""}" href="#{anchor}">{dual_html(zh, en)}</a>'
         for anchor, zh, en in TOP_NAV
