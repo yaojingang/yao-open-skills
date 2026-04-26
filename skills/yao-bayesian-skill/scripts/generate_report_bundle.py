@@ -617,11 +617,32 @@ def build_markdown(request: dict, report: dict) -> str:
     else:
         lines.append("- 当前没有足够的备选行动用于比较。")
 
+    hygiene = report.get("prior_hygiene") or {}
+    hygiene_checks = hygiene.get("checks") or []
+    lines.extend(
+        [
+            "",
+            "## 5. 贝叶斯先验检查",
+            f"- 选择规则：{hygiene.get('selection_rule') or '从默认先验检查表中选择本次最相关的项目。'}",
+        ]
+    )
+    if hygiene_checks:
+        for item in hygiene_checks:
+            lines.extend(
+                [
+                    f"- {item['principle']}：{item['core_sentence']}",
+                    f"  - 触发原因：{item['trigger']}",
+                    f"  - 对决策的影响：{item['decision_use']}",
+                ]
+            )
+    else:
+        lines.append("- 当前没有单独触发的先验检查项。")
+
     if process:
         lines.extend(
             [
                 "",
-                "## 5. 多轮对话过程与决策准备度",
+                "## 6. 多轮对话过程与决策准备度",
                 f"- 初始现状：{process.get('initial_state') or '-'}",
                 f"- 对话轮次：{process.get('round_count')}",
                 f"- 当前状态：{process.get('status')}",
@@ -659,7 +680,7 @@ def build_markdown(request: dict, report: dict) -> str:
     lines.extend(
         [
             "",
-            "## 6. 决策问题",
+            "## 7. 决策问题",
             f"- 决策问题：{report['question']['decision_question']}",
             f"- 要判断的假设：{report['question']['hypothesis']}",
             f"- 时间范围：{report['question']['time_horizon']}",
@@ -667,7 +688,7 @@ def build_markdown(request: dict, report: dict) -> str:
             f"- 成功标准：{report['question']['success_metric']}",
             f"- 领域：{report['question']['domain']}",
             "",
-            "## 7. 先验设置",
+            "## 8. 先验设置",
             f"- 先验概率：{fmt_pct(report['prior']['probability'])}",
             f"- 先验分布：{report['prior']['distribution']}",
             f"- 先验区间：{fmt_interval(report['prior']['credible_interval'])}",
@@ -684,7 +705,7 @@ def build_markdown(request: dict, report: dict) -> str:
 
     lines.extend(
         [
-            "## 8. 证据摘要",
+            "## 9. 证据摘要",
             "| 证据 | 可信度 | 方向 | 似然比 | 依赖折扣 | 摘要 |",
             "|---|---|---|---:|---:|---|",
         ]
@@ -697,13 +718,13 @@ def build_markdown(request: dict, report: dict) -> str:
     lines.extend(
         [
             "",
-            "## 9. 贝叶斯更新",
+            "## 10. 贝叶斯更新",
             f"- 更新方法：{report['posterior']['method']}",
             f"- 后验概率：{fmt_pct(report['posterior']['probability'])}",
             f"- 后验区间：{fmt_interval(report['posterior']['credible_interval'])}",
             f"- 自然频率解释：{report['natural_frequency']['explanation']}",
             "",
-            "## 10. 行动比较",
+            "## 11. 行动比较",
             f"- 推荐行动：{report['decision']['recommended_action']}",
             f"- 推荐理由：{report['decision']['reason']}",
             f"- 决策状态：{report['decision'].get('decision_status') or '未单独评估'}",
@@ -721,7 +742,7 @@ def build_markdown(request: dict, report: dict) -> str:
     lines.extend(
         [
             "",
-            "## 11. 敏感性分析",
+            "## 12. 敏感性分析",
             f"- 后验范围：{fmt_interval(report['sensitivity']['posterior_range'])}",
             f"- 结论稳定性：{report['sensitivity']['conclusion_stability']}",
             "",
@@ -737,11 +758,11 @@ def build_markdown(request: dict, report: dict) -> str:
     lines.extend(
         [
             "",
-            "## 12. 下一步最有价值的信息",
+            "## 13. 下一步最有价值的信息",
             f"- 推荐下一步信息：{report['next_information']['recommended_next_information']}",
             f"- 判断原因：{report['next_information']['reason']}",
             "",
-            "## 13. 风险与注意事项",
+            "## 14. 风险与注意事项",
         ]
     )
     if report["warnings"]:
@@ -752,7 +773,7 @@ def build_markdown(request: dict, report: dict) -> str:
     lines.extend(
         [
             "",
-            "## 14. Skill 流程",
+            "## 15. Skill 流程",
         ]
     )
     for index, item in enumerate(SKILL_FLOW, start=1):
@@ -761,7 +782,7 @@ def build_markdown(request: dict, report: dict) -> str:
     lines.extend(
         [
             "",
-            "## 15. Skill 能力",
+            "## 16. Skill 能力",
         ]
     )
     for capability in SKILL_CAPABILITIES:
@@ -770,7 +791,7 @@ def build_markdown(request: dict, report: dict) -> str:
     lines.extend(
         [
             "",
-            "## 16. 自动生成说明",
+            "## 17. 自动生成说明",
             "- 本报告不是手写示例，而是由同一个结构化输入自动渲染出来的正式输出。",
             "- HTML 提供中英双语一键切换，并支持直接打印或在浏览器打印面板里存储为 PDF。",
             f"- {plain['decision_gate_zh']}",
