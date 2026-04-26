@@ -693,6 +693,166 @@ def information_value_hint(actions: list[dict], posterior_probability: float, ca
     }
 
 
+def action_text_blob(actions: list[dict], evaluated_actions: list[dict]) -> str:
+    parts = []
+    for item in actions + evaluated_actions:
+        if item.get("name"):
+            parts.append(str(item["name"]))
+    return " ".join(parts).lower()
+
+
+def add_hygiene_check(checks: list[dict], rule_id: str, priority: int, trigger: str, trigger_en: str, decision_use: str, decision_use_en: str) -> None:
+    rule = PRIOR_HYGIENE_RULES[rule_id]
+    checks.append(
+        {
+            "id": rule_id,
+            "priority": priority,
+            "principle": rule["principle"],
+            "principle_en": rule["principle_en"],
+            "core_sentence": rule["core_sentence"],
+            "core_sentence_en": rule["core_sentence_en"],
+            "score": rule["score"],
+            "trigger": trigger,
+            "trigger_en": trigger_en,
+            "decision_use": decision_use,
+            "decision_use_en": decision_use_en,
+        }
+    )
+
+
+def build_prior_hygiene_checks(
+    request: dict,
+    prior_payload: dict,
+    evidence: list[dict],
+    actions: list[dict],
+    evaluated_actions: list[dict],
+    sensitivity: dict,
+    warnings: list[str],
+    next_info: dict,
+) -> dict:
+    config = request.get("prior_hygiene") or {}
+    max_reported = int(config.get("max_reported", 5))
+    max_reported = max(3, min(max_reported, 8))
+    checks: list[dict] = []
+    observations = request.get("observations") or {}
+    trials = observations.get("trials")
+    weak_evidence_count = sum(1 for item in evidence if item.get("quality") in {"C", "D", "E"})
+    dependent_count = sum(1 for item in evidence if float(item.get("dependency_discount", 1.0)) < 1.0)
+    min_false_utility = min((utilities_for_action(item)[1] for item in actions), default=0.0)
+    text_blob = action_text_blob(actions, evaluated_actions)
+
+    add_hygiene_check(
+        checks,
+        "fallibility",
+        100,
+        "当前报告存在后验区间、敏感性结果和警示项，需要保留可更新余地。",
+        "The report has an interval, sensitivity results, and warnings, so the judgment should remain updateable.",
+        "在结论里保留置信度、剩余缺口和触发重新判断的条件。",
+        "Keep confidence, remaining gaps, and update triggers visible in the conclusion.",
+    )
+    add_hygiene_check(
+        checks,
+        "base_rate",
+        95,
+        f"先验来自 {localize_text(prior_payload.get('source_quality'), 'zh') or '未标明'} 等级来源，当前判断需要先从参考类出发。",
+        f"The prior uses {localize_text(prior_payload.get('source_quality'), 'en') or 'unspecified'} quality sources, so the judgment should start from the reference class.",
+        "先把参考类作为起点，再用当前个案证据上调或下调。",
+        "Use the reference class as the starting point, then update with case-specific evidence.",
+    )
+    if evidence:
+        add_hygiene_check(
+            checks,
+            "evidence_grade",
+            90,
+            f"本次使用了 {len(evidence)} 条证据，其中 {weak_evidence_count} 条属于 C/D/E 或更弱等级。",
+            f"This report uses {len(evidence)} evidence items; {weak_evidence_count} are C/D/E or weaker signals.",
+            "弱证据可以影响方向，但更新幅度要小，并在敏感性分析里重跑。",
+            "Weak evidence may guide direction, but it should update less and be stress-tested.",
+        )
+    if sensitivity.get("conclusion_stability_code") != "stable" or weak_evidence_count or warnings:
+        add_hygiene_check(
+            checks,
+            "strong_evidence",
+            84,
+            "当前结论仍受证据强度、依赖折扣或敏感性变化影响。",
+            "The conclusion is still affected by evidence strength, dependency discounts, or sensitivity changes.",
+            "重投入或强承诺需要更强证据；现阶段优先用低成本验证补证据。",
+            "Heavy commitment needs stronger evidence; use a low-cost validation step first.",
+        )
+    if trials is not None and float(trials) < 30:
+        add_hygiene_check(
+            checks,
+            "small_sample",
+            82,
+            f"当前可观察样本量为 {int(float(trials))}，仍属于容易波动的小样本。",
+            f"The observed sample size is {int(float(trials))}, which is still noisy.",
+            "把观察结果当成方向性信号，而不是直接当成稳定规律。",
+            "Treat observations as directional signals rather than a stable pattern.",
+        )
+    if request.get("high_risk_domain") or min_false_utility <= -50000:
+        add_hygiene_check(
+            checks,
+            "ruin_risk",
+            88,
+            "至少一个行动存在较大失败损失，或该领域本身属于高风险辅助判断。",
+            "At least one action has substantial downside, or the domain itself is high-risk decision support.",
+            "即使后验概率较高，也要先控制不可恢复损失和退出路径。",
+            "Even with a high posterior, control unrecoverable downside and exit paths first.",
+        )
+    if dependent_count:
+        add_hygiene_check(
+            checks,
+            "causality",
+            78,
+            f"{dependent_count} 条证据存在依赖折扣，说明这些信号不能完全独立相乘。",
+            f"{dependent_count} evidence items received dependency discounts, so these signals should not be multiplied as fully independent.",
+            "把相关信号当作线索，继续寻找更接近因果或行为结果的证据。",
+            "Treat correlated signals as clues and seek more causal or behavioral evidence.",
+        )
+    if any(token in text_blob for token in ("试", "test", "pilot", "landing", "小规模", "分阶段", "先做")):
+        add_hygiene_check(
+            checks,
+            "reversibility",
+            76,
+            "备选行动里已经存在试点、测试或分阶段方案。",
+            "The action set already includes a pilot, test, or staged option.",
+            "在不确定性较高时，优先选择能撤回、能学习、能继续更新的行动。",
+            "Under uncertainty, prefer actions that are reversible, informative, and updateable.",
+        )
+    if next_info.get("recommended_next_information"):
+        add_hygiene_check(
+            checks,
+            "disconfirming",
+            72,
+            "报告已经识别出下一步最有价值的信息。",
+            "The report has identified the next most valuable information to collect.",
+            "把下一步信息设计成能推翻当前建议的测试，而不是只寻找支持证据。",
+            "Design the next information step to challenge the recommendation, not only confirm it.",
+        )
+    if prior_payload.get("source_summary"):
+        add_hygiene_check(
+            checks,
+            "stale_prior",
+            64,
+            "当前先验依赖历史经验、类比或已有样本。",
+            "The prior depends on historical experience, analogy, or previous samples.",
+            "如果环境、用户群或市场周期已变化，需要重新校准先验。",
+            "If the environment, user segment, or market cycle has changed, recalibrate the prior.",
+        )
+
+    checks.sort(key=lambda item: item["priority"], reverse=True)
+    selected = checks[:max_reported]
+    for item in selected:
+        item.pop("priority", None)
+    return {
+        "principles_total": PRIOR_HYGIENE_LIBRARY_SIZE,
+        "reported_count": len(selected),
+        "selection_rule": f"从 {PRIOR_HYGIENE_LIBRARY_SIZE} 条生活贝叶斯先验中，只展示本次最相关的 {len(selected)} 条。",
+        "selection_rule_en": f"From {PRIOR_HYGIENE_LIBRARY_SIZE} everyday Bayesian priors, show only the {len(selected)} most relevant checks for this decision.",
+        "checks": selected,
+    }
+
+
 def build_sensitivity(method: str, prior_payload: dict, evidence: list[dict], actions: list[dict], observations: dict | None, sensitivity: dict) -> dict:
     prior_scenarios = sensitivity.get("prior_probabilities") or default_prior_scenarios(prior_payload)
     prior_scenarios = [clamp(float(value), 1e-6, 1 - 1e-6) for value in prior_scenarios]
