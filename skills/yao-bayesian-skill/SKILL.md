@@ -24,10 +24,11 @@ description: Convert uncertain real-world choices into an auditable Bayesian evi
 1. Use `references/intake-contract.md` to convert the request into one structured decision brief.
 2. If the input is incomplete, read `references/multi-turn-dialogue-loop.md` and start with a weak prior plus a preliminary judgment instead of pretending certainty.
 3. Use `references/evidence-prior-playbook.md` to grade evidence and choose the lightest valid update path.
-4. Maintain a structured conversation log for each round: what the user added, what gap remained, how the Bayesian update changed, and whether the case is now ready to decide.
-5. Run `scripts/bayesian_decision_report.py` for canonical JSON or `scripts/generate_report_bundle.py` for the HTML + Markdown report pair.
-6. Read `references/report-export-pipeline.md` before export. The normal output is `markdown + html`.
-7. Finalize with `references/decision-report-contract.md` and `references/sensitivity-and-safety.md`.
+4. Run `references/prior-hygiene-checklist.md` as a judgment-audit layer before finalizing the prior, evidence weight, and action intensity.
+5. Maintain a structured conversation log for each round: what the user added, what gap remained, how the Bayesian update changed, and whether the case is now ready to decide.
+6. Run `scripts/bayesian_decision_report.py` for canonical JSON or `scripts/generate_report_bundle.py` for the HTML + Markdown report pair.
+7. Read `references/report-export-pipeline.md` before export. The normal output is `markdown + html`.
+8. Finalize with `references/decision-report-contract.md` and `references/sensitivity-and-safety.md`.
 
 ## Iteration And Implementation Constraints
 
@@ -46,6 +47,7 @@ Apply these constraints when extending or refining this skill itself. They gover
 - When the user starts with only a question plus current state, begin with a weak prior and a preliminary action read; then ask the minimum next questions needed to improve the decision.
 - For multi-turn use, keep a round-by-round log of the evolving prior, posterior, decision readiness, remaining gaps, and the exact Bayesian formula or update path used in that round.
 - Final reports must analyze the dialogue process itself: what changed in each round, which information moved the belief the most, whether the decision is now ready, and what is still missing if it is not.
+- Final reports should include the 3-5 most relevant prior-hygiene checks when they materially affect the interpretation: base rates, evidence grade, strong-evidence thresholds, small-sample noise, ruin risk, reversible options, disconfirming evidence, or stale priors.
 - If the result is unstable, recommend a lower-cost test before a heavier commitment.
 - In high-risk domains, label the output as decision support only.
 - Human-facing reports default to Simplified Chinese; HTML must also provide bilingual Chinese/English switching with sticky top navigation.
@@ -61,6 +63,7 @@ Apply these constraints when extending or refining this skill itself. They gover
 - `references/intake-contract.md`: request-to-brief conversion
 - `references/multi-turn-dialogue-loop.md`: incomplete-input handling and iterative questioning
 - `references/evidence-prior-playbook.md`: evidence tiers, priors, update-path selection
+- `references/prior-hygiene-checklist.md`: updateable default assumptions for checking priors, evidence, and action intensity
 - `references/decision-report-contract.md`: required report sections and schema alignment
 - `references/report-export-pipeline.md`: automatic HTML/Markdown generation and bilingual HTML rules
 - `references/sensitivity-and-safety.md`: sensitivity analysis and high-risk disclaimers
