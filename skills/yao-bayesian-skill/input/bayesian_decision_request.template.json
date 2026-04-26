@@ -30,6 +30,10 @@
   },
   "high_risk_domain": false,
   "method": "auto",
+  "prior_hygiene": {
+    "max_reported": 5,
+    "note": "可选。报告会从 20 条生活贝叶斯先验中自动选择本次最相关的 3-5 条。"
+  },
   "prior": {
     "probability": 0.18,
     "alpha": 9,

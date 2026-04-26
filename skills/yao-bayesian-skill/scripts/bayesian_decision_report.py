@@ -1030,6 +1030,16 @@ def build_report(request: dict) -> dict:
         posterior_probability,
         localize_list((request.get("next_information") or {}).get("candidates", []), "zh"),
     )
+    prior_hygiene = build_prior_hygiene_checks(
+        request,
+        prior_payload,
+        evidence,
+        actions,
+        evaluated_actions,
+        sensitivity,
+        warnings,
+        next_info,
+    )
     conversation_process = build_conversation_process(
         request,
         float(prior_payload["probability"]),
@@ -1117,6 +1127,7 @@ def build_report(request: dict) -> dict:
         "sensitivity": sensitivity,
         "natural_frequency": natural_frequency(prior_payload["probability"], posterior_probability),
         "next_information": next_info,
+        "prior_hygiene": prior_hygiene,
         "warnings": warnings,
         "conversation_process": conversation_process,
         "calculation_log": calculation_log,

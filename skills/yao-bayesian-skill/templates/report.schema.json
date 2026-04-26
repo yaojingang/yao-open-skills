@@ -92,6 +92,26 @@
     "next_information": {
       "type": "object"
     },
+    "prior_hygiene": {
+      "type": "object",
+      "properties": {
+        "principles_total": {
+          "type": "number"
+        },
+        "reported_count": {
+          "type": "number"
+        },
+        "selection_rule": {
+          "type": "string"
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
     "warnings": {
       "type": "array",
       "items": {
