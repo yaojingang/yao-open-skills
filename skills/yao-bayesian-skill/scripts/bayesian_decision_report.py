@@ -75,6 +75,83 @@ def direction_label_zh(direction: str | None) -> str:
     return mapping.get(direction or "", direction or "未知")
 
 
+PRIOR_HYGIENE_LIBRARY_SIZE = 20
+
+
+PRIOR_HYGIENE_RULES = {
+    "fallibility": {
+        "principle": "我可能错",
+        "principle_en": "I may be wrong",
+        "core_sentence": "任何判断先给自己留一条退路。",
+        "core_sentence_en": "Leave room for every judgment to be wrong.",
+        "score": 25,
+    },
+    "base_rate": {
+        "principle": "基础率优先",
+        "principle_en": "Base rates first",
+        "core_sentence": "先看一般规律，再看个别故事。",
+        "core_sentence_en": "Start with the general pattern before the individual story.",
+        "score": 25,
+    },
+    "evidence_grade": {
+        "principle": "证据有等级",
+        "principle_en": "Evidence has grades",
+        "core_sentence": "独立、重复、可验证的证据更强。",
+        "core_sentence_en": "Independent, repeatable, verifiable evidence is stronger.",
+        "score": 25,
+    },
+    "strong_evidence": {
+        "principle": "强结论需要强证据",
+        "principle_en": "Strong claims need strong evidence",
+        "core_sentence": "越惊人的说法，证据门槛越高。",
+        "core_sentence_en": "The stronger the claim, the stronger the evidence should be.",
+        "score": 24,
+    },
+    "small_sample": {
+        "principle": "小样本很吵",
+        "principle_en": "Small samples are noisy",
+        "core_sentence": "一两个案例不能代表整体。",
+        "core_sentence_en": "One or two cases rarely represent the whole population.",
+        "score": 24,
+    },
+    "ruin_risk": {
+        "principle": "避免毁灭性风险",
+        "principle_en": "Avoid ruin risk",
+        "core_sentence": "先避免输光，再追求赢很多。",
+        "core_sentence_en": "Avoid unrecoverable loss before chasing large upside.",
+        "score": 24,
+    },
+    "causality": {
+        "principle": "相关不等于因果",
+        "principle_en": "Correlation is not causation",
+        "core_sentence": "两件事一起发生，不代表一件导致另一件。",
+        "core_sentence_en": "Two things moving together does not prove one caused the other.",
+        "score": 23,
+    },
+    "reversibility": {
+        "principle": "保留可逆选项",
+        "principle_en": "Keep reversible options",
+        "core_sentence": "不确定时，优先选择还能调整的路。",
+        "core_sentence_en": "Under uncertainty, prefer paths you can adjust.",
+        "score": 22,
+    },
+    "disconfirming": {
+        "principle": "反面证据最珍贵",
+        "principle_en": "Disconfirming evidence is valuable",
+        "core_sentence": "能改变你看法的证据，最值得看。",
+        "core_sentence_en": "The evidence that could change your mind is the most valuable.",
+        "score": 22,
+    },
+    "stale_prior": {
+        "principle": "先验会过期",
+        "principle_en": "Priors can expire",
+        "core_sentence": "世界变了，旧经验要重新校准。",
+        "core_sentence_en": "When the world changes, old experience needs recalibration.",
+        "score": 21,
+    },
+}
+
+
 def load_request(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
