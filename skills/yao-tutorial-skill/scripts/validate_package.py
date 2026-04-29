@@ -102,6 +102,7 @@ class Validator:
 
     def validate_package_files(self) -> None:
         required = [
+            "brief.json",
             "tutorial.md",
             "outline.md",
             "research/evidence-map.md",

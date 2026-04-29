@@ -1,0 +1,231 @@
+{
+  "optimizer_hints": {
+    "capability": "Create source-backed beginner tutorials with adaptive research, chapter visuals, and DOCX/PDF/HTML exports",
+    "inputs": [
+      "topic",
+      "notes",
+      "URLs",
+      "papers",
+      "repositories",
+      "reference materials",
+      "主题",
+      "资料",
+      "链接",
+      "论文",
+      "GitHub 项目"
+    ],
+    "trigger_actions": [
+      "create a beginner tutorial",
+      "build a textbook-style tutorial",
+      "research and write a tutorial",
+      "generate a tutorial package",
+      "做成教程",
+      "生成教程",
+      "写成教材",
+      "做成教程输出物"
+    ],
+    "exclusions": [
+      "quick explanation",
+      "summary only",
+      "finished document conversion",
+      "standalone diagram",
+      "SEO blog post",
+      "简单解释",
+      "只总结",
+      "只转换文件",
+      "单独画图"
+    ],
+    "artifacts": [
+      "outline",
+      "source register",
+      "evidence map",
+      "chapter visuals",
+      "markdown",
+      "docx",
+      "pdf",
+      "html"
+    ]
+  },
+  "fallback_positive_concepts": [
+    "tutorial_package",
+    "source_backed_research",
+    "chapter_visuals",
+    "multi_format_exports"
+  ],
+  "positive_concepts": {
+    "tutorial_package": {
+      "weight": 0.34,
+      "phrases": [
+        "tutorial",
+        "beginner tutorial",
+        "textbook-like tutorial",
+        "course guide",
+        "teaching document",
+        "beginner guide",
+        "long beginner guide",
+        "tutorial package",
+        "教程",
+        "小白教程",
+        "教材",
+        "教学文档",
+        "教程输出物",
+        "高审美教程"
+      ]
+    },
+    "source_backed_research": {
+      "weight": 0.24,
+      "phrases": [
+        "source-backed",
+        "adaptive research",
+        "research",
+        "references",
+        "user material",
+        "x.com",
+        "papers",
+        "authoritative sources",
+        "github evidence",
+        "github repos",
+        "source citations",
+        "资料",
+        "链接",
+        "论文",
+        "权威资料",
+        "GitHub",
+        "参考项目",
+        "补充必要的论文"
+      ]
+    },
+    "chapter_visuals": {
+      "weight": 0.2,
+      "phrases": [
+        "chapter visuals",
+        "visuals",
+        "diagrams",
+        "visual html diagrams",
+        "one visual per chapter",
+        "每章",
+        "配图",
+        "清晰配图",
+        "图示",
+        "可视化",
+        "visual HTML"
+      ]
+    },
+    "multi_format_exports": {
+      "weight": 0.16,
+      "phrases": [
+        "markdown",
+        "docx",
+        "word",
+        "pdf",
+        "html",
+        "exports",
+        "final docx",
+        "pdf/word/html",
+        "Word",
+        "导出",
+        "固定锚文本目录",
+        "HTML",
+        "PDF"
+      ]
+    },
+    "outline_learning_path": {
+      "weight": 0.06,
+      "phrases": [
+        "outline",
+        "outline design",
+        "textbook-style headings",
+        "第1章",
+        "1.1",
+        "大纲",
+        "章节标题"
+      ]
+    }
+  },
+  "negative_concepts": {
+    "quick_answer": {
+      "weight": 0.34,
+      "exclusive": true,
+      "phrases": [
+        "quick answers",
+        "quick explanation",
+        "explain in five bullets",
+        "explain rag in five bullets",
+        "five bullets",
+        "简单解释",
+        "快速解释",
+        "五个要点"
+      ]
+    },
+    "summary_only": {
+      "weight": 0.3,
+      "exclusive": true,
+      "phrases": [
+        "summarize links only",
+        "summary only",
+        "link summaries",
+        "只总结",
+        "只要摘要",
+        "总结链接"
+      ]
+    },
+    "conversion_only": {
+      "weight": 0.36,
+      "exclusive": true,
+      "phrases": [
+        "finished document conversion",
+        "convert this finished markdown file",
+        "convert this finished markdown file to a pdf",
+        "file conversion",
+        "只转换文件",
+        "转成 PDF"
+      ]
+    },
+    "pure_diagram": {
+      "weight": 0.34,
+      "exclusive": true,
+      "phrases": [
+        "standalone diagram",
+        "interactive diagram page",
+        "no tutorial text",
+        "pure diagram",
+        "单独画图",
+        "只做图"
+      ]
+    },
+    "marketing_or_page": {
+      "weight": 0.26,
+      "exclusive": true,
+      "phrases": [
+        "seo blog post",
+        "course landing page",
+        "landing page",
+        "marketing",
+        "营销文章",
+        "落地页"
+      ]
+    },
+    "deck_only": {
+      "weight": 0.24,
+      "exclusive": true,
+      "phrases": [
+        "powerpoint deck",
+        "ppt",
+        "slide deck",
+        "presentation",
+        "PPT",
+        "幻灯片"
+      ]
+    },
+    "personalized_study_plan": {
+      "weight": 0.2,
+      "exclusive": false,
+      "phrases": [
+        "personalized study guide",
+        "learner profile",
+        "study plan",
+        "个性化学习计划"
+      ]
+    }
+  }
+}
