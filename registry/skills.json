@@ -1,6 +1,6 @@
 {
   "repo_name": "yao-open-skills",
-  "updated_at": "2026-04-27",
+  "updated_at": "2026-04-30",
   "skills": [
     {
       "slug": "learning-builder",
@@ -133,6 +133,30 @@
       ],
       "last_synced_at": "2026-04-06",
       "updated_at": "2026-04-09"
+    },
+    {
+      "slug": "yao-tutorial-skill",
+      "title": "Yao Tutorial Skill",
+      "summary": "Turn topics, source packets, papers, GitHub repos, URLs, or drafts into source-backed beginner tutorial packages with adaptive research, chapter visuals, and Markdown/DOCX/PDF/HTML exports.",
+      "source_local_path": "/Users/laoyao/AI Coding/03-Development/Skills/yao-tutorial-skill",
+      "collection_path": "skills/yao-tutorial-skill",
+      "lifecycle": "active",
+      "sync_status": "published",
+      "github_repo": "yao-open-skills",
+      "github_url": "https://github.com/yaojingang/yao-open-skills/tree/main/skills/yao-tutorial-skill",
+      "guide_path": "docs/skills/yao-tutorial-skill.md",
+      "license": "MIT",
+      "tags": [
+        "education",
+        "tutorials",
+        "research",
+        "visuals",
+        "docx",
+        "pdf",
+        "html"
+      ],
+      "last_synced_at": "2026-04-30",
+      "updated_at": "2026-04-30"
     }
   ]
 }

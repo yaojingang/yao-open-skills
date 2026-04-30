@@ -14,3 +14,4 @@ Current guides:
 - [yao-bayesian-skill](yao-bayesian-skill.md)
 - [yao-business-skill](yao-business-skill.md)
 - [yao-kelly-skill](yao-kelly-skill.md)
+- [yao-tutorial-skill](yao-tutorial-skill.md)

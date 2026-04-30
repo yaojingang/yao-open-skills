@@ -1,10 +1,10 @@
 # Yao Open Skills
 
-*A curated collection of high-quality, production-ready AI skills*
+*A curated collection of production-ready AI skills for research, decision, business, learning, and document generation*
 
-`OpenYao` 延续 `YAO = Yielding AI Outcomes` 这条方法线。重点不是继续堆更多 prompt 文本，而是把有效的方法、流程、评估和执行边界沉淀成可复用的 AI 资产，并最终产生真实可交付的结果。
+`OpenYao` 延续 `YAO = Yielding AI Outcomes` 这条方法线。重点不是继续堆更多 prompt 文本，而是把有效的方法、流程、评估、审美约束和执行边界沉淀成可复用的 AI 资产，并最终产生真实可交付的结果。
 
-Yao Open Skills is a growing collection of AI-native skills designed for real-world impact.
+Yao Open Skills is a growing collection of AI-native skills designed for real-world work: turning uncertain decisions into reports, turning business questions into structured analysis, and turning topics or reference packets into polished tutorial documents.
 
 这个目录同时承担两件事：
 
@@ -17,7 +17,7 @@ Yao Open Skills is a growing collection of AI-native skills designed for real-wo
 - [OpenYao 理念](#openyao-理念)
 - [推荐入口](#推荐入口)
 - [Published Skill Guides](#published-skill-guides)
-- [Featured Published Skill](#featured-published-skill)
+- [Featured Published Skills](#featured-published-skills)
 - [Skill Catalog](#skill-catalog)
 - [发布规则](docs/publishing-rules.md)
 - [命名规范](docs/naming-conventions.md)
@@ -115,8 +115,35 @@ yao-open-skills/
 - [Yao Bayesian Skill](docs/skills/yao-bayesian-skill.md)
 - [Yao Business Skill](docs/skills/yao-business-skill.md)
 - [Yao Kelly Skill](docs/skills/yao-kelly-skill.md)
+- [Yao Tutorial Skill](docs/skills/yao-tutorial-skill.md)
 
-## Featured Published Skill
+## Featured Published Skills
+
+### Yao Tutorial Skill
+
+[`yao-tutorial-skill`](docs/skills/yao-tutorial-skill.md) 是一个“从主题或资料包到完整教程成品”的生产型 Skill。
+
+它不是简单帮你写一篇说明文，而是把输入主题、用户给定资料、权威来源、论文、GitHub 实践和案例证据组织成一套可交付教程包：先归一化需求，再做研究取证，再生成面向小白的章节大纲，最后输出带配图的 `Markdown + Word + PDF + HTML`。
+
+它的公开版本现在有这些比较突出的特点：
+
+- 支持只输入一个主题，也支持输入一组资料、链接、论文、仓库或草稿
+- 优先以用户给定资料为核心，资料不足时再补充外部权威来源
+- 面向新手写作，要求开头有吸引力，章节结构通俗、可执行
+- 每个章节都必须有一张对应的可视化配图
+- 配图先生成 HTML 画板，再截图嵌入教程内容
+- HTML 报告支持居中内容容器、左侧目录、日期、章节跳转和清爽阅读排版
+- Word/PDF 默认去掉页眉页脚，避免导出路径、页码和浏览器打印信息干扰阅读
+- 内置验证脚本，检查章节、配图、引用、导出文件和本地路径泄漏
+
+如果你想快速理解这个 Skill，建议按这个顺序看：
+
+1. [公开说明文档](docs/skills/yao-tutorial-skill.md)
+2. [Skill 入口](skills/yao-tutorial-skill/SKILL.md)
+3. [输入适配规则](skills/yao-tutorial-skill/references/input-adaptation.md)
+4. [教程写作规则](skills/yao-tutorial-skill/references/tutorial-outline-and-writing.md)
+5. [可视化画板规则](skills/yao-tutorial-skill/references/visual-html-workflow.md)
+6. [导出与验证脚本](skills/yao-tutorial-skill/scripts/validate_package.py)
 
 ### Yao Bayesian Skill
 
@@ -183,6 +210,7 @@ yao-open-skills/
 | [yao-business-skill](skills/yao-business-skill/SKILL.md) | [guide](docs/skills/yao-business-skill.md) | `active` | `published` | [skills/yao-business-skill](skills/yao-business-skill) | `external-local-source` | [link](https://github.com/yaojingang/yao-open-skills/tree/main/skills/yao-business-skill) |
 | [yao-kelly-skill](skills/yao-kelly-skill/SKILL.md) | [guide](docs/skills/yao-kelly-skill.md) | `active` | `published` | [skills/yao-kelly-skill](skills/yao-kelly-skill) | `external-local-source` | [link](https://github.com/yaojingang/yao-open-skills/tree/main/skills/yao-kelly-skill) |
 | [yao-open-skills-sync](skills/yao-open-skills-sync/SKILL.md) | [guide](docs/skills/yao-open-skills-sync.md) | `active` | `published` | [skills/yao-open-skills-sync](skills/yao-open-skills-sync) | [skills/yao-open-skills-sync](skills/yao-open-skills-sync) | [link](https://github.com/yaojingang/yao-open-skills/tree/main/skills/yao-open-skills-sync) |
+| [yao-tutorial-skill](skills/yao-tutorial-skill/SKILL.md) | [guide](docs/skills/yao-tutorial-skill.md) | `active` | `published` | [skills/yao-tutorial-skill](skills/yao-tutorial-skill) | `external-local-source` | [link](https://github.com/yaojingang/yao-open-skills/tree/main/skills/yao-tutorial-skill) |
 <!-- catalog:end -->
 
 ## 后续约定
