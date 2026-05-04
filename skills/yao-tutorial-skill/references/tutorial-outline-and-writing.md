@@ -21,7 +21,7 @@ Use this structure unless the topic clearly needs another order:
 9. Practice: tasks that reinforce the path.
 10. Human-readable reference or further-reading section when useful, plus next learning path.
 
-For a short tutorial, use `3-5` chapters. For a textbook-like guide, use `6-10` chapters, but keep each chapter scoped to one learner question.
+For a short tutorial, use `3-5` chapters. For a textbook-like guide, start with `6-10` chapters, but add or split chapters whenever the learner outcome cannot be taught cleanly inside that frame. Keep each chapter scoped to one learner question.
 
 ## User-Material Adaptation
 
@@ -45,19 +45,21 @@ When the user gives URLs or named references:
 - create at least one chapter, section, visual, or source note that explains how those references matter
 - avoid turning the tutorial into a link summary; the references should become teaching structure
 
-## Length Contract
+## Depth Contract
 
-Default to a complete tutorial, not a short article:
+Default to a complete tutorial, not a short article. Do not use a fixed word-count ceiling as the stopping rule. The stopping rule is learning sufficiency: the tutorial is done only when a beginner can understand the concept, apply the method, avoid common mistakes, and self-check their result.
 
-- Chinese body target: `5000-10000` Chinese characters, excluding source appendix, source tables, and raw research notes.
-- English body target: roughly `3500-7000` words, excluding source appendix.
-- Default chapter count: `6-10`.
-- Each Chinese chapter should usually be `600-1200` characters.
-- Each English chapter should usually be `450-900` words.
-- Opening hook should usually be `300-600` Chinese characters or `200-400` English words.
-- Final practice section should include a concrete exercise, a checkpoint, and a small self-review rubric.
+Use these depth rules instead of a hard length rule:
 
-Use a shorter target only when the user explicitly asks for a sample, preview, brief, or one-pager. If the topic is very narrow, keep the tutorial shorter but say why.
+- If the user asks for a sample, preview, brief, one-pager, or time-boxed draft, intentionally keep it short and say it is a short version.
+- If the user asks for a complete tutorial, course, manual, or "from beginner to mastery" guide, continue as long as needed to teach the outcome thoroughly.
+- Chapter count is determined by the learning path. Use fewer chapters only when the concept is narrow; use more chapters when hidden prerequisites, workflows, cases, or safety boundaries would otherwise be compressed.
+- Each chapter should be written with comparable care. Do not let middle or later chapters become thinner, more abstract, or less example-rich than early chapters.
+- Every chapter needs enough explanation, examples, pitfalls, practice, and checkpoint detail for the learner question it answers.
+- The final practice section should include a concrete exercise, a checkpoint, and a small self-review rubric.
+- When a chapter is intentionally short, record the reason in `research/chapter-quality-review.md`.
+
+Avoid padding. The goal is not more words; the goal is enough teaching surface for the learner to actually learn.
 
 ## Opening Rules
 
@@ -95,6 +97,30 @@ Each chapter must include:
 - practice task
 - checkpoint question
 - source traceability in internal research notes; no visible bracket source IDs in the public tutorial
+
+## Per-Chapter Quality Loop
+
+After drafting each numbered chapter, run an independent chapter check before moving on or before final export. Create `research/chapter-quality-review.md` with one row per numbered chapter.
+
+Minimum review columns:
+
+```markdown
+| chapter | learner_question | depth_status | example_or_case | practice_or_checkpoint | evidence_support | visual_fit | revision_notes |
+|---|---|---|---|---|---|---|---|
+| 第1章 ... | ... | pass / revise | ... | ... | ... | ... | ... |
+```
+
+Each chapter must pass these questions:
+
+1. Does this chapter answer one clear learner question?
+2. Would a beginner understand the idea without hidden prerequisites?
+3. Does it include a concrete example, walkthrough, table, or reusable template?
+4. Does it include a common pitfall, practice prompt, or checkpoint that makes the learner act?
+5. Is the chapter's visual doing real teaching work rather than decoration?
+6. Is the chapter at least as careful as the chapters before it, especially in the middle and back half?
+7. Are factual claims traceable in `research/evidence-map.md` or clearly framed as practical guidance?
+
+If any answer is weak, revise the chapter before export. Do not compensate for a weak chapter by adding a short summary at the end; strengthen the chapter itself.
 
 Recommended chapter rhythm:
 
@@ -149,9 +175,10 @@ Avoid exercises that require tools or accounts the learner has not been prepared
 ## Final Tutorial Checklist
 
 - The first page answers "why should I care?"
-- The body length is within the requested or default range.
+- The body depth is sufficient for the user's learning goal; no chapter is compressed only to fit a word count.
 - The chapter order has no hidden prerequisites.
 - Every chapter has a visual and a source-backed purpose.
+- `research/chapter-quality-review.md` exists and covers every numbered chapter.
 - The tutorial includes theory, practice, and case material.
 - User-provided material has been used as the spine when it is strong enough, and external material is added only where it improves support.
 - The source appendix is audit-friendly.

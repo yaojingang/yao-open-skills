@@ -10,7 +10,7 @@ description: Create standalone beginner tutorial packages from a topic or suppli
 1. Normalize topic, audience, outcome, language, formats, user material, style references, and exclusions into `brief.json`.
 2. Read `references/input-adaptation.md`; use user material as the spine when sufficient, then add only needed external research.
 3. Read `references/research-sourcing.md`; create `research/user-materials-register.md` when needed, `research/source-register.md`, and `research/evidence-map.md`.
-4. Read `references/tutorial-outline-and-writing.md` plus `references/course-design-principles.md`; write `outline.md`, then standalone public `tutorial.md` using `第1章` and `1.1`.
+4. Read `references/tutorial-outline-and-writing.md` plus `references/course-design-principles.md`; write `outline.md`, standalone public `tutorial.md` using `第1章` and `1.1`, and `research/chapter-quality-review.md`.
 5. Read the editorial and visual references; create `visuals/visual-spec.json`, then run `build_visual_pack.py` and `capture_visuals.py`.
 6. Read `references/export-workflow.md`; run `export_tutorial.py` and then `validate_package.py`.
 7. Report exact failures and fallbacks. Never fabricate X posts, papers, repo details, dates, or citations.
@@ -21,7 +21,8 @@ description: Create standalone beginner tutorial packages from a topic or suppli
 - Public exports never show internal source IDs or reference-packet provenance.
 - Copy reads as a standalone formal teaching product.
 - Every numbered chapter has a matching visual spec and embedded visual.
-- Default full tutorial length is `5000-10000` Chinese characters or `3500-7000` English words unless requested otherwise.
+- Depth is governed by learning sufficiency, not a fixed word limit; continue until the learner can understand, apply, and self-check the topic.
+- Every numbered chapter has an independent quality review for depth, examples, practice, evidence, visual fit, and back-half consistency.
 - HTML uses centered `report-shell`; DOCX/PDF have no visible headers, footers, local paths, or print chrome.
 - Delivery passes `scripts/validate_package.py` or names the remaining warnings/failures.
 

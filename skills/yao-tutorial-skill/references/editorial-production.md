@@ -73,18 +73,19 @@ Not allowed in final output:
 - Body: a restrained sans or serif depending on the document tone.
 - Avoid using Inter/Roboto/Arial as the main visual identity, though they are acceptable fallbacks.
 
-## Long Tutorial Length
+## Tutorial Depth And Completeness
 
-Default tutorial length should be substantial enough to teach, but not become a book:
+Default tutorial length should be substantial enough to teach. Do not cap a complete tutorial at a fixed word count unless the user explicitly asks for a short artifact.
 
-- Chinese tutorial body: `5000-10000` Chinese characters excluding source appendix and raw source tables.
-- English tutorial body: roughly `3500-7000` words excluding source appendix.
-- Default chapter count: `6-10`.
-- Each chapter: `600-1200` Chinese characters or `450-900` English words.
-- Opening hook: `300-600` Chinese characters or `200-400` English words.
+Use learning sufficiency as the depth standard:
+
+- The tutorial should be as long as needed for the learner to understand the problem, build the mental model, see examples, practice the method, and self-check results.
+- The chapter count should follow the learning path, not a default quota. Start from `6-10` chapters for broad topics, then expand or merge based on prerequisite load and learner questions.
+- Each chapter should feel complete on its own: scene challenge, explanation, example or case, visual, pitfall, practice/checkpoint, and a success state.
+- Middle and later chapters must not become outline-like, compressed, or less careful than early chapters. If the back half becomes thin, revise chapter by chapter before export.
+- Short versions are allowed only when the user asks for a sample, brief, one-pager, or fast draft.
+- Deep manuals and course-style outputs may become long. Keep structure, navigation, and pacing strong rather than cutting necessary explanation.
 - Final practice section: at least one applied exercise and one self-check rubric.
-
-Only go shorter when the user asks for a sample, brief, one-pager, or fast draft. Only go longer when the user asks for a course, book chapter, or deep manual.
 
 ## HTML Report Contract
 
@@ -157,7 +158,9 @@ Borrow presentation rhythm without turning the tutorial into slides:
 
 Before delivery, check:
 
-- body length matches the requested or default length range
+- body depth matches the requested learning outcome and is not artificially compressed by a word-count ceiling
+- each numbered chapter has an internal quality review in `research/chapter-quality-review.md`
+- middle and later chapters are not noticeably thinner or less actionable than early chapters
 - every chapter has a visual and caption
 - screenshots are crisp enough for PDF/Word
 - HTML image frames do not show double borders or duplicate captions

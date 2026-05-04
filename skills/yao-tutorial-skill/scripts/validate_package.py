@@ -29,6 +29,7 @@ class Validator:
         self.strict = strict
         self.checks: list[Check] = []
         self.chapter_numbers: list[int] = []
+        self.chapter_sections: list[tuple[int, str, str]] = []
         self.markdown_image_refs: list[str] = []
 
     def add(self, status: str, message: str) -> None:
@@ -107,6 +108,7 @@ class Validator:
             "tutorial.md",
             "outline.md",
             "research/evidence-map.md",
+            "research/chapter-quality-review.md",
             "visuals/visual-spec.json",
             "visuals/index.html",
         ]
@@ -155,6 +157,7 @@ class Validator:
         chapter_matches = list(re.finditer(r"^##\s+第\s*(\d+)\s*章\b", text, flags=re.M))
         chapters = [match.group(0) for match in chapter_matches]
         self.chapter_numbers = [int(match.group(1)) for match in chapter_matches]
+        self.chapter_sections = split_chapter_sections(text, chapter_matches)
         if chapters:
             self.pass_(f"Found {len(chapters)} numbered chapters")
         else:
@@ -188,6 +191,8 @@ class Validator:
             self.pass_("tutorial.md contains no public bracket source markers")
 
         self.validate_specific_h3_headings(h3_headings)
+        self.validate_chapter_depth_consistency()
+        self.validate_chapter_quality_review()
 
     def validate_visuals(self) -> None:
         spec_path = self.package_dir / "visuals/visual-spec.json"
@@ -415,6 +420,66 @@ class Validator:
         else:
             self.pass_("H3 headings are specific, not repeated generic labels")
 
+    def validate_chapter_depth_consistency(self) -> None:
+        if len(self.chapter_sections) < 4:
+            return
+
+        chapter_lengths = [
+            (number, visible_text_length(section))
+            for number, _heading, section in self.chapter_sections
+        ]
+        first_half = chapter_lengths[: max(1, len(chapter_lengths) // 2)]
+        second_half = chapter_lengths[len(chapter_lengths) // 2 :]
+        first_median = median([length for _number, length in first_half])
+        second_median = median([length for _number, length in second_half])
+        thin_chapters = [
+            f"第{number}章 ({length})"
+            for number, length in chapter_lengths
+            if first_median and length < first_median * 0.45
+        ]
+
+        if second_median and first_median and second_median < first_median * 0.65:
+            self.warn(
+                "Later chapters appear much thinner than early chapters; "
+                f"first-half median {first_median}, second-half median {second_median}"
+            )
+        elif thin_chapters:
+            self.warn("Some chapters may be too thin for a full tutorial: " + ", ".join(thin_chapters[:6]))
+        else:
+            self.pass_("Chapter depth is reasonably balanced across the tutorial")
+
+    def validate_chapter_quality_review(self) -> None:
+        review = self.package_dir / "research/chapter-quality-review.md"
+        if not review.exists():
+            self.fail("Missing research/chapter-quality-review.md for per-chapter quality control")
+            return
+
+        text = read_text(review)
+        missing = [
+            number for number in self.chapter_numbers
+            if not re.search(rf"(第\s*{number}\s*章|chapter-0*{number}\b)", text, flags=re.I)
+        ]
+        if missing:
+            self.fail(
+                "chapter-quality-review.md is missing review rows for chapters: "
+                + ", ".join(f"第{number}章" for number in missing)
+            )
+        else:
+            self.pass_("chapter-quality-review.md covers every numbered chapter")
+
+        required_terms = [
+            "learner_question",
+            "depth_status",
+            "example_or_case",
+            "practice_or_checkpoint",
+            "visual_fit",
+        ]
+        missing_terms = [term for term in required_terms if term not in text]
+        if missing_terms:
+            self.warn("chapter-quality-review.md may be missing expected columns: " + ", ".join(missing_terms))
+        else:
+            self.pass_("chapter-quality-review.md includes depth, example, practice, and visual review columns")
+
     def validate_public_provenance_hygiene(self) -> None:
         public_texts: list[tuple[str, str]] = []
         tutorial = self.package_dir / "tutorial.md"
@@ -481,6 +546,37 @@ def find_browser() -> str:
 
 def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8", errors="ignore")
+
+
+def split_chapter_sections(markdown: str, chapter_matches: list[re.Match[str]]) -> list[tuple[int, str, str]]:
+    sections: list[tuple[int, str, str]] = []
+    for index, match in enumerate(chapter_matches):
+        start = match.start()
+        end = chapter_matches[index + 1].start() if index + 1 < len(chapter_matches) else len(markdown)
+        number = int(match.group(1))
+        heading = match.group(0)
+        sections.append((number, heading, markdown[start:end]))
+    return sections
+
+
+def visible_text_length(markdown: str) -> int:
+    text = re.sub(r"```.*?```", " ", markdown, flags=re.S)
+    text = re.sub(r"!\[[^\]]*\]\([^)]+\)", " ", text)
+    text = re.sub(r"\[[^\]]+\]\([^)]+\)", " ", text)
+    text = re.sub(r"^#+\s+", " ", text, flags=re.M)
+    text = re.sub(r"[|`*_>#\-\[\]():]", " ", text)
+    text = re.sub(r"\s+", "", text)
+    return len(text)
+
+
+def median(values: list[int]) -> int:
+    if not values:
+        return 0
+    ordered = sorted(values)
+    mid = len(ordered) // 2
+    if len(ordered) % 2:
+        return ordered[mid]
+    return (ordered[mid - 1] + ordered[mid]) // 2
 
 
 def public_source_markers(text: str) -> list[str]:

@@ -8,6 +8,7 @@
 - `outline.md`：教程大纲
 - `tutorial.md`：正式教程正文
 - `research/`：内部证据登记
+- `research/chapter-quality-review.md`：每章独立质检记录
 - `visuals/`：配图 HTML 画板与 SVG
 - `assets/screenshots/`：章节配图截图
 - `exports/`：HTML、Word、PDF 和预览图
@@ -25,6 +26,7 @@
 三套示例均已通过 `scripts/validate_package.py --formats docx html pdf --check-deps`：
 
 - 每个编号章节都有对应视觉规格和嵌入配图。
+- 每个编号章节都有独立质检记录。
 - HTML 具备居中正文容器、粘性目录、日期和表格包裹。
 - Word 不包含页眉页脚引用。
 - PDF 为无页眉页脚的干净导出。

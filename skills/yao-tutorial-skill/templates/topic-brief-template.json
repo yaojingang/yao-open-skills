@@ -19,7 +19,7 @@
     "sufficiency_tier": "auto: rich | moderate | thin"
   },
   "scope": {
-    "desired_length": "complete tutorial",
+    "desired_length": "auto: as long as needed to teach the outcome; no fixed cap unless the user sets one",
     "chapter_count": "auto",
     "time_budget": "",
     "must_include": [],
@@ -57,5 +57,10 @@
     "html",
     "visual-html"
   ],
-  "citation_style": "inline source IDs plus source appendix"
+  "quality_control": {
+    "chapter_quality_review": true,
+    "review_file": "research/chapter-quality-review.md",
+    "depth_rule": "learning sufficiency, not fixed word count"
+  },
+  "citation_style": "public human-readable references; internal source IDs only in research files"
 }
